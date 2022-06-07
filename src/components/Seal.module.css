@@ -1,0 +1,19 @@
+.article {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.picture {
+    width: 75px;
+}
+
+.text {
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    position: relative;
+    bottom: 60px;
+    height: fit-content;
+    margin: auto;
+}
