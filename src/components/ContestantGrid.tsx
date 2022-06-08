@@ -41,7 +41,7 @@ function ContestantGrid(props: IProps) {
                             padding: 10,
                         }}
                     >
-                    {contestants.map(id => <SortableItem id={id} key={id} score={6}/>)}
+                    {contestants.map(id => <SortableItem id={id} key={id} score={contestants.indexOf(id)+1}/>)}
                     </div>
                     </SortableContext>
             </DndContext>
