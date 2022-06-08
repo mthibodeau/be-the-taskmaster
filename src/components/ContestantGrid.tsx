@@ -59,6 +59,8 @@ const getLayouts = () => {
 function ContestantGrid(props: IProps) {
     const handleLayoutChange = (layout: any, layouts: any) => {
         localStorage.setItem("grid-layout", JSON.stringify(layouts))
+        console.log("start of layout")
+        console.log(JSON.stringify(layouts))
     };
 
     return (
@@ -74,7 +76,6 @@ function ContestantGrid(props: IProps) {
 
                 {contestants.map((contestant) => (
                     <div key={contestant.name}>
-                        <h2>{contestant.name}</h2>
                         <Frame name={contestant.name} />
                     </div>
                 ))}
