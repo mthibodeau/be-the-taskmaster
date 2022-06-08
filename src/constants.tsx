@@ -1,0 +1,1 @@
+export const contestants = {"13": ["ardal", "bridget", "chris", "judi", "sophie"]} as const

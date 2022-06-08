@@ -6,7 +6,7 @@ import Frame from './components/Frame'
 
 function App() {
 
-  const [series, setSeries] = useState<number>(13)
+  const [series, setSeries] = useState<string>("13")
 
   return (
     <div className="App">

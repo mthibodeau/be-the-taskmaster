@@ -1,88 +1,65 @@
 import React, {useState} from 'react';
-import {Responsive, WidthProvider} from 'react-grid-layout';
+import {DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors,} from '@dnd-kit/core';
+import {
+    arrayMove,
+    SortableContext,
+    sortableKeyboardCoordinates,
+    horizontalListSortingStrategy,
+} from '@dnd-kit/sortable'
 
-import classes from './ContestantGrid.module.css';
-import Frame from '../components/Frame'
-
-import alex from '../assets/alex.png';
-import frame from '../assets/frame.png';
-
-const ResponsiveGridLayout = WidthProvider(Responsive);
+import styles from './ContestantGrid.module.css';
+import {SortableItem} from "./SortableItem";
 
 interface IProps {
-    series: number
+    series: string
 }
 
-const contestants = [
-
-    {
-        name: "Alex1",
-        image: alex
-    },
-
-    {
-        name: "Alex2",
-        image: alex
-    },
-
-    {
-        name: "Alex3",
-        image: alex
-    },
-
-    {
-        name: "Alex4",
-        image: alex
-    },
-
-    {
-        name: "Alex5",
-        image: alex
-    },
-]
-
-const layout = [
-    {i: contestants[0].name, x: 0, y: 0, w: 1, h: 1},
-    {i: contestants[1].name, x: 1, y: 0, w: 1, h: 1},
-    {i: contestants[2].name, x: 2, y: 0, w: 1, h: 1},
-    {i: contestants[3].name, x: 3, y: 0, w: 1, h: 1},
-    {i: contestants[4].name, x: 4, y: 0, w: 1, h: 1}
-];
-
-const getLayouts = () => {
-    const savedLayouts = localStorage.getItem("grid-layout");
-    return savedLayouts ? JSON.parse(savedLayouts) : { lg : layout};
-};
-
-
-
 function ContestantGrid(props: IProps) {
-    const handleLayoutChange = (layout: any, layouts: any) => {
-        localStorage.setItem("grid-layout", JSON.stringify(layouts))
-        console.log("start of layout")
-        console.log(JSON.stringify(layouts))
-    };
+
+    const [contestants, setContestants] = useState(["ardal", "bridget", "chris", "judi", "sophie"]);
+    const sensors = useSensors(
+        useSensor(PointerSensor),
+        useSensor(KeyboardSensor, {
+            coordinateGetter: sortableKeyboardCoordinates,
+        })
+    );
 
     return (
-        <div style={{marginTop: 20, marginBottom: 50}}>
-            <ResponsiveGridLayout
-                layouts={getLayouts()}
-                breakpoints={{lg: 1200, md: 996, sm: 768, xs: 480, xxs: 0}}
-                cols={{lg: 5, md: 4, sm: 3, xs: 2, xxs: 1}}
-                rowHeight={350}
-                width={100}
-                onLayoutChange={handleLayoutChange}
-            >
+            <DndContext
+                sensors={sensors}
+                collisionDetection={closestCenter}
+                onDragEnd={handleDragEnd}>
 
-                {contestants.map((contestant) => (
-                    <div key={contestant.name}>
-                        <Frame name={contestant.name} />
+                <SortableContext items={contestants}
+                                 strategy={horizontalListSortingStrategy}>
+
+                    <div
+                        style={{
+                            display: 'grid',
+                            gridTemplateColumns: `repeat(${5}, 1fr)`,
+                            gridGap: 10,
+                            padding: 10,
+                        }}
+                    >
+                    {contestants.map(id => <SortableItem id={id} key={id} score={6}/>)}
                     </div>
-                ))}
-
-            </ResponsiveGridLayout>
-        </div>
+                    </SortableContext>
+            </DndContext>
     );
+
+
+    function handleDragEnd(event: { active: any; over: any; }) {
+        const {active, over} = event;
+
+        if (active.id !== over.id) {
+            setContestants((contestants) => {
+                const oldIndex = contestants.indexOf(active.id);
+                const newIndex = contestants.indexOf(over.id);
+
+                return arrayMove(contestants, oldIndex, newIndex);
+            });
+        }
+    }
 }
 
 export default ContestantGrid;

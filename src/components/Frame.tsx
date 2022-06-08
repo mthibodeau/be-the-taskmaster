@@ -1,5 +1,9 @@
 import alex from '../assets/alex.png';
-import frame from '../assets/frame.png';
+import ardal from '../assets/Frame_ARDAL.png';
+import bridget from '../assets/Frame_BRIDGET.png';
+import chris from '../assets/Frame_CHRIS.png';
+import judi from '../assets/Frame_JUDI.png';
+import sophie from '../assets/Frame_SOPHIE.png';
 import seal from '../assets/seal-tm.png';
 import classes from "./ContestantGrid.module.css";
 import styles from './Frame.module.css';
@@ -7,18 +11,22 @@ import Seal from './Seal';
 import React from "react";
 
 interface IProps {
-     name: string
+    name: string,
+    score: number
 }
 
+let contestants: any = {"ardal": ardal, "bridget": bridget, "chris": chris, "judi": judi, "sophie": sophie}
+
 export default function Frame(props: IProps) {
+    const name = props.name;
+    console.log(name)
     return (
-        <div className={classes.Frame}>
+        <div className={classes.Frame} id={props.name}>
             <div>
                 <h2>{props.name}</h2>
-                <img className={styles.picture} src={alex} alt="contestant"/>
-                <img className={styles.frame} src={frame} alt="frame" width={200}/>
+                <img src={contestants[props.name]} alt={props.name}/>
             </div>
-            <Seal score={5} />
+            <Seal score={props.score}/>
         </div>
     )
 }
