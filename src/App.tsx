@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import ContestantGrid from "./components/ContestantGrid";
@@ -7,13 +7,23 @@ import {contestants} from "./constants";
 
 function App() {
 
-    const [series, setSeries] = useState<string>("13");
+    const [series, setSeries] = useState<string>("5");
+    const [episode, setEpisode] = useState<string>("5");
+    const [task, setTask] = useState<string>("5");
 
-    React.useEffect(() => {
-        fetch("/abc")
-            .then((res) => res.json())
-            .then((data) => setSeries(data.message));
-    }, []);
+    useEffect(() => {
+        const fetchScores = async () => {
+            const res = await fetch(`http://localhost:3001/${series}/${episode}/${task}`)
+            const data = await res.json();
+            console.log('fetch scores: ', data);
+        }
+
+        fetchScores();
+    });
+    //     fetch("/abc")
+    //         .then((res) => res.json())
+    //         .then((data) => setSeries(data.message));
+    // }, []);
 
     return (
         <div className="App">
