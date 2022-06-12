@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors,} from '@dnd-kit/core';
 import {
     arrayMove,
@@ -11,12 +11,15 @@ import {SortableItem} from './SortableItem';
 import styles from './ContestantGrid.module.css';
 
 interface IProps {
-    series: string
+    series: string,
+    episode: string,
+    task: string
 }
 
 function ContestantGrid(props: IProps) {
 
     const [contestants, setContestants] = useState(["chris", "judi", "sophie", "ardal", "bridget"]);
+    const [scores, setScores] = useState<any>();
     const sensors = useSensors(
         useSensor(PointerSensor),
         useSensor(KeyboardSensor, {
@@ -41,7 +44,6 @@ function ContestantGrid(props: IProps) {
                     </SortableContext>
             </DndContext>
     );
-
 
     function handleDragEnd(event: { active: any; over: any; }) {
         const {active, over} = event;

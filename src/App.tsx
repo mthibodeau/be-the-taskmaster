@@ -15,11 +15,12 @@ function App() {
         const fetchScores = async () => {
             const res = await fetch(`http://localhost:3001/${series}/${episode}/${task}`)
             const data = await res.json();
-            console.log('fetch scores: ', data);
+            const scores = data.scores
         }
 
         fetchScores();
     });
+
     //     fetch("/abc")
     //         .then((res) => res.json())
     //         .then((data) => setSeries(data.message));
@@ -27,7 +28,7 @@ function App() {
 
     return (
         <div className="App">
-            <ContestantGrid series={series}/>
+            <ContestantGrid series={series} episode={episode} task={task} />
             <button className='btn' onClick={scoreTaskHandler}>
                 My Judgement is Final
             </button>
