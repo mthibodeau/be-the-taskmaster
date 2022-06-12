@@ -13,9 +13,10 @@ function App() {
 
     useEffect(() => {
         const fetchScores = async () => {
-            const res = await fetch(`http://localhost:3001/${series}/${episode}/${task}`)
+            const res = await fetch(`http://localhost:3001/scores/${series}/${episode}/${task}`)
             const data = await res.json();
             const scores = data.scores
+            console.log(data);
         }
 
         fetchScores();

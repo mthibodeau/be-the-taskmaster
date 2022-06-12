@@ -1,8 +1,23 @@
+const mongoose = require('mongoose');
+
+let taskSchema = new mongoose.Schema({
+  series: Number,
+  episode: Number,
+  task: Number,
+  description: String,
+  type: String,
+  contestantOne: Number,
+  contestantTwo: Number,
+  contestantThree: Number,
+  contestantFour: Number,
+  contestantFive: Number
+});
+
 const getTaskScores = (series, episode) => {
   // TODO insert db query
-  console.log("taskModel getTaskScores")
   return {"ardal": 1, "bridget": 3, "chris": 4, "judi": 2, "sophie": 5};
 }
+
 
 module.exports = {
   getTaskScores

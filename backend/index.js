@@ -1,16 +1,19 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require('path');
-const cors = require('cors')
+const cors = require('cors');
 
-
-const taskController = require('./controller/taskController');
+const scoreRoutes = require('./routes/scores');
 
 const PORT = process.env.PORT || 3001
 
+// Connect to the mongodb
+mongoose.connect(`mongodb+srv://${process.env.MONGO_ATLAS_USERNAME}:${process.env.MONGO_ATLAS_PASSWORD}@tmcluster.izhw5.mongodb.net/?retryWrites=true&w=majority\n`);
+
 const app = express();
 
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(cors())
 
@@ -18,7 +21,7 @@ app.use(cors())
 //   res.json({ message: "55" });
 // });
 
-app.use(`/:series/:episode/:task`, taskController.getScores);
+app.use('/scores', scoreRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(err, res, next) {
