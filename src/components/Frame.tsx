@@ -4,9 +4,7 @@ import bridget from '../assets/Frame_BRIDGET.png';
 import chris from '../assets/Frame_CHRIS.png';
 import judi from '../assets/Frame_JUDI.png';
 import sophie from '../assets/Frame_SOPHIE.png';
-import seal from '../assets/seal-tm.png';
 import classes from "./ContestantGrid.module.css";
-import styles from './Frame.module.css';
 import Seal from './Seal';
 import React from "react";
 
@@ -19,7 +17,6 @@ let contestants: any = {"ardal": ardal, "bridget": bridget, "chris": chris, "jud
 
 export default function Frame(props: IProps) {
     const name = props.name;
-    console.log(name)
     return (
         <div className={classes.Frame} id={props.name}>
             <div>

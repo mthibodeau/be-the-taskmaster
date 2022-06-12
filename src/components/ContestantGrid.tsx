@@ -4,11 +4,11 @@ import {
     arrayMove,
     SortableContext,
     sortableKeyboardCoordinates,
-    horizontalListSortingStrategy,
+    rectSortingStrategy, horizontalListSortingStrategy,
 } from '@dnd-kit/sortable'
 
+import {SortableItem} from './SortableItem';
 import styles from './ContestantGrid.module.css';
-import {SortableItem} from "./SortableItem";
 
 interface IProps {
     series: string
@@ -16,7 +16,7 @@ interface IProps {
 
 function ContestantGrid(props: IProps) {
 
-    const [contestants, setContestants] = useState(["ardal", "bridget", "chris", "judi", "sophie"]);
+    const [contestants, setContestants] = useState(["chris", "judi", "sophie", "ardal", "bridget"]);
     const sensors = useSensors(
         useSensor(PointerSensor),
         useSensor(KeyboardSensor, {
@@ -33,15 +33,10 @@ function ContestantGrid(props: IProps) {
                 <SortableContext items={contestants}
                                  strategy={horizontalListSortingStrategy}>
 
-                    <div
-                        style={{
-                            display: 'grid',
-                            gridTemplateColumns: `repeat(${5}, 1fr)`,
-                            gridGap: 10,
-                            padding: 10,
-                        }}
-                    >
-                    {contestants.map(id => <SortableItem id={id} key={id} score={contestants.indexOf(id)+1}/>)}
+                    <div className={styles.flexContainer}>
+                    {contestants.map(id => <SortableItem id={id}
+                                                         key={id}
+                                                         score={contestants.indexOf(id)+1}/>)}
                     </div>
                     </SortableContext>
             </DndContext>
