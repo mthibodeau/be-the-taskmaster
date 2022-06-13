@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-let taskSchema = new mongoose.Schema({
+const taskScoreSchema = new mongoose.Schema({
   series: Number,
   episode: Number,
   task: Number,
@@ -13,12 +13,10 @@ let taskSchema = new mongoose.Schema({
   contestantFive: Number
 });
 
-const getTaskScores = (series, episode) => {
-  // TODO insert db query
-  return {"ardal": 1, "bridget": 3, "chris": 4, "judi": 2, "sophie": 5};
-}
+// const getTaskScores = (series, episode) => {
+//   // TODO insert db query
+//   return {"ardal": 1, "bridget": 3, "chris": 4, "judi": 2, "sophie": 5};
+// }
 
 
-module.exports = {
-  getTaskScores
-}
+module.exports = mongoose.model('TaskScore', taskScoreSchema)
