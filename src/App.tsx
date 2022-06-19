@@ -1,9 +1,7 @@
 import React, {useState, useEffect } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import ContestantGrid from "./components/ContestantGrid";
-import Frame from './components/Frame'
-import {contestants} from "./constants";
+import NavBar from "./components/NavBar";
 
 function App() {
 
@@ -18,6 +16,7 @@ function App() {
 
     return (
         <div className="App">
+            <NavBar />
             <ContestantGrid series={series} episode={episode} task={task} />
             <button className='btn' onClick={scoreTaskHandler}>
                 My Judgement is Final
