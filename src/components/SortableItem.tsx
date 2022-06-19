@@ -5,10 +5,10 @@ import Frame from "./Frame";
 
 interface IProps {
     id: string,
-    score: number
+    score?: number
 }
 
-export function SortableItem(props: IProps) {
+export default function SortableItem(props: IProps) {
     const {
         attributes,
         listeners,
@@ -25,7 +25,7 @@ export function SortableItem(props: IProps) {
     return (
         <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
             {/* ... */}
-            <Frame name={props.id} score={props.score ? props.score : 0} />
+             <Frame id={props.id} score={props.score ? props.score : 0} />
         </div>
     )
 }

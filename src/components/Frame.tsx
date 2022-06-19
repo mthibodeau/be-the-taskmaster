@@ -9,21 +9,19 @@ import Seal from './Seal';
 import React from "react";
 
 interface IProps {
-    name: string,
+    id: string,
     score: number
 }
 
 let contestants: any = {"ardal": ardal, "bridget": bridget, "chris": chris, "judi": judi, "sophie": sophie}
 
 export default function Frame(props: IProps) {
-    const name = props.name;
     return (
-        <div className={classes.Frame} id={props.name}>
+        <div className={classes.Frame} id={props.id}>
             <div>
-                <h2>{props.name}</h2>
-                <img src={contestants[props.name]} alt={props.name}/>
+                <img src={contestants[props.id]} alt={props.id}/>
             </div>
-            <Seal score={props.score}/>
+            <Seal score={props.score ? props.score : 0}/>
         </div>
     )
 }

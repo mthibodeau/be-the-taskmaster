@@ -11,17 +11,6 @@ function App() {
     const [episode, setEpisode] = useState<string>("5");
     const [task, setTask] = useState<string>("5");
 
-    useEffect(() => {
-        const fetchScores = async () => {
-            const res = await fetch(`http://localhost:3001/scores/${series}/${episode}/${task}`)
-            const data = await res.json();
-            const scores = data.scores
-            console.log(data);
-        }
-
-        fetchScores();
-    });
-
     //     fetch("/abc")
     //         .then((res) => res.json())
     //         .then((data) => setSeries(data.message));
