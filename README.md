@@ -1,13 +1,5 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Features
-
-- **Drag & Drop Image Gallery**: Interactive image gallery with 5 placeholder images
-- **Persistent Ordering**: Image order is saved to localStorage and persists across page refreshes
-- **Accessible**: Full keyboard navigation support with ARIA labels
-- **Responsive**: Works on desktop, tablet, and mobile devices with touch support
-- **Modern Stack**: Built with React 19, Next.js 16, TypeScript, and Tailwind CSS
-
 ## Getting Started
 
 First, install the dependencies:
