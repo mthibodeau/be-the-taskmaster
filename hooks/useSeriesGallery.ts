@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { DragEndEvent } from '@dnd-kit/core';
 import { arrayMove } from '@dnd-kit/sortable';
-import { Contestant } from '@/types/contestant';
+import { Contestant, RankedContestant } from '@/types/contestant';
 import { getSeriesById } from '@/data/series';
 
 /**
@@ -17,7 +17,7 @@ import { getSeriesById } from '@/data/series';
  * @returns contestants array and drag handler function
  */
 export function useSeriesGallery(seriesId: number) {
-  const [contestants, setContestants] = useState<Contestant[]>([]);
+  const [rankedContestants, setRankedContestants] = useState<RankedContestant[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   // Generate localStorage key for this specific series
@@ -33,78 +33,120 @@ export function useSeriesGallery(seriesId: number) {
     const series = getSeriesById(seriesId);
     if (!series) {
       console.warn(`Series ${seriesId} not found`);
-      setContestants([]);
+      setRankedContestants([]);
       setIsLoading(false);
       return;
     }
 
-    // Try to load saved order from localStorage
+    // Try to load saved rankings from localStorage
     try {
-      const savedOrder = localStorage.getItem(getStorageKey());
-      if (savedOrder) {
-        const savedIds = JSON.parse(savedOrder) as string[];
+      const savedData = localStorage.getItem(getStorageKey());
+      if (savedData) {
+        const parsed = JSON.parse(savedData) as RankedContestant[];
         
-        // Reorder contestants based on saved order
-        const orderedContestants = savedIds
-          .map((id) => series.contestants.find((c) => c.id === id))
-          .filter((c): c is Contestant => c !== undefined);
-        
-        // If saved order matches current contestants, use it
-        if (orderedContestants.length === series.contestants.length) {
-          setContestants(orderedContestants);
-        } else {
-          // Otherwise use default order
-          setContestants(series.contestants);
+        // Validate saved data matches current contestants
+        if (Array.isArray(parsed) && parsed.length === series.contestants.length) {
+          // Ensure all contestants are present
+          const savedIds = new Set(parsed.map((c) => c.id));
+          const currentIds = new Set(series.contestants.map((c) => c.id));
+          
+          if (savedIds.size === currentIds.size && 
+              [...savedIds].every((id) => currentIds.has(id))) {
+            setRankedContestants(parsed);
+            setIsLoading(false);
+            return;
+          }
         }
-      } else {
-        // No saved order, use default
-        setContestants(series.contestants);
       }
+      
+      // No saved data or invalid, initialize with default ranks (1-5)
+      const defaultRanked: RankedContestant[] = series.contestants.map((c, index) => ({
+        ...c,
+        rank: index + 1,
+      }));
+      setRankedContestants(defaultRanked);
     } catch (error) {
-      console.error('Error loading saved contestant order:', error);
-      setContestants(series.contestants);
+      console.error('Error loading saved contestant rankings:', error);
+      // Initialize with default ranks
+      const defaultRanked: RankedContestant[] = series.contestants.map((c, index) => ({
+        ...c,
+        rank: index + 1,
+      }));
+      setRankedContestants(defaultRanked);
     }
     
     setIsLoading(false);
   }, [seriesId, getStorageKey]);
 
-  // Save order to localStorage whenever contestants array changes
+  // Save rankings to localStorage whenever rankedContestants array changes
   useEffect(() => {
-    if (contestants.length === 0 || isLoading) return;
+    if (rankedContestants.length === 0 || isLoading) return;
 
     try {
-      const contestantIds = contestants.map((c) => c.id);
-      localStorage.setItem(getStorageKey(), JSON.stringify(contestantIds));
+      localStorage.setItem(getStorageKey(), JSON.stringify(rankedContestants));
     } catch (error) {
-      console.error('Error saving contestant order:', error);
+      console.error('Error saving contestant rankings:', error);
     }
-  }, [contestants, getStorageKey, isLoading]);
+  }, [rankedContestants, getStorageKey, isLoading]);
 
   /**
    * Handle drag end event from dnd-kit
-   * Reorders the contestants array based on the drag operation
+   * Supports three behaviors:
+   * 1. Dropping on another contestant: merge into same rank (stack)
+   * 2. Dropping on an empty rank slot: assign to that rank (unstack)
+   * 3. Dropping in empty space: reorder and assign new ranks
    */
   const handleDragEnd = useCallback((event: DragEndEvent) => {
     const { active, over } = event;
 
-    // Only reorder if the item was dropped over a different position
-    if (over && active.id !== over.id) {
-      setContestants((items) => {
-        const oldIndex = items.findIndex((item) => item.id === active.id);
-        const newIndex = items.findIndex((item) => item.id === over.id);
+    if (!over) return;
 
-        if (oldIndex === -1 || newIndex === -1) {
-          return items;
+    setRankedContestants((items) => {
+      const draggedItem = items.find((item) => item.id === active.id);
+      if (!draggedItem) return items;
+
+      // Check if dropped on a rank slot (format: "rank-{number}")
+      if (typeof over.id === 'string' && over.id.startsWith('rank-')) {
+        const targetRank = parseInt(over.id.replace('rank-', ''), 10);
+        if (!isNaN(targetRank) && targetRank >= 0 && targetRank <= 5) {
+          // Assign to the target rank (unstacking or moving to empty rank)
+          return items.map((item) =>
+            item.id === active.id ? { ...item, rank: targetRank } : item
+          );
         }
+      }
 
-        // Use arrayMove utility from dnd-kit to reorder the array
-        return arrayMove(items, oldIndex, newIndex);
-      });
-    }
+      // Check if dropped on another contestant
+      const targetItem = items.find((item) => item.id === over.id);
+      if (targetItem && active.id !== over.id) {
+        // Merge into same rank (stacking)
+        const targetRank = targetItem.rank;
+        return items.map((item) =>
+          item.id === active.id ? { ...item, rank: targetRank } : item
+        );
+      }
+
+      // If dropped in empty space, don't change anything
+      return items;
+    });
   }, []);
 
+  // Group contestants by rank for display
+  const contestantsByRank = rankedContestants.reduce((acc, contestant) => {
+    if (!acc[contestant.rank]) {
+      acc[contestant.rank] = [];
+    }
+    acc[contestant.rank].push(contestant);
+    return acc;
+  }, {} as Record<number, RankedContestant[]>);
+
+  // Always show ranks 0-5, even if empty (0 = disqualified)
+  const allRanks = [0, 1, 2, 3, 4, 5];
+
   return {
-    contestants,
+    rankedContestants,
+    contestantsByRank,
+    allRanks,
     isLoading,
     handleDragEnd,
   };

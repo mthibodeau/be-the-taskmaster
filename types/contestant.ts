@@ -21,6 +21,15 @@ export interface Contestant {
 }
 
 /**
+ * Represents a contestant with its rank
+ * Used for managing rankings where multiple contestants can share the same rank
+ */
+export interface RankedContestant extends Contestant {
+  /** Rank position (1-5, can be shared with other contestants) */
+  rank: number;
+}
+
+/**
  * Represents a series/season with its contestants
  */
 export interface Series {
