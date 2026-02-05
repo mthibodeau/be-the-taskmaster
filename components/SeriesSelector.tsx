@@ -1,6 +1,13 @@
 'use client';
 
 import { getAllSeries } from '@/data/series';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 
 interface SeriesSelectorProps {
   /** Currently selected series ID */
@@ -13,8 +20,8 @@ interface SeriesSelectorProps {
 /**
  * SeriesSelector Component
  * 
- * Displays a dropdown to select between different series.
- * Shows all available series from the data file.
+ * Displays a styled dropdown to select between different series using shadcn/ui Select.
+ * Shows all available series from the data file with smooth animations.
  * 
  * @param currentSeries - The currently selected series ID
  * @param onSeriesChange - Callback function when user selects a different series
@@ -25,36 +32,39 @@ export default function SeriesSelector({
 }: SeriesSelectorProps) {
   const allSeries = getAllSeries();
 
-  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const newSeriesId = parseInt(event.target.value, 10);
+  const handleValueChange = (value: string) => {
+    const newSeriesId = parseInt(value, 10);
     if (!isNaN(newSeriesId)) {
       onSeriesChange(newSeriesId);
     }
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto px-4 mb-6">
-      <div className="flex items-center gap-4">
-        <label
-          htmlFor="series-selector"
-          className="text-lg font-semibold text-zinc-900 dark:text-zinc-50 whitespace-nowrap"
-        >
-          Select Series:
-        </label>
-        <select
+    <div className="flex items-center gap-4">
+      <label
+        htmlFor="series-selector"
+        className="text-lg font-semibold text-zinc-900 dark:text-zinc-50 whitespace-nowrap"
+      >
+        Select Series:
+      </label>
+      <Select
+        value={currentSeries.toString()}
+        onValueChange={handleValueChange}
+      >
+        <SelectTrigger
           id="series-selector"
-          value={currentSeries}
-          onChange={handleChange}
-          className="flex-1 max-w-xs px-4 py-2 rounded-lg border-2 border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-50 focus:border-zinc-400 dark:focus:border-zinc-600 focus:outline-none focus:ring-2 focus:ring-zinc-400 dark:focus:ring-zinc-600 transition-all cursor-pointer"
-          aria-label="Select series"
+          className="w-[200px] bg-white dark:bg-zinc-900"
         >
+          <SelectValue placeholder="Select a series" />
+        </SelectTrigger>
+        <SelectContent>
           {allSeries.map((series) => (
-            <option key={series.id} value={series.id}>
+            <SelectItem key={series.id} value={series.id.toString()}>
               {series.displayName || series.name}
-            </option>
+            </SelectItem>
           ))}
-        </select>
-      </div>
+        </SelectContent>
+      </Select>
     </div>
   );
 }

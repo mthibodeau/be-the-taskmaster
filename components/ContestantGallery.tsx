@@ -10,6 +10,8 @@ import {
   useSensors,
   DragOverlay,
   useDroppable,
+  type DragStartEvent,
+  type DragEndEvent,
 } from '@dnd-kit/core';
 import {
   SortableContext,
@@ -19,22 +21,29 @@ import {
 import { CSS } from '@dnd-kit/utilities';
 import { useSeriesGallery } from '@/hooks/useSeriesGallery';
 import { useState } from 'react';
-import { RankedContestant } from '@/types/contestant';
+import { ScoredContestant } from '@/types/contestant';
+import PointsSeal from './PointsSeal';
+// Note: clsx needs to be installed: npm install clsx
+import clsx from 'clsx';
 
 interface ContestantGalleryProps {
   /** The series ID to display contestants for */
   seriesId: number;
+  /** The episode ID to display contestants for */
+  episodeId: number;
+  /** The task ID to display contestants for */
+  taskId: number;
 }
 
 /**
  * Individual sortable contestant image (no seal, just the image)
- * Used within a rank group
+ * Used within a points group
  */
 function SortableContestantImage({ 
   contestant,
   isLarge = false
 }: { 
-  contestant: RankedContestant;
+  contestant: ScoredContestant;
   isLarge?: boolean;
 }) {
   const {
@@ -56,13 +65,16 @@ function SortableContestantImage({
     <div
       ref={setNodeRef}
       style={style}
-      className={`relative group cursor-grab active:cursor-grabbing ${
-        isDragging ? 'z-50' : ''
-      } ${isLarge ? 'scale-125' : ''}`}
+      className={clsx(
+        'relative group cursor-grab active:cursor-grabbing rounded-lg',
+        'focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2',
+        isDragging && 'z-50',
+        isLarge && 'scale-125'
+      )}
       {...attributes}
       {...listeners}
     >
-      <div className="relative w-full aspect-[225/266] overflow-hidden rounded-lg transition-all duration-200 hover:shadow-lg">
+      <div className="relative w-full aspect-[225/266] overflow-hidden rounded-lg transition-shadow duration-200 hover:shadow-lg">
         <Image
           src={contestant.imageUrl}
           alt={contestant.name}
@@ -73,7 +85,7 @@ function SortableContestantImage({
         />
         
         {/* Drag handle indicator on hover */}
-        <div className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/10 transition-all duration-200">
+        <div className="absolute inset-0 flex items-center justify-center group-hover:bg-black/10 transition-colors duration-200">
           <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-white text-sm font-medium bg-black/50 px-3 py-1 rounded-full backdrop-blur-sm">
             Drag to reorder
           </div>
@@ -84,37 +96,36 @@ function SortableContestantImage({
 }
 
 /**
- * Rank group component - displays stacked contestants with a single seal
- * Always shows all 5 ranks, even if empty
+ * Points group component - displays stacked contestants with same points
+ * Always shows all point values (0-5), even if empty
  * Seals are aligned horizontally at the same level
  */
-function RankGroup({ 
-  rank, 
+function PointsGroup({ 
+  points, 
   contestants 
 }: { 
-  rank: number;
-  contestants: RankedContestant[];
+  points: number;
+  contestants: ScoredContestant[];
 }) {
   const { setNodeRef, isOver } = useDroppable({
-    id: `rank-${rank}`,
+    id: `points-${points}`,
   });
-
-  const isEmpty = contestants.length === 0;
 
   return (
     <div
       ref={setNodeRef}
-      className={`relative flex flex-col items-center rounded-lg transition-colors ${
-        isOver ? 'bg-zinc-100 dark:bg-zinc-900' : ''
-      }`}
+      className={clsx(
+        'relative flex flex-col items-center rounded-lg transition-colors',
+        isOver && 'bg-zinc-100 dark:bg-zinc-900'
+      )}
     >
       {/* Stacked contestant images */}
-      <div className="w-full space-y-2">
+      <div className="w-full flex flex-col gap-2">
         {contestants.map((contestant) => (
           <SortableContestantImage 
             key={contestant.id} 
             contestant={contestant}
-            isLarge={rank === 5}
+            isLarge={points === 5}
           />
         ))}
       </div>
@@ -125,13 +136,16 @@ function RankGroup({
 /**
  * ContestantGallery Component
  * 
- * Displays a grid of draggable contestant images grouped by rank.
- * Supports drag-and-drop reordering and stacking (multiple contestants per rank).
+ * Displays a grid of draggable contestant images grouped by points.
+ * Supports drag-and-drop reordering and stacking (multiple contestants per points value).
+ * Scores are stored independently per series/episode/task combination.
  * 
  * @param seriesId - The series number to display
+ * @param episodeId - The episode number to display
+ * @param taskId - The task number to display
  */
-export default function ContestantGallery({ seriesId }: ContestantGalleryProps) {
-  const { rankedContestants, contestantsByRank, allRanks, isLoading, handleDragEnd } = useSeriesGallery(seriesId);
+export default function ContestantGallery({ seriesId, episodeId, taskId }: ContestantGalleryProps) {
+  const { scoredContestants, contestantsByPoints, allPoints, isLoading, handleDragEnd } = useSeriesGallery(seriesId, episodeId, taskId);
   const [activeId, setActiveId] = useState<string | null>(null);
 
   // Configure sensors for drag detection
@@ -146,11 +160,11 @@ export default function ContestantGallery({ seriesId }: ContestantGalleryProps) 
     })
   );
 
-  const handleDragStart = (event: any) => {
-    setActiveId(event.active.id);
+  const handleDragStart = (event: DragStartEvent) => {
+    setActiveId(String(event.active.id));
   };
 
-  const handleDragEndWrapper = (event: any) => {
+  const handleDragEndWrapper = (event: DragEndEvent) => {
     setActiveId(null);
     handleDragEnd(event);
   };
@@ -161,7 +175,7 @@ export default function ContestantGallery({ seriesId }: ContestantGalleryProps) 
 
   // Find the active contestant for the drag overlay
   const activeContestant = activeId
-    ? rankedContestants.find((c) => c.id === activeId)
+    ? scoredContestants.find((c) => c.id === activeId)
     : null;
 
   if (isLoading) {
@@ -174,7 +188,7 @@ export default function ContestantGallery({ seriesId }: ContestantGalleryProps) 
     );
   }
 
-  if (rankedContestants.length === 0) {
+  if (scoredContestants.length === 0) {
     return (
       <div className="w-full max-w-5xl mx-auto p-4">
         <div className="text-center text-zinc-600 dark:text-zinc-400">
@@ -192,66 +206,25 @@ export default function ContestantGallery({ seriesId }: ContestantGalleryProps) 
         onDragStart={handleDragStart}
         onDragEnd={handleDragEndWrapper}
         onDragCancel={handleDragCancel}
-      >
-        <SortableContext
-          items={[...rankedContestants.map((c) => c.id), ...allRanks.map((r) => `rank-${r}`)]}
         >
-          <div className="grid grid-cols-2 md:grid-cols-6 gap-6 items-end">
-            {/* Disqualified (rank 0) - on the left */}
-            <RankGroup
-              key={0}
-              rank={0}
-              contestants={contestantsByRank[0] || []}
-            />
-            {/* Ranks 1-5 */}
-            {allRanks.filter((r) => r !== 0).map((rank) => {
-              const contestants = contestantsByRank[rank] || [];
-              return (
-                <RankGroup
-                  key={rank}
-                  rank={rank}
-                  contestants={contestants}
+          <SortableContext
+            items={[...scoredContestants.map((c) => c.id), ...allPoints.map((p) => `points-${p}`)]}
+          >
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 items-end">
+              {allPoints.map((points) => (
+                <PointsGroup
+                  key={points}
+                  points={points}
+                  contestants={contestantsByPoints[points] || []}
                 />
-              );
-            })}
-          </div>
-          
-          {/* Seals row - aligned horizontally below all content */}
-          <div className="grid grid-cols-2 md:grid-cols-6 gap-6 mt-6">
-            {/* Disqualified seal */}
-            <div className="flex justify-center">
-              <div className="relative w-16 h-16">
-                <Image
-                  src="/images/blank-seal.png"
-                  alt="Disqualified"
-                  fill
-                  sizes="64px"
-                  className="object-contain"
-                  priority={false}
-                />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-white text-xl font-bold drop-shadow-lg">DQ</span>
-                </div>
-              </div>
+              ))}
             </div>
-            {/* Rank seals 1-5 */}
-            {allRanks.filter((r) => r !== 0).map((rank) => (
-              <div key={rank} className="flex justify-center">
-                <div className="relative w-16 h-16">
-                  <Image
-                    src="/images/blank-seal.png"
-                    alt={`Rank ${rank}`}
-                    fill
-                    sizes="64px"
-                    className="object-contain"
-                    priority={false}
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-white text-xl font-bold drop-shadow-lg">{rank}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
+            
+            {/* Seals row - aligned horizontally below all content */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 mt-6">
+              {allPoints.map((points) => {
+                return <PointsSeal key={points} points={points} />;
+              })}
           </div>
         </SortableContext>
 
@@ -273,8 +246,8 @@ export default function ContestantGallery({ seriesId }: ContestantGalleryProps) 
         </DragOverlay>
       </DndContext>
 
-      <div className="mt-8 text-center text-sm text-zinc-500 dark:text-zinc-500">
-        <p>💡 Drag contestants to reorder or stack them on top of each other to share a rank.</p>
+      <div className="mt-8 text-center text-sm text-zinc-500">
+        <p>💡 Drag contestants to reorder or stack them on top of each other to share points.</p>
       </div>
     </div>
   );

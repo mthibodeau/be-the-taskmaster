@@ -1,0 +1,138 @@
+// Prisma schema for Taskmaster scoring database
+// Supports official scores and user customizations
+
+generator client {
+  provider = "prisma-client-js"
+  // Note: Prisma 7 uses WASM engine which requires adapter (configured in lib/prisma.ts)
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ==================== User Model ====================
+
+model User {
+  id            String      @id @default(cuid())
+  createdAt     DateTime    @default(now())
+  
+  userScores    UserScore[]
+  
+  @@map("users")
+}
+
+// ==================== Core Data Models ====================
+
+model Series {
+  id           Int          @id
+  name         String
+  displayName  String?
+  createdAt    DateTime     @default(now())
+  
+  contestants  Contestant[]
+  episodes     Episode[]
+  tasks        Task[]
+  
+  @@map("series")
+}
+
+model Contestant {
+  id                String            @id
+  name              String
+  imageUrl          String
+  seriesId          Int
+  displayOrder      Int               @default(0)
+  
+  series         Series          @relation(fields: [seriesId], references: [id])
+  officialScores OfficialScore[]
+  userScores     UserScore[]
+  
+  @@index([seriesId])
+  @@map("contestants")
+}
+
+model Episode {
+  id        Int      @id @default(autoincrement())
+  seriesId  Int
+  number    Int
+  name      String
+  
+  series    Series   @relation(fields: [seriesId], references: [id])
+  tasks     Task[]
+  
+  @@unique([seriesId, number])
+  @@index([seriesId])
+  @@map("episodes")
+}
+
+model Task {
+  id                Int               @id @default(autoincrement())
+  episodeId         Int
+  seriesId          Int
+  number            Int
+  name              String
+  description       String?
+  taskWording       String?
+  taskFormat        TaskFormat        @default(INDIVIDUAL)
+  scoringType       ScoringType       @default(OBJECTIVE)
+  taskType          String?
+  location          String?
+  isPrizeTask       Boolean           @default(false)
+  isLiveTask        Boolean           @default(false)
+  
+  episode        Episode         @relation(fields: [episodeId], references: [id])
+  series         Series          @relation(fields: [seriesId], references: [id])
+  officialScores OfficialScore[]
+  userScores     UserScore[]
+  
+  @@unique([episodeId, number])
+  @@index([episodeId])
+  @@index([seriesId])
+  @@map("tasks")
+}
+
+// ==================== Enums ====================
+
+enum TaskFormat {
+  TEAM
+  INDIVIDUAL
+}
+
+enum ScoringType {
+  SUBJECTIVE
+  OBJECTIVE
+}
+
+// ==================== Scoring Models ====================
+
+model OfficialScore {
+  id            Int        @id @default(autoincrement())
+  taskId        Int
+  contestantId  String
+  points        Int
+  notes         String?
+  
+  task          Task       @relation(fields: [taskId], references: [id])
+  contestant    Contestant @relation(fields: [contestantId], references: [id])
+  
+  @@unique([taskId, contestantId])
+  @@index([taskId])
+  @@map("official_scores")
+}
+
+model UserScore {
+  id            Int        @id @default(autoincrement())
+  userId        String
+  taskId        Int
+  contestantId  String
+  points        Int
+  updatedAt     DateTime   @updatedAt
+  
+  user          User       @relation(fields: [userId], references: [id])
+  task          Task       @relation(fields: [taskId], references: [id])
+  contestant    Contestant @relation(fields: [contestantId], references: [id])
+  
+  @@unique([userId, taskId, contestantId])
+  @@index([userId, taskId])
+  @@map("user_scores")
+}

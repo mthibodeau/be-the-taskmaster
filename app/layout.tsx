@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Taskmaster Contestant Rankings",
-  description: "Rank and organize Taskmaster contestants by series",
+  title: "Taskmaster Contestant Scores",
+  description: "Score and organize Taskmaster contestants by series",
 };
 
 export default function RootLayout({
