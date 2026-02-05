@@ -1,117 +1,87 @@
 import { useState, useEffect, useCallback } from 'react';
 import { DragEndEvent } from '@dnd-kit/core';
-import { arrayMove } from '@dnd-kit/sortable';
-import { Contestant, RankedContestant } from '@/types/contestant';
-import { getSeriesById } from '@/data/series';
+import { ScoredContestant } from '@/types/contestant';
+import { hasDBData } from '@/data/series';
+import { fetchScoresAction, fetchContestantsAction } from '@/app/actions/fetch-scores';
+
+// Constants - possible point values (0 for DQ, 1-5 standard, higher with bonus)
+const ALL_POINTS = [0, 1, 2, 3, 4, 5] as const;
 
 /**
- * Custom hook for managing contestant gallery with series support
+ * Custom hook for managing contestant gallery with series, episode, and task support
  * 
  * This hook handles:
- * - Loading contestants for a specific series
- * - Managing drag-and-drop ordering
- * - Persisting order to localStorage per series
- * - Restoring saved order on mount
+ * - Loading official scores from database for specific tasks (all series)
+ * - Loading contestants with default points when no task is specified
+ * - Managing drag-and-drop ordering in memory (not persisted)
  * 
  * @param seriesId - The series number to display
- * @returns contestants array and drag handler function
+ * @param episodeId - The episode number to display (optional)
+ * @param taskId - The task number to display (optional)
+ * @returns contestants array, grouped scores, and drag handler function
  */
-export function useSeriesGallery(seriesId: number) {
-  const [rankedContestants, setRankedContestants] = useState<RankedContestant[]>([]);
+export function useSeriesGallery(seriesId: number, episodeId?: number, taskId?: number) {
+  const [scoredContestants, setScoredContestants] = useState<ScoredContestant[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-
-  // Generate localStorage key for this specific series
-  const getStorageKey = useCallback(
-    () => `contestant-order-series-${seriesId}`,
-    [seriesId]
-  );
 
   // Load contestants for the selected series
   useEffect(() => {
-    setIsLoading(true);
-    
-    const series = getSeriesById(seriesId);
-    if (!series) {
-      console.warn(`Series ${seriesId} not found`);
-      setRankedContestants([]);
-      setIsLoading(false);
-      return;
-    }
+    async function loadData() {
+      setIsLoading(true);
 
-    // Try to load saved rankings from localStorage
-    try {
-      const savedData = localStorage.getItem(getStorageKey());
-      if (savedData) {
-        const parsed = JSON.parse(savedData) as RankedContestant[];
-        
-        // Validate saved data matches current contestants
-        if (Array.isArray(parsed) && parsed.length === series.contestants.length) {
-          // Ensure all contestants are present
-          const savedIds = new Set(parsed.map((c) => c.id));
-          const currentIds = new Set(series.contestants.map((c) => c.id));
-          
-          if (savedIds.size === currentIds.size && 
-              [...savedIds].every((id) => currentIds.has(id))) {
-            setRankedContestants(parsed);
-            setIsLoading(false);
-            return;
-          }
+      // Check if series has database data and specific task is requested
+      if (hasDBData(seriesId) && episodeId !== undefined && taskId !== undefined) {
+        // Fetch official scores from database via Server Action
+        const result = await fetchScoresAction(seriesId, episodeId, taskId);
+
+        if (result.success) {
+          setScoredContestants(result.data);
+          setIsLoading(false);
+          return;
+        } else {
+          console.error('Failed to load scores from database:', result.error);
+          // Fall through to contestant fallback
         }
       }
-      
-      // No saved data or invalid, initialize with default ranks (1-5)
-      const defaultRanked: RankedContestant[] = series.contestants.map((c, index) => ({
-        ...c,
-        rank: index + 1,
-      }));
-      setRankedContestants(defaultRanked);
-    } catch (error) {
-      console.error('Error loading saved contestant rankings:', error);
-      // Initialize with default ranks
-      const defaultRanked: RankedContestant[] = series.contestants.map((c, index) => ({
-        ...c,
-        rank: index + 1,
-      }));
-      setRankedContestants(defaultRanked);
-    }
-    
-    setIsLoading(false);
-  }, [seriesId, getStorageKey]);
 
-  // Save rankings to localStorage whenever rankedContestants array changes
-  useEffect(() => {
-    if (rankedContestants.length === 0 || isLoading) return;
+      // Fallback: fetch just contestants with default points
+      const contestantsResult = await fetchContestantsAction(seriesId);
+      if (contestantsResult.success) {
+        setScoredContestants(contestantsResult.data);
+      } else {
+        console.error('Failed to load contestants:', contestantsResult.error);
+        setScoredContestants([]);
+      }
 
-    try {
-      localStorage.setItem(getStorageKey(), JSON.stringify(rankedContestants));
-    } catch (error) {
-      console.error('Error saving contestant rankings:', error);
+      setIsLoading(false);
     }
-  }, [rankedContestants, getStorageKey, isLoading]);
+
+    loadData();
+  }, [seriesId, episodeId, taskId]);
 
   /**
    * Handle drag end event from dnd-kit
    * Supports three behaviors:
-   * 1. Dropping on another contestant: merge into same rank (stack)
-   * 2. Dropping on an empty rank slot: assign to that rank (unstack)
-   * 3. Dropping in empty space: reorder and assign new ranks
+   * 1. Dropping on another contestant: merge into same points group (stack)
+   * 2. Dropping on an empty points slot: assign to that points value (unstack)
+   * 3. Dropping in empty space: reorder and assign new points
    */
   const handleDragEnd = useCallback((event: DragEndEvent) => {
     const { active, over } = event;
 
     if (!over) return;
 
-    setRankedContestants((items) => {
+    setScoredContestants((items) => {
       const draggedItem = items.find((item) => item.id === active.id);
       if (!draggedItem) return items;
 
-      // Check if dropped on a rank slot (format: "rank-{number}")
-      if (typeof over.id === 'string' && over.id.startsWith('rank-')) {
-        const targetRank = parseInt(over.id.replace('rank-', ''), 10);
-        if (!isNaN(targetRank) && targetRank >= 0 && targetRank <= 5) {
-          // Assign to the target rank (unstacking or moving to empty rank)
+      // Check if dropped on a points slot (format: "points-{number}")
+      if (typeof over.id === 'string' && over.id.startsWith('points-')) {
+        const targetPoints = parseInt(over.id.replace('points-', ''), 10);
+        if (!isNaN(targetPoints) && targetPoints >= 0) {
+          // Assign to the target points group
           return items.map((item) =>
-            item.id === active.id ? { ...item, rank: targetRank } : item
+            item.id === active.id ? { ...item, points: targetPoints } : item
           );
         }
       }
@@ -119,10 +89,10 @@ export function useSeriesGallery(seriesId: number) {
       // Check if dropped on another contestant
       const targetItem = items.find((item) => item.id === over.id);
       if (targetItem && active.id !== over.id) {
-        // Merge into same rank (stacking)
-        const targetRank = targetItem.rank;
+        // Merge into same points group (stacking)
+        const targetPoints = targetItem.points;
         return items.map((item) =>
-          item.id === active.id ? { ...item, rank: targetRank } : item
+          item.id === active.id ? { ...item, points: targetPoints } : item
         );
       }
 
@@ -131,22 +101,19 @@ export function useSeriesGallery(seriesId: number) {
     });
   }, []);
 
-  // Group contestants by rank for display
-  const contestantsByRank = rankedContestants.reduce((acc, contestant) => {
-    if (!acc[contestant.rank]) {
-      acc[contestant.rank] = [];
+  // Group contestants by points for display
+  const contestantsByPoints = scoredContestants.reduce((acc, contestant) => {
+    if (!acc[contestant.points]) {
+      acc[contestant.points] = [];
     }
-    acc[contestant.rank].push(contestant);
+    acc[contestant.points].push(contestant);
     return acc;
-  }, {} as Record<number, RankedContestant[]>);
-
-  // Always show ranks 0-5, even if empty (0 = disqualified)
-  const allRanks = [0, 1, 2, 3, 4, 5];
+  }, {} as Record<number, ScoredContestant[]>);
 
   return {
-    rankedContestants,
-    contestantsByRank,
-    allRanks,
+    scoredContestants,
+    contestantsByPoints,
+    allPoints: ALL_POINTS,
     isLoading,
     handleDragEnd,
   };

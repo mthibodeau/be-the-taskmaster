@@ -1,136 +1,263 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Taskmaster Scoring App
 
-## Getting Started
-
-First, install the dependencies:
-
-```bash
-npm install
-```
-
-Then, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+A Next.js application for viewing and managing Taskmaster contestant scores across all series, including Champion of Champions and New Year's Treat specials.
 
 ## Features
 
-- **Multi-Series Support**: Manage contestants across 20+ series
-- **Drag & Drop Rankings**: Interactive ranking system with drag-and-drop reordering
-- **Series Selection**: Easy dropdown to switch between series
-- **Persistent Ordering**: Rankings saved to localStorage per series (persists across page refreshes)
-- **Contestant Management**: Organized file structure ready for database integration
-- **Accessible**: Full keyboard navigation support with ARIA labels
-- **Responsive**: Works on desktop, tablet, and mobile devices with touch support
-- **Modern Stack**: Built with React 19, Next.js 16, TypeScript, and Tailwind CSS
+- **Database-Backed Scoring**: PostgreSQL database with official scores from the show
+- **Multi-Series Support**: Regular series (1-20), Champion of Champions (CoC1-4), New Year's Treat (NYT1-6)
+- **Interactive Rankings**: Drag-and-drop interface for exploring and customizing scores
+- **Episode & Task Navigation**: Browse by series, episode, and individual task
+- **Points-Based System**: Displays actual points (0-5+), including DQ and bonus points
+- **Modern Stack**: React 19, Next.js 16, TypeScript, Prisma 7, PostgreSQL
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+ and npm
+- Docker (for PostgreSQL)
+
+### Installation
+
+1. **Clone and install dependencies:**
+   ```bash
+   npm install
+   ```
+
+2. **Start PostgreSQL database:**
+   ```bash
+   docker run --name taskmaster-postgres \
+     -e POSTGRES_USER=postgres \
+     -e POSTGRES_PASSWORD=postgres \
+     -e POSTGRES_DB=taskmaster \
+     -p 5432:5432 \
+     -d postgres:16
+   ```
+
+3. **Set up environment variables:**
+   Create a `.env` file:
+   ```bash
+   DATABASE_URL="postgresql://postgres:postgres@localhost:5432/taskmaster"
+   ```
+
+4. **Initialize database:**
+   ```bash
+   # Run Prisma migrations
+   npx prisma generate
+   npx prisma db push
+   
+   # Import data from CSV files
+   npx tsx prisma/import-csv.ts
+   ```
+
+5. **Start development server:**
+   ```bash
+   npm run dev
+   ```
+
+6. **Open the app:**
+   Navigate to [http://localhost:3000](http://localhost:3000)
 
 ## Project Structure
 
 ```
 /app
-  page.tsx                    # Main page with series selection
+  /actions
+    fetch-scores.ts           # Server Actions for secure data fetching
+  page.tsx                    # Main page with series/episode/task selection
   layout.tsx                  # Root layout
+  
 /components
-  ContestantGallery.tsx       # Drag-and-drop contestant gallery
-  SeriesSelector.tsx          # Series dropdown selector
+  ContestantGallery.tsx       # Drag-and-drop gallery with dnd-kit
+  EpisodeTaskSidebar.tsx      # Episode and task navigation
+  PointsSeal.tsx              # Points display component
+  SeriesSelector.tsx          # Series dropdown
+  /ui                         # Radix UI components
+  
 /hooks
-  useSeriesGallery.ts         # Custom hook for series-specific contestant management
+  useSeriesGallery.ts         # Main hook for contestant state and drag-drop
+  
+/lib
+  prisma.ts                   # Prisma Client singleton with connection pooling
+  db.ts                       # Database query layer (server-only)
+  utils.ts                    # Utility functions
+  
 /types
-  contestant.ts               # TypeScript interfaces for Contestant and Series
+  contestant.ts               # TypeScript interfaces for contestants and scores
+  episode.ts                  # TypeScript interfaces for episodes and tasks
+  
 /data
-  series.ts                   # Series and contestant data (ready for DB migration)
+  series.ts                   # Static data for series without database mappings
+  episodes.ts                 # Static episode data (fallback)
+  
+/prisma
+  schema.prisma               # Database schema
+  init.sql                    # SQL version of schema
+  import-csv.ts               # CSV import script
+  seed.ts                     # Database seeding
+  
 /public/images
-  series-01/                  # Contestant images organized by series
-  series-02/
-  ...
-  NAMING-GUIDE.md            # Image naming conventions
+  /series-04                  # Contestant images by series
+  /series-05
+  blank-seal.png              # Points seal background
 ```
 
-## How It Works
+## Architecture
 
-### Architecture
+### Data Flow
 
-- **Series-Based Organization**: Each series has its own folder with contestant images
-- **Data Layer**: TypeScript interfaces and data files separate concerns from UI
-- **useSeriesGallery Hook**: Manages series-specific contestant state and localStorage per series
-- **dnd-kit Library**: Modern drag-and-drop library with excellent accessibility and touch support
-- **localStorage**: Rankings saved per series using key: `contestant-order-series-{id}`
-- **Next.js Image**: Optimized image component with automatic lazy loading and responsive images
+```
+PostgreSQL Database
+       ↓
+  Prisma Client (lib/prisma.ts)
+       ↓
+  Database Layer (lib/db.ts)
+       ↓
+  Server Actions (app/actions/fetch-scores.ts)
+       ↓
+  React Hook (hooks/useSeriesGallery.ts)
+       ↓
+  UI Components (components/)
+```
 
-### Adding a New Series
+### Key Technologies
 
-1. **Create series folder:**
+- **Next.js 16**: App Router with Server Actions
+- **React 19**: Modern hooks and concurrent features
+- **TypeScript**: Full type safety
+- **Prisma 7**: Type-safe ORM with WASM engine
+- **PostgreSQL**: Relational database
+- **Tailwind CSS v4**: Utility-first styling
+- **dnd-kit**: Accessible drag-and-drop
+- **Radix UI**: Accessible component primitives
+
+## Database Schema
+
+### Core Models
+- **Series**: Taskmaster series/seasons
+- **Contestant**: Participants (linked to series)
+- **Episode**: Episodes within series
+- **Task**: Individual tasks within episodes
+
+### Scoring Models
+- **OfficialScore**: Canonical scores from the show
+  - `points`: 0 (DQ), 1-5 (standard), >5 (bonus)
+  - `notes`: Additional context (e.g., "Disqualified", "Tie")
+- **UserScore**: User customizations (future feature)
+
+## CSV Data Import
+
+The app imports data from three CSV files:
+
+1. **`taskmaster_tasks.csv`** - Regular series (1-20)
+2. **`taskmaster__coc_tasks.csv`** - Champion of Champions
+3. **`taskmaster_nyt_tasks.csv`** - New Year's Treat specials
+
+**Import command:**
+```bash
+npx tsx prisma/import-csv.ts
+```
+
+This will:
+1. Clear existing data
+2. Import episodes and tasks
+3. Insert official scores for all contestants
+
+## Adding New Series
+
+Currently, only Series 4 and 5 have contestant mappings. To add more:
+
+1. **Add contestant images:**
    ```bash
    mkdir public/images/series-XX
+   # Add images: firstname-lastname.png
    ```
 
-2. **Add contestant images:**
-   - Name files: `firstname-lastname.ext`
-   - Use lowercase with hyphens
-   - Example: `john-smith.png`
-
-3. **Update data file** (`data/series.ts`):
+2. **Update contestant mappings:**
+   Edit `prisma/import-csv.ts`:
    ```typescript
-   {
-     id: XX,
-     name: 'Series XX',
-     contestants: [
-       {
-         id: createContestantId(XX, 'Contestant Name'),
-         name: 'Contestant Name',
-         imageUrl: getImageUrl(XX, 'Contestant Name', 'png'),
-         seriesId: XX,
-       },
-       // ... add 4 more contestants
-     ]
-   }
+   const CONTESTANT_MAPPINGS: Record<string, string[]> = {
+     '4': ['s4-hugh-dennis', 's4-joe-lycett', ...],
+     '5': ['s5-aisling-bea', 's5-bob-mortimer', ...],
+     'XX': ['sXX-contestant-1', 'sXX-contestant-2', ...], // Add new series
+   };
    ```
 
-4. **Refresh the app** - new series appears in dropdown!
+3. **Re-import data:**
+   ```bash
+   npx tsx prisma/import-csv.ts
+   ```
 
-See `public/images/NAMING-GUIDE.md` for detailed conventions.
+## Testing
 
-## Key Technologies
+### Test Database Connection
+```bash
+npx tsx scripts/test-db.ts
+```
 
-- **React 19**: Latest React with hooks and concurrent features
-- **Next.js 16**: App Router, Server Components, and optimized bundling
-- **TypeScript**: Type-safe development with full IntelliSense
-- **Tailwind CSS v4**: Utility-first CSS framework
-- **dnd-kit**: Accessible drag-and-drop library
+### Direct Database Queries
+```bash
+# Connect to database
+docker exec -it taskmaster-postgres psql -U postgres -d taskmaster
+
+# Check data
+SELECT COUNT(*) FROM episodes;
+SELECT COUNT(*) FROM official_scores;
+
+# View scores for a specific task
+SELECT c.name, os.points FROM official_scores os
+JOIN contestants c ON c.id = os."contestantId"
+WHERE os."taskId" = 1
+ORDER BY os.points DESC;
+```
+
+## Hybrid Data Architecture
+
+The app uses a **hybrid approach**:
+- **Series with database mappings** (4, 5): Fetch from PostgreSQL
+- **Series without mappings**: Use static data from `data/series.ts`
+
+Check if series uses database:
+```typescript
+import { hasDBData } from '@/data/series';
+
+if (hasDBData(seriesId)) {
+  // Use database
+} else {
+  // Use static data
+}
+```
 
 ## Future Enhancements
 
-The current structure is designed to support:
+- [ ] User authentication
+- [ ] Save user custom scores to database
+- [ ] Contestant mappings for all series
+- [ ] Statistics and analytics
+- [ ] Series-wide scoreboard
+- [ ] Search and filtering
+- [ ] Mobile app
 
-- **Database Integration**: Data structure maps directly to SQL tables
-- **Episode & Task Tracking**: Organize by episodes and tasks
-- **User Rankings**: Multiple users can rank contestants per task
-- **Statistics**: Analytics and performance metrics
-- **API Routes**: Backend services for data persistence
-- **Authentication**: User accounts and profiles
+## Development Commands
 
-See `data/series.ts` for database schema examples.
+```bash
+npm run dev          # Start dev server
+npm run build        # Build for production
+npm run start        # Start production server
+npm run lint         # Run ESLint
+
+npx prisma studio    # Open Prisma Studio (database GUI)
+npx prisma generate  # Generate Prisma Client
+npx prisma db push   # Push schema to database
+```
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Prisma Documentation](https://www.prisma.io/docs)
+- [Taskmaster Wiki](https://taskmaster.fandom.com/wiki/Taskmaster_Wiki)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is for educational purposes. Taskmaster is a trademark of Avalon Television.

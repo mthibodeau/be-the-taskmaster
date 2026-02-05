@@ -1,0 +1,948 @@
+Series,EpisodeNumber,EpisodeTitle,AirDate,TaskNumber,Description,IsLive,IsTeam,IsPrize,Contestant1,Contestant2,Contestant3,Contestant4,Contestant5
+1,1,Melon buffet,28 July 2015,1,Most unusual item.,FALSE,FALSE,TRUE,4,1,2,3,5
+1,1,Melon buffet,28 July 2015,2,"In the lab, there is a watermelon. Eat as much watermelon as possible.",FALSE,FALSE,FALSE,2,3,1,5,4
+1,1,Melon buffet,28 July 2015,3,Paint the best picture of a horse whilst riding a horse.,FALSE,FALSE,FALSE,5,3,1,4,2
+1,1,Melon buffet,28 July 2015,4,"Completely empty this bathtub. You must not remove the plug, tip or damage the bath.",FALSE,FALSE,FALSE,4,3,2,5,1
+1,1,Melon buffet,28 July 2015,5,Pop up a tent. Get in the tent. Zip up the tent. Pop on a onesie in the tent. And emerge from the tent wearing the onesie.,TRUE,FALSE,FALSE,4,3,1,2,5
+1,2,The pie whisperer,4 August 2015,1,Most impressive item.,FALSE,FALSE,TRUE,4,2,3,1,5
+1,2,The pie whisperer,4 August 2015,2,High-five a 55-year-old.,FALSE,FALSE,FALSE,2,5,4,1,3
+1,2,The pie whisperer,4 August 2015,3,"Identify the contents of these pies. You may touch the pies, but may not breach their pastry.",FALSE,FALSE,FALSE,1,2,4,3,5
+1,2,The pie whisperer,4 August 2015,4,Do something that will look impressive in reverse. The Taskmaster will see whatever act you perform played backwards. You must therefore do something backwards that will look impressive when the footage is played in reverse.,FALSE,FALSE,FALSE,1,4,5,5,3
+1,2,The pie whisperer,4 August 2015,5,"Crack the code, unshackle yourself and sprint 1 metre.",TRUE,FALSE,FALSE,1,3,5,4,2
+1,3,The poet and the egg,11 August 2015,1,Most meaningful item.,FALSE,FALSE,TRUE,4,2,1,5,3
+1,3,The poet and the egg,11 August 2015,2,Throw a teabag into a mug from the farthest distance.,FALSE,FALSE,FALSE,4,DQ,2,3,5
+1,3,The poet and the egg,11 August 2015,3,"Using this device to track your route, create the best image for the Taskmaster. Pop a balloon to signal you have finished your image.",FALSE,FALSE,FALSE,2,5,1,4,3
+1,3,The poet and the egg,11 August 2015,4,Buy the best present for the Taskmaster. Here is £20.,FALSE,FALSE,FALSE,3,5,4,2,1
+1,3,The poet and the egg,11 August 2015,5,"Using only the items currently on this table, get this egg as high as possible. The egg must not break.",FALSE,FALSE,FALSE,0,5,0,4,0
+1,3,The poet and the egg,11 August 2015,6,Stand up after 100 seconds.,TRUE,FALSE,FALSE,2,5,1,4,4
+1,4,Down an octave,18 August 2015,1,Most beautiful item.,FALSE,FALSE,TRUE,3,4,2,1,5
+1,4,Down an octave,18 August 2015,2,Make this ice block disappear as fast as possible.,FALSE,FALSE,FALSE,4,5,3,2,1
+1,4,Down an octave,18 August 2015,3,Get to 11 points as fast as possible.,FALSE,TRUE,FALSE,1,2,2,2,1
+1,4,Down an octave,18 August 2015,4,Fill an egg cup with as many tears as possible.,FALSE,FALSE,FALSE,5,3,1,4,1
+1,4,Down an octave,18 August 2015,5,Memorise the names of an Australian rules football team.,TRUE,FALSE,FALSE,1,1,1,1,1
+1,5,Little denim shorts,25 August 2015,1,Most valuable item.,FALSE,FALSE,TRUE,4,5,1,3,2
+1,5,Little denim shorts,25 August 2015,2,Get this boulder as far from this place as possible.,FALSE,FALSE,FALSE,4,5,1,2,3
+1,5,Little denim shorts,25 August 2015,3,Grow the longest nail.,FALSE,FALSE,FALSE,3,5,2,4,1
+1,5,Little denim shorts,25 August 2015,4,Make this bed to a hotel standard whilst holding hands. Your time ends when you get in the bed. Hold hands now.,FALSE,TRUE,FALSE,2,0,0,0,2
+1,5,Little denim shorts,25 August 2015,5,Make this Swedish person blush as deeply as possible.,FALSE,FALSE,FALSE,3,1,5,4,2
+1,5,Little denim shorts,25 August 2015,6,Blow up the biggest balloon whilst blindfolded.,TRUE,FALSE,FALSE,4,2,5,3,DQ
+1,6,The last supper,1 September 2015,1,Most satisfying item.,FALSE,FALSE,TRUE,2,4,1,3,5
+1,6,The last supper,1 September 2015,2,Get the lowest golf score using eggs. You must complete the 5 holes using chicken eggs. You score will be calculated as follows: Shots x eggs x minutes.,FALSE,FALSE,FALSE,4,2,5,1,3
+1,6,The last supper,1 September 2015,3,Stage a realistic blooper from a home movie.,FALSE,TRUE,FALSE,2,0,0,0,2
+1,6,The last supper,1 September 2015,4,Make the best meal for the Taskmaster using ingredients beginning with every letter of the alphabet.,FALSE,FALSE,FALSE,5,1,1,4,3
+1,6,The last supper,1 September 2015,5,"Wearing boxing gloves, put the blue sweets in the empty bowl. Non-blue sweets will be subtracted from your total.",TRUE,FALSE,FALSE,3,2,1,4,5
+2,1,Fear of failure,21 June 2016,1,Most important document.,FALSE,FALSE,TRUE,4,5,2,3,2
+2,1,Fear of failure,21 June 2016,2,Place these three exercise balls on the yoga mat on the top of that hill. The task is complete when all three balls sit fully inflated and stationary on the mat.,FALSE,FALSE,FALSE,1,2,4,3,5
+2,1,Fear of failure,21 June 2016,3,Get this potato into the golf hole. You may not touch the red green.,FALSE,FALSE,FALSE,2,DQ,5,3,4
+2,1,Fear of failure,21 June 2016,4,Find out the following information from thisSwedish person. The Swedish person may not speak or write in English.,FALSE,FALSE,FALSE,2,1,3,5,4
+2,1,Fear of failure,21 June 2016,5,Pack for your holiday. All items must either be packed in your hand luggage or worn on your body.,TRUE,FALSE,FALSE,0,0,4,3,5
+2,2,Pork is a sausage,28 June 2016,1,Trendiest item of clothing.,FALSE,FALSE,TRUE,5,2,3,4,1
+2,2,Pork is a sausage,28 June 2016,2,Eat me (an egg). Fastest wins.,FALSE,FALSE,FALSE,4,2,3,0,5
+2,2,Pork is a sausage,28 June 2016,3,Make the best music video for a nursery rhyme.,FALSE,FALSE,FALSE,5,2,5,4,3
+2,2,Pork is a sausage,28 June 2016,4,"Using this camera, take a picture of an inanimate object that looks like you.",FALSE,FALSE,FALSE,1,2,4,3,5
+2,2,Pork is a sausage,28 June 2016,6,"Using these big chopsticks, get these potatoes into your basket. You must only hold the big chopsticks on the grips provided. The big chopsticks alone may touch the potatoes in turn. Whoever has the most potatoes.",TRUE,FALSE,FALSE,DQ,DQ,5,4,DQ
+2,3,A pistachio eclair,5 July 2016,1,Best dinner party guest.,FALSE,FALSE,TRUE,3,5,1,4,2
+2,3,A pistachio eclair,5 July 2016,2,Impress this mayor.,FALSE,FALSE,FALSE,2,3,1,5,4
+2,3,A pistachio eclair,5 July 2016,3,Make the most unexpected silhouette on this screen.,FALSE,FALSE,FALSE,1,3,5,2,4
+2,3,A pistachio eclair,5 July 2016,4,Buy a gift for the Taskmaster.,FALSE,FALSE,FALSE,3,2,1,4,5
+2,3,A pistachio eclair,5 July 2016,5,"Put on this blindfold, then instruct only the person closest to you to open their task.",FALSE,TRUE,FALSE,0,-,-,-,-
+2,3,A pistachio eclair,5 July 2016,6,Throw the rabbits into your hat.,TRUE,FALSE,FALSE,12,12,4,15,7
+2,4,Welcome to Rico Face,12 July 2016,1,Coolest blue thing.,FALSE,FALSE,TRUE,3,4,5,2,1
+2,4,Welcome to Rico Face,12 July 2016,2,Rescue the cat.,FALSE,FALSE,FALSE,4,3,2,5,0
+2,4,Welcome to Rico Face,12 July 2016,3,Conceal this pineapple on your person. No part of the pineapple may be thrown away.,FALSE,FALSE,FALSE,2,1,5,4,3
+2,4,Welcome to Rico Face,12 July 2016,4,Set a fun task. Your task must take no more than one minute.,FALSE,FALSE,FALSE,0,0,-,0,0
+2,4,Welcome to Rico Face,12 July 2016,5,"Using only the items on the rug, construct the best thing for the Taskmaster.",FALSE,TRUE,FALSE,4,4,1,4,1
+2,4,Welcome to Rico Face,12 July 2016,6,Create the highest tower using only these potato-based items. Your potato tower must be self-standing. Your potato tower must be built on the table. Your potato tower will be measured from the tabletop to the highest potato point.,TRUE,FALSE,FALSE,5,0,0,0,0
+2,5,There's strength in arches,19 July 2016,1,Best piece of memorabilia.,FALSE,FALSE,TRUE,2,1,3,4,5
+2,5,There's strength in arches,19 July 2016,2,Get all this shopping into the shopping trolley.,FALSE,FALSE,FALSE,DQ,5,DQ,3,4
+2,5,There's strength in arches,19 July 2016,3,Make the best stop-motion film starring this potato.,FALSE,TRUE,FALSE,2,2,3,2,3
+2,5,There's strength in arches,19 July 2016,4,Make a bridge over the river using only items on this table. Highest self-supporting bridge wins. The bridge alone must support the potato. You must not touch the Taskmaster's house.,FALSE,FALSE,FALSE,4,3,5,1,2
+2,5,There's strength in arches,19 July 2016,5,"Put on a pair of food handling gloves, eat a whole banana correctly, put on a tie, and clap as many times as possible.",TRUE,FALSE,FALSE,4,0,2,3,5
+3,1,A pea in a haystack,4 October 2016,1,Most flamboyant clock.,FALSE,FALSE,TRUE,4,3,1,2,5
+3,1,A pea in a haystack,4 October 2016,2,Get to the microwave in as few steps as possible and open the door before the microwave dings.,FALSE,FALSE,FALSE,4,2,DQ,5,3
+3,1,A pea in a haystack,4 October 2016,3,Propel this pea the furthest distance. Your pea must land and remain on the red carpet.,FALSE,FALSE,FALSE,5,DQ,2,4,3
+3,1,A pea in a haystack,4 October 2016,4,Make the best snowman.,FALSE,FALSE,FALSE,3,5,1,2,4
+3,1,A pea in a haystack,4 October 2016,5,Balance your swedes on your Swede. Your Swede must remain standing at all times. Your swedes may only balance on the exterior of your Swede.,TRUE,FALSE,FALSE,5,3,4,2,1
+3,2,The dong and the gong,11 October 2016,1,Heaviest item that can fit in a shoebox.,FALSE,FALSE,TRUE,3,5,2,4,1
+3,2,The dong and the gong,11 October 2016,2,Surprise Alex when he emerges from the shed in one hour.,FALSE,FALSE,FALSE,4,3,1,5,2
+3,2,The dong and the gong,11 October 2016,3,Team Puzzle:Release Alex.,FALSE,FALSE,FALSE,0,0,0,5,5
+3,2,The dong and the gong,11 October 2016,4,Create the best upside-down self portrait using only the materials supplied. The Taskmaster will judge the picture when it has been rotated 180 degrees.,FALSE,FALSE,FALSE,5,3,2,2,4
+3,2,The dong and the gong,11 October 2016,5,Pop the balloons.,FALSE,FALSE,FALSE,1,3,4,5,2
+3,2,The dong and the gong,11 October 2016,6,Unravel a whole roll of sticky tape. Put the unraveled sticky tape in your lunchbox. Close your lunchbox.,TRUE,FALSE,FALSE,5,3,4,0,2
+3,3,Little polythene grief cave,18 October 2016,1,Best battery-operated item.,FALSE,FALSE,TRUE,2,1,4,5,3
+3,3,Little polythene grief cave,18 October 2016,2,Fill this egg cup with your own sweat.,FALSE,FALSE,FALSE,DQ,3,5,2,4
+3,3,Little polythene grief cave,18 October 2016,3,Make the best domino rally.,FALSE,FALSE,FALSE,1,4,5,3,1
+3,3,Little polythene grief cave,18 October 2016,4,Buy a gift for the Taskmaster.,FALSE,FALSE,FALSE,3,5,2,4,1
+3,3,Little polythene grief cave,18 October 2016,5,Create the best flag meal.,FALSE,FALSE,FALSE,2,5,4,1,3
+3,3,Little polythene grief cave,18 October 2016,6,Anchor these balloons using only bread.,TRUE,FALSE,FALSE,1,3,2,4,5
+3,4,A very nuanced character,25 October 2016,1,Shiniest thing.,FALSE,FALSE,TRUE,1,3,5,2,4
+3,4,A very nuanced character,25 October 2016,2,Spread your clothes as far and wide as possible at your own expense. You must discard four items of clothing that you're currently wearing.,FALSE,FALSE,FALSE,5,3,1,4,2
+3,4,A very nuanced character,25 October 2016,3,Find out what this gentleman did for a living. You can ask him any question but you must whisper at all times. The gentleman can only nod or shake his head. The gentleman can only lie.,FALSE,FALSE,FALSE,5,4,1,2,3
+3,4,A very nuanced character,25 October 2016,4,Make the most special effect.,FALSE,TRUE,FALSE,3,3,3,2,2
+3,4,A very nuanced character,25 October 2016,5,"Wearing a blindfold, cover yourself in sticky notes. Sticky notes must be applied individually.",TRUE,FALSE,FALSE,2,4,1,5,3
+3,5,The F.I.P,1 November 2016,1,The photo of the most handsome relative.,FALSE,FALSE,TRUE,4,5,1,3,1
+3,5,The F.I.P,1 November 2016,2,Move the water from bucket A to bucket B. You must not move the buckets.,FALSE,FALSE,FALSE,5,DQ,3,4,3
+3,5,The F.I.P,1 November 2016,3,"Wearing one of these hands on each of your hands at all times, communicate to your teammates the names of these films, books or TV programmes. You may not raise your voice.",FALSE,TRUE,FALSE,5,5,5,0,0
+3,5,The F.I.P,1 November 2016,4,Do something that looks brilliant when sped up or slowed down.,FALSE,FALSE,FALSE,2,3,3,5,5
+3,5,The F.I.P,1 November 2016,5,"Place one or more doughnuts on your stick. You have 100 seconds, after which the person with the lowest unique whole number of doughnuts on their stick wins.",TRUE,FALSE,FALSE,0,0,0,5,0
+4,1,A fat bald white man,25 April 2017,1,Most interesting autograph on the most interesting vegetable.,FALSE,FALSE,TRUE,1,2,3,4,5
+4,1,A fat bald white man,25 April 2017,2,Destroy this cake.,FALSE,FALSE,FALSE,1,5,2,3,4
+4,1,A fat bald white man,25 April 2017,4,Fell all the rubber ducks.,FALSE,FALSE,FALSE,5,3,4,1,2
+4,1,A fat bald white man,25 April 2017,5,"Make the most juice. You must pick one fruit and one tool. If you pick the same tool as someone else, you must juice blindfolded. If you pick the same fruit as someone else, you must juice one-handed. If you pick the same fruit and tool as someone else, you must juice blindfolded, one-handed and bouncing up and down.",TRUE,FALSE,FALSE,4,3,1,5,2
+4,2,Look at me,2 May 2017,1,Most boastful item.,FALSE,FALSE,TRUE,1,2,4,3,5
+4,2,Look at me,2 May 2017,2,Keep the basketball on the running machine for as long as possible. You may not touch the basketball or the running machine.,FALSE,FALSE,FALSE,5,2,4,3,1
+4,2,Look at me,2 May 2017,3,"Paint the best picture of the Taskmaster. Only the paint, and brush may touch the mat, easel and canvas.",FALSE,FALSE,FALSE,DQ,4,2,3,5
+4,2,Look at me,2 May 2017,4,Land the flour on the target. You may not leave the bandstand.,FALSE,TRUE,FALSE,5,DQ,DQ,5,DQ
+4,2,Look at me,2 May 2017,5,"Without touching the egg or the egg cup, get the egg into the egg cup. You may only use the equipment currently on the table. If you touch a piece of equipment that another contestant touches, you will both receive a 1 minute penalty per piece of equipment touched.",FALSE,FALSE,FALSE,2,3,5,1,4
+4,2,Look at me,2 May 2017,6,"Looking at the Taskmaster at all times and with your arms always beneath your hairdressing smock, attach as many balloons together as possible.",TRUE,FALSE,FALSE,4,2,3,5,3
+4,3,Hollowing out a baguette,9 May 2017,1,Best membership/subscription.,FALSE,FALSE,TRUE,1,3,4,2,5
+4,3,Hollowing out a baguette,9 May 2017,2,Camouflage yourself.,FALSE,FALSE,FALSE,4,4,2,1,5
+4,3,Hollowing out a baguette,9 May 2017,3,Make a trailer for Taskmaster The Movie.,FALSE,TRUE,FALSE,3,2,2,3,2
+4,3,Hollowing out a baguette,9 May 2017,4,Persuade three dogs to stand on the red mat. Exactly 12 legs must be stood on the red mat at the same time.,FALSE,FALSE,FALSE,3,5,-,1,4
+4,3,Hollowing out a baguette,9 May 2017,6,"Take it in turns to say a 5-letter word whenever the music stops. You may not say a word that has been previously said. If you fail to say a word before the music starts again, you're eliminated and the game continues with different length words.",TRUE,FALSE,FALSE,0,5,0,0,0
+4,4,Friendship is truth,16 May 2017,1,Most surprising picture of themselves.,FALSE,FALSE,TRUE,1,4,5,3,2
+4,4,Friendship is truth,16 May 2017,3,Choreograph a dance for you and Alex to perform to any of the following ringtones.,FALSE,FALSE,FALSE,1,2,3,5,5
+4,4,Friendship is truth,16 May 2017,4,Create a portrait of a celebrity using loo roll. There is a camera above your head. The mat beneath your feet is your canvas.,FALSE,FALSE,FALSE,3,4,2,2,5
+4,4,Friendship is truth,16 May 2017,5,Do the most incredible thing with this pommel horse.,FALSE,FALSE,FALSE,5,3,1,5,3
+4,4,Friendship is truth,16 May 2017,6,Make the highest tower using these tubes.,TRUE,FALSE,FALSE,5,3,3,5,3
+4,5,Meat,23 May 2017,1,Cutest thing.,FALSE,FALSE,TRUE,1,4,5,2,3
+4,5,Meat,23 May 2017,2,Slide the furthest.,FALSE,FALSE,FALSE,4,2,1,5,3
+4,5,Meat,23 May 2017,4,Put as many different things in the bathtub.,FALSE,TRUE,FALSE,5,-,0,-,-
+4,5,Meat,23 May 2017,5,Throw something into something.,FALSE,FALSE,FALSE,3,2,1,5,4
+4,6,Spatchcock it,30 May 2017,1,Best sheep-related item.,FALSE,FALSE,TRUE,2,3,5,1,3
+4,6,Spatchcock it,30 May 2017,2,Get this camel through the smallest gap.,FALSE,FALSE,FALSE,4,2,3,5,1
+4,6,Spatchcock it,30 May 2017,4,Work out what's in the sleeping bag. You may not look inside the sleeping bag. You may not take items out of the sleeping bag.,FALSE,FALSE,FALSE,DQ,5,5,2,5
+4,6,Spatchcock it,30 May 2017,5,Prepare these items for the second part of the task.,TRUE,FALSE,FALSE,2,1,3,4,5
+4,7,No stars for naughty boys,6 June 2017,1,Best chair.,FALSE,FALSE,TRUE,5,2,3,1,4
+4,7,No stars for naughty boys,6 June 2017,2,"Stand on one leg then continue reading. Your raised foot must not touch the ground until the task is complete. Bring Alex his dinner. Every time your raised foot touches the ground, you must eat a slice of Alex's dinner.",FALSE,FALSE,FALSE,4,3,1,2,5
+4,7,No stars for naughty boys,6 June 2017,3,Hide from Alex. Alex is in the caravan.,FALSE,FALSE,FALSE,3,3,5,4,1
+4,7,No stars for naughty boys,6 June 2017,4,"Get this wheelie bin across the finish line. One of you must be in the bin at all times. The other person must be blindfolded at all times. The wheelie bin rider must direct the wheelie bin drivers to complete the course and the five challenges with. Also, no-one can speak English.",FALSE,TRUE,FALSE,2,3,3,2,3
+4,7,No stars for naughty boys,6 June 2017,5,Unveil a new handshake.,FALSE,FALSE,FALSE,3,5,3,3,4
+4,7,No stars for naughty boys,6 June 2017,6,Make the best and biggest all-round banana out of these bananas.,TRUE,FALSE,FALSE,3,4,5,1,2
+4,8,Tony Three Pies,13 June 2017,1,Most cash.,FALSE,FALSE,TRUE,1,4,5,2,3
+4,8,Tony Three Pies,13 June 2017,3,Strike one of these objects the furthest distance with one of the other objects. You have three strikes with your chosen object.,FALSE,FALSE,FALSE,4,3,1,2,5
+4,8,Tony Three Pies,13 June 2017,4,Do something surprising with this rubber duck.,FALSE,FALSE,FALSE,2,3,1,5,4
+5,1,Dignity intact,13 September 2017,1,Something that makes the most excellent noise.,FALSE,FALSE,TRUE,3,2,5,1,4
+5,1,Dignity intact,13 September 2017,2,Give Alex a special cuddle.,FALSE,FALSE,FALSE,3,5,2,2,4
+5,1,Dignity intact,13 September 2017,3,Get Alex onto dry land as elegantly as possible. Alex must remain dry.,FALSE,FALSE,FALSE,3,2,1,5,4
+5,1,Dignity intact,13 September 2017,4,Get the basketball through the hoop. You may not touch the basketball with your hands. You may not wear gloves or anything that could reasonably be construed to be gloves.,FALSE,FALSE,FALSE,3,5,4,2,DQ
+5,1,Dignity intact,13 September 2017,5,Get one item of fruit into the fishbowl. You may not leave or move your chair. You may not throw your fruit.,TRUE,FALSE,FALSE,1,4,5,3,2
+5,2,The leprechaun or the lesbian,20 September 2017,1,Hippest item of headwear.,FALSE,FALSE,TRUE,3,4,2,1,5
+5,2,The leprechaun or the lesbian,20 September 2017,2,Make the best coconut flinging machine.,FALSE,FALSE,FALSE,2,5,2,3,4
+5,2,The leprechaun or the lesbian,20 September 2017,3,Paint the best rainbow scene. You may not open the lab door until the task is complete.,FALSE,FALSE,FALSE,5,1,3,2,4
+5,2,The leprechaun or the lesbian,20 September 2017,4,There is a loaf of bread in the lab. Slice the loaf as neatly as possible. You may use one tool only and that tool must be found in this caravan.,FALSE,FALSE,FALSE,DQ,DQ,4,5,DQ
+5,2,The leprechaun or the lesbian,20 September 2017,5,Achieve the greatest splat. One teammate must be splatted for the splat to be valid.,FALSE,TRUE,FALSE,2,2,3,3,2
+5,3,Phoenix,27 September 2017,1,The thing they're actually proudest of.,FALSE,FALSE,TRUE,3,5,2,1,4
+5,3,Phoenix,27 September 2017,2,Remove the table tennis ball from the pipe. The pipe must not move.,FALSE,FALSE,FALSE,DQ,5,3,2,4
+5,3,Phoenix,27 September 2017,3,Make this coconut look like a businessman.,FALSE,FALSE,FALSE,3,1,4,5,2
+5,3,Phoenix,27 September 2017,4,"Items: Jelly, Weetabix, TwigletEat one item.",FALSE,FALSE,FALSE,2,4,3,0,5
+5,3,Phoenix,27 September 2017,5,"Play table tennis with words. When the ball is within striking distance, you must say a word while pretending to hit the ball with your bat. That word must begin with the last letter of the previous word. If you fail to say a word within the time it would take you to hit a ball, you are out. After saying a word, you must run to the back of the opposite queue.",TRUE,FALSE,FALSE,5,2,3,4,1
+5,4,Residue around the hoof,4 October 2017,1,Most extraordinary souvenir.,FALSE,FALSE,TRUE,5,1,2,4,3
+5,4,Residue around the hoof,4 October 2017,2,Make Marmite.,FALSE,FALSE,FALSE,3,5,4,DQ,2
+5,4,Residue around the hoof,4 October 2017,3,Do something remarkable synchronised.,FALSE,TRUE,FALSE,3,3,2,2,3
+5,4,Residue around the hoof,4 October 2017,4,"Wearing this blindfold, blow up this balloon so that its circumference is the same as the length of a standard cucumber.",FALSE,FALSE,FALSE,3,4,5,1,2
+5,4,Residue around the hoof,4 October 2017,5,Sneeze.,FALSE,FALSE,FALSE,DQ,5,4,0,DQ
+5,4,Residue around the hoof,4 October 2017,6,"Stand on one leg for the longest whilst playing a game of Greg says, Alex says. Your raised foot must remain above the balloon at all times and may not touch any other item.",TRUE,FALSE,FALSE,5,1,4,2,3
+5,5,A wind-dried puffin,11 October 2017,1,Most high octane item.,FALSE,FALSE,TRUE,3,4,1,2,5
+5,5,A wind-dried puffin,11 October 2017,2,"Put the biggest thing inside this balloon. The balloon must then be successfully inflated, tied, and bigger than your head.",FALSE,FALSE,FALSE,5,0,4,0,0
+5,5,A wind-dried puffin,11 October 2017,3,Generate a watercooler moment involving this watercooler.,FALSE,FALSE,FALSE,2,3,1,4,5
+5,5,A wind-dried puffin,11 October 2017,4,"Make the tallest tower of cans on this table. Also, whilst building your tower, you must shake Alex's hand and say you're from a different country once every 10 seconds. Alex will blow his whistle every 10 seconds.",FALSE,FALSE,FALSE,1,5,5,3,2
+5,6,Spoony Neeson,18 October 2017,1,Best thing they've made themselves.,FALSE,FALSE,TRUE,4,5,1,3,2
+5,6,Spoony Neeson,18 October 2017,2,Balance Alex. You may not use any humans to balance Alex.,FALSE,FALSE,FALSE,3,2,1,5,4
+5,6,Spoony Neeson,18 October 2017,3,"With this camera strapped to your head, record the most incredible footage.",FALSE,FALSE,FALSE,4,4,4,1,5
+5,6,Spoony Neeson,18 October 2017,5,Make yourself monotone.,TRUE,FALSE,FALSE,5,2,3,1,4
+5,7,Boing boing,25 October 2017,1,Most surprisingly expensive item.,FALSE,FALSE,TRUE,3,3,5,1,4
+5,7,Boing boing,25 October 2017,2,"Wearing that blindfold at all times, travel as far as possible in three minutes. Alex will be at your side at all times because he is a strong, independent, handsome man. On removing the blindfold, you will then have another three minutes to retrace your steps to your starting position.",FALSE,FALSE,FALSE,4,5,2,1,3
+5,7,Boing boing,25 October 2017,3,Muster the biggest coconut bobsleigh team. You may only use items from the caravan to secure your coconuts. You'll be disqualified if you use any item used by another contestant.,FALSE,FALSE,FALSE,5,DQ,3,4,DQ
+5,7,Boing boing,25 October 2017,4,"Vote for which contestant you think should receive five bonus points. The contestant who receives the most votes will receive five bonus points. You may vote for yourself. If, however, you vote for yourself and fail to receive the most votes, you will lose two points.",FALSE,FALSE,FALSE,0,0,-2,-2,5
+5,7,Boing boing,25 October 2017,5,Make a funny little flick-book film. The mat beneath your feet is the paper. The camera above your head will take photos of your paper.,FALSE,FALSE,FALSE,3,5,3,5,3
+5,7,Boing boing,25 October 2017,6,Send the most things to the Taskmaster. Items must travel via zipline and land on your segment of the Taskmaster's table. You may not move from your current position.,TRUE,FALSE,FALSE,2,5,4,3,1
+5,8,Their water's so delicious,1 November 2017,1,Most awkward item for somebody else to take home.,FALSE,FALSE,TRUE,2,1,5,4,3
+5,8,Their water's so delicious,1 November 2017,2,Get this coconut as far from here as possible. You may not touch the ground. You may not step on anything more than once. The coconut may not travel by car.,FALSE,FALSE,FALSE,3[1],4[1],DQ,2,5
+5,8,Their water's so delicious,1 November 2017,3,Create the best graph.,FALSE,FALSE,FALSE,3,4,3,5,3
+5,8,Their water's so delicious,1 November 2017,4,Write and perform a song about this woman.,FALSE,TRUE,FALSE,2,2,3,3,2
+5,8,Their water's so delicious,1 November 2017,5,Throw the egg through the hoop and catch it as many times as possible. You may not touch the net or post.,TRUE,FALSE,FALSE,0,5,0,0,4
+CoC1,1,Wiley giraffe blower,13 December 2017,1,The thing that genuinely causes them the most embarrassment.,FALSE,FALSE,TRUE,2,5,4,1,3
+CoC1,1,Wiley giraffe blower,13 December 2017,2,Either throw an exercise ball into the bath or put all the coconuts in the shopping trolley. You must throw the exercise ball while under a roof and you may not move the bath. You must not touch any of the coconuts with your hands and you may not move the shopping trolley.,FALSE,FALSE,FALSE,2,1,3,5,4
+CoC1,1,Wiley giraffe blower,13 December 2017,3,Blow something substantial off this table.,FALSE,FALSE,FALSE,2,4,4,1,5
+CoC1,1,Wiley giraffe blower,13 December 2017,4,Perform a miracle.,FALSE,FALSE,FALSE,4,5,5,4,3
+CoC1,1,Wiley giraffe blower,13 December 2017,5,"Write down a word beginning with T every time Alex blows his whistle. The person with the second longest word takes a step down. Whoever writes down the longest word misses a turn. If you write down one of Alex's special words, you advance an extra step.",TRUE,FALSE,FALSE,1,4,4,5,4
+CoC1,2,I've sinned again,20 December 2017,1,Best thing.,FALSE,FALSE,TRUE,3,3,1,4,5
+CoC1,2,I've sinned again,20 December 2017,2,What's in the case?,FALSE,FALSE,FALSE,2,4,1,5,3
+CoC1,2,I've sinned again,20 December 2017,3,Make a mask that tastes delicious and looks great. Your mask but be entirely edible and entirely wearable. You must then wear your mask so Alex can taste it.,FALSE,FALSE,FALSE,5,4,3,2,2
+CoC1,2,I've sinned again,20 December 2017,4,Make the biggest mess and completely clear it up.,FALSE,FALSE,FALSE,1,3,5,4,4
+CoC1,2,I've sinned again,20 December 2017,5,Record the highest total of steps on your pedometer. You may not touch your blindfold.,TRUE,FALSE,FALSE,2,4,5,1,3
+6,1,The old soft curved padlock,2 May 2018,1,Best liquid.,FALSE,FALSE,TRUE,4,1,3,1,5
+6,1,The old soft curved padlock,2 May 2018,2,"Perform the best stunt, using this wheelbarrow.",FALSE,FALSE,FALSE,5,1,3,4,2
+6,1,The old soft curved padlock,2 May 2018,3,Make the highest tower using only what's in the bowl. You may wield the knife a maximum of 5 times.,FALSE,FALSE,FALSE,4,1,3,5,2
+6,1,The old soft curved padlock,2 May 2018,4,"Wearing a hat, kiss the portrait of the Taskmaster in the Taskmaster's House. The hat must not come from the grounds of the Taskmaster's house. Closest to 30 minutes wins.",FALSE,FALSE,FALSE,5,1,3,4,2
+6,1,The old soft curved padlock,2 May 2018,5,"Sort the objects under the table in order of size. You must keep your elbows on the table top and your head in your hands at all times. The smallest object should be on your right, the largest on your left, and they must all be in line under your table. Also, there must be no fruit in your line-up. If there is any fruit left under your table, you will be disqualified.",TRUE,FALSE,FALSE,DQ,4,5,4,DQ
+6,2,Tarpeters,9 May 2018,1,Best hairy thing that isn't alive.,FALSE,FALSE,TRUE,2,1,4,2,5
+6,2,Tarpeters,9 May 2018,2,"Get the highest score in darts. You can either throw one dart from 1 metre away, three darts from 2.37 metres away, or sixty darts from 10 metres away. When throwing, please stand behind whichever distance line you choose.",FALSE,FALSE,FALSE,2,3,5,1,4
+6,2,Tarpeters,9 May 2018,3,Keep Alex dry. You may not touch Alex at any point. You may not be within the compass when the shower is on.,FALSE,TRUE,FALSE,4,1,1,4,1
+6,2,Tarpeters,9 May 2018,4,"Take a picture of a group of people, each holding an egg. Most people holding eggs in a picture wins. You must be in your picture.",FALSE,FALSE,FALSE,2,3,5,4,1
+6,2,Tarpeters,9 May 2018,5,Make this wind-up little man go on the most extraordinary journey.,FALSE,FALSE,FALSE,3,5,4,3,3
+6,2,Tarpeters,9 May 2018,6,"When instructed, put your grape in either your mouth or your hand whilst staring at the Taskmaster. You must then answer the Taskmaster's questions and fool the Taskmaster into thinking your grape is not where your grape is. You must not eat your grape. Your answer must contain at least five words. If the Taskmaster correctly guesses correctly where your grape is, you are eliminated.",TRUE,FALSE,FALSE,0,0,0,DQ,0
+6,3,One warm prawn,16 May 2018,1,Most magnificent day trip.,FALSE,FALSE,TRUE,1,2,4,3,5
+6,3,One warm prawn,16 May 2018,2,"Write, illustrate and read out a bedtime story for grown-ups. Your bedtime story for grown-ups may be no more or fewer than 50 words.",FALSE,FALSE,FALSE,1,3,5,3,2
+6,3,One warm prawn,16 May 2018,3,Make something spin for the longest. Your thing must not be a person.,FALSE,FALSE,FALSE,1,4,5,2,3
+6,3,One warm prawn,16 May 2018,5,"Catch the most socks and put them in your laundry basket. You must stare straight forward throughout the task. You must not touch any pants. You must not move your laundry basket and if you drop a sock, you can't then pick it up. Every time you touch some pants, you lose a sock.",TRUE,FALSE,FALSE,1,4,4,5,4
+6,4,BMXing!,23 May 2018,1,Most thought-provoking thing.,FALSE,FALSE,TRUE,3,1,2,5,4
+6,4,BMXing!,23 May 2018,2,Do something manly with this cardboard box.,FALSE,FALSE,FALSE,4,4,5,4,4
+6,4,BMXing!,23 May 2018,3,Have the most fun.,FALSE,TRUE,FALSE,2,3,3,2,3
+6,4,BMXing!,23 May 2018,4,Make the best art using the entire contents of this can of squirty cream.,FALSE,FALSE,FALSE,4,1,5,3,2
+6,4,BMXing!,23 May 2018,5,"Remove the £5 note from under the pint without spilling any of the pint. If you spill any of the pint, you are disqualified.",FALSE,FALSE,FALSE,DQ,4,DQ,5,3
+6,4,BMXing!,23 May 2018,6,"When tapped on the shoulder, shake hands with the Taskmaster without revealing your identities. You may not speak during the task. Everyone must shake hands with the Taskmaster once for at least 2 seconds. If the Taskmaster guesses your identity, you are disqualified.",TRUE,FALSE,FALSE,5,0,0,0,0
+6,5,H,30 May 2018,1,Sturdiest thing.,FALSE,FALSE,TRUE,4,1,5,3,2
+6,5,H,30 May 2018,2,"Without leaving the caravan, work out how long this piece of string is.",FALSE,FALSE,FALSE,2,4,1,3,5
+6,5,H,30 May 2018,3,Pull this tablecloth off this table. Most eggs left unbroken on the table wins.,FALSE,FALSE,FALSE,5,5,5,5,5
+6,5,H,30 May 2018,4,Find the link then do it 100 times.,FALSE,TRUE,FALSE,3,5,5,3,5
+6,5,H,30 May 2018,5,Pull off the most elaborate trick shot.,FALSE,FALSE,FALSE,1,2,4,3,5
+6,5,H,30 May 2018,6,Throw as many eggs onto the shelves as possible. You must lie flat on your bed at all times.,TRUE,FALSE,FALSE,1,2,5,4,4
+6,6,We met at mealtimes,6 June 2018,1,Best thing that they've invented.,FALSE,FALSE,TRUE,1,1,3,1,5
+6,6,We met at mealtimes,6 June 2018,2,Make the best snow globe.,FALSE,FALSE,FALSE,3,1,4,5,3
+6,6,We met at mealtimes,6 June 2018,3,Knock over as many ducks as possible. You must all remain on the red carpet throughout the task.,FALSE,TRUE,FALSE,DQ,5,5,DQ,5
+6,6,We met at mealtimes,6 June 2018,4,Make an announcement. Biggest announcement to the most people wins.,FALSE,FALSE,FALSE,2,5,2,1,4
+6,6,We met at mealtimes,6 June 2018,5,Make the best parachute for this wooden spoon. Slowest and most dramatic fall wins.,FALSE,FALSE,FALSE,4,1,5,2,3
+6,6,We met at mealtimes,6 June 2018,6,"You will each be given a category. You will each have 10 seconds to say things in that fall into that category. First, you must each predict how many correct answers you will give.",TRUE,FALSE,FALSE,5,4,1,3,3
+6,7,Roadkill doused in syrup,13 June 2018,1,Scariest thing from their kitchen.,FALSE,FALSE,TRUE,2,4,3,5,1
+6,7,Roadkill doused in syrup,13 June 2018,2,Knock the bails off the stumps. You've got a maximum of one over. You must make your attempts from behind this stump. No stumps may be moved.,FALSE,FALSE,FALSE,0,0,DQ,5,4
+6,7,Roadkill doused in syrup,13 June 2018,4,Write down as many obscure animals as possible.,FALSE,FALSE,FALSE,–,2,–,3,–
+6,7,Roadkill doused in syrup,13 June 2018,5,"Wearing this sweatband around your head at all times, tuck as many items from the kitchen inside the sweatband as possible. Then make a pancake with a diameter of at least 9 inches. Then eat the whole pancake. Most kitchen items successfully kept within the sweatband wins.",FALSE,FALSE,FALSE,2,3,5,5,5
+6,7,Roadkill doused in syrup,13 June 2018,6,Get an egg as close to the centre of the target as possible. You must stand on the spot when taking your turn. You must ROLL two of the eggs. The person whose egg is furthest from the centre of the target after each round is eliminated.,TRUE,FALSE,FALSE,3,5,2,1,4
+6,8,What kind of pictures?,20 June 2018,1,Most interesting footwear.,FALSE,FALSE,TRUE,1,5,3,2,4
+6,8,What kind of pictures?,20 June 2018,2,Put something genuinely surprising inside this chocolate egg.,FALSE,FALSE,FALSE,5,3,3,3,4
+6,8,What kind of pictures?,20 June 2018,3,Find out what you have in common with this person. You must look the person in the eye throughout the task and shake hands every time you discover you have in common.,FALSE,FALSE,FALSE,2,5,3,4,2
+6,8,What kind of pictures?,20 June 2018,4,"Wearing these high heels, create the best dot-to-dot picture on this canvas.",FALSE,FALSE,FALSE,2,1,4,3,5
+6,8,What kind of pictures?,20 June 2018,5,Stick a plaster to the correct body part. Alex will say the names of three body parts. You must stick a plaster to the body part that comes second in the dictionary out of the three body parts. The slowest person to stick a plaster to the correct body part is eliminated.,TRUE,FALSE,FALSE,3,2,4,5,1
+6,9,The Bubble Brothers,27 June 2018,1,Most pleasing thing the same size as a cat.,FALSE,FALSE,TRUE,3,2,1,4,5
+6,9,The Bubble Brothers,27 June 2018,2,Make the biggest bubble and burst it with your nose.,FALSE,FALSE,FALSE,5,3,4,1,2
+6,9,The Bubble Brothers,27 June 2018,3,Perform a scene from Taskmaster The Musical.,FALSE,TRUE,FALSE,3,2,2,3,2
+6,9,The Bubble Brothers,27 June 2018,4,Make this plastic bag as heavy as possible.,FALSE,FALSE,FALSE,3,4,5,2,1
+6,9,The Bubble Brothers,27 June 2018,5,Pick up as many points as possible.,TRUE,FALSE,FALSE,4,1,2,5,4
+6,10,He was a different man,4 July 2018,1,Least appropriate accessary for a wedding.,FALSE,FALSE,TRUE,3,5,1,4,2
+6,10,He was a different man,4 July 2018,2,"Knock over the fewest skittles. You may place one item on each of the three ramp sections, or you may place two items on one of the ramp sections. Your items must be found on this table and may not include either you or the table. You may not tamper with the balls or the ramp..",FALSE,FALSE,FALSE,3,3,4,5,1
+6,10,He was a different man,4 July 2018,3,Blow the candle out from the furthest distance. You may not relight the candle.,FALSE,FALSE,FALSE,3,5,0,2,4
+6,10,He was a different man,4 July 2018,4,Tell the Taskmaster you love him in the most meaningful way.,FALSE,FALSE,FALSE,2,5,5,1,3
+6,10,He was a different man,4 July 2018,5,"Display a number. You get one rosette if your number is higher than the person's on your right and one if its lower than the person's on your left. If you display the same number as someone else, you lose them all.",TRUE,FALSE,FALSE,5,4,0,0,3
+7,1,The mean bean,5 September 2018,1,The thing that most people would like to touch.,FALSE,FALSE,TRUE,2,1,2,5,4
+7,1,The mean bean,5 September 2018,2,Design and demonstrate the best quick-change outfit.,FALSE,FALSE,FALSE,2,4,5,1,3
+7,1,The mean bean,5 September 2018,3,Build the highest tower.,FALSE,FALSE,FALSE,1,3,4,2,5
+7,1,The mean bean,5 September 2018,4,Work out the circumference of the caravan in baked beans.,FALSE,FALSE,FALSE,4,3,5,1,2
+7,1,The mean bean,5 September 2018,5,Make the best fruit display hat. You may not touch or tamper with your hat. Only the fruit picker-uppers may touch the fruit. You may only hold the fruit picker-uppers by their handles.,TRUE,FALSE,FALSE,2,3,4,4,5
+7,2,My eyes are circles,12 September 2018,1,Boldest belt.,FALSE,FALSE,TRUE,1,2,3,4,5
+7,2,My eyes are circles,12 September 2018,2,Write a ten-word story before you reach the finish line. You must be running while writing.,FALSE,FALSE,FALSE,5,4,3,2,1
+7,2,My eyes are circles,12 September 2018,3,Paint the best picture of this still life. The painter must remain blindfolded throughout. The other person may not move from their chair and may only say certain words.,FALSE,TRUE,FALSE,3,2,2,3,3
+7,2,My eyes are circles,12 September 2018,4,"Predict what one of the other contestants (specified) will do with one of the objects and and do something yourself with one of the objects. You also get 5 points if a third contestant (specified, different) correctly predicts your own action.",FALSE,FALSE,FALSE,5,10,5,5,5
+7,2,My eyes are circles,12 September 2018,5,Draw the biggest and best circle. Your circle must be completed in one single sweep.,FALSE,FALSE,FALSE,1,3,5,2,4
+7,2,My eyes are circles,12 September 2018,6,"Make the highest tower of cans within your hoop. If you step out of your hoop during the 100 seconds, you will be disqualified.",TRUE,FALSE,FALSE,1,2,5,3,4
+7,3,Twelve blush majesty two,19 September 2018,1,Best thing from the '90s.,FALSE,FALSE,TRUE,4,DQ,5,3,DQ
+7,3,Twelve blush majesty two,19 September 2018,2,Excite Alex.,FALSE,FALSE,FALSE,4,5,3,1,2
+7,3,Twelve blush majesty two,19 September 2018,3,"Make the best noise. When you are ready to make your noise, you must say ""This is my best noise"". After you have made your noise, you must remain still and silent for at least 10 seconds.",FALSE,FALSE,FALSE,2,4,3,5,1
+7,3,Twelve blush majesty two,19 September 2018,4,Get this ball in that hole in as few strokes as possible. The ball must only be struck. The ball must never be carried.,FALSE,FALSE,FALSE,3,1,2,4,5
+7,4,OLLIE,26 September 2018,1,Most confusing thing.,FALSE,FALSE,TRUE,1,5,2,4,3
+7,4,OLLIE,26 September 2018,2,Work out what happens when you flick this switch on. You may not take this switch out of this room.,FALSE,FALSE,FALSE,5,2,4,3,1
+7,4,OLLIE,26 September 2018,3,Dramatically alter your appearance. You may start altering your appearance when you are inside the lift and the doors have closed. You must stop altering your appearance when the doors open again.,FALSE,FALSE,FALSE,1,4,3,2,5
+7,4,OLLIE,26 September 2018,4,Make these scales read 31.770kg. The scales must read 31.770kg for at least 5 seconds.,FALSE,FALSE,FALSE,5,1,3,2,4
+7,4,OLLIE,26 September 2018,5,Correctly don the most items of clothing.,TRUE,FALSE,FALSE,5,4,4,1,4
+7,5,Lotta soup,3 October 2018,1,Worst present from a named relative.,FALSE,FALSE,TRUE,2,5,3,1,4
+7,5,Lotta soup,3 October 2018,2,Deliver this task to Alex in the most spectacular way. Alex is in his caravan.,FALSE,FALSE,FALSE,5,3,1,2,4
+7,5,Lotta soup,3 October 2018,3,Make as many white circles on the target as possible. You must not step beyond this rope. You must not move the rope or the target.,FALSE,FALSE,FALSE,5,5,5,0,5
+7,5,Lotta soup,3 October 2018,4,Cheer up this former traffic warden.,FALSE,FALSE,FALSE,5,5,1,3,2
+7,5,Lotta soup,3 October 2018,5,Make yourselves look as little or big as possible.,FALSE,TRUE,FALSE,3,2,2,3,3
+7,5,Lotta soup,3 October 2018,6,"Team Live:Taking it in turn, each team must dangle on of these items on the hanger. A different member of the team must dangle each time. Once you've touched one of the items, you must dangle it, and you must dangle it within 20 seconds of the previous dangler.",FALSE,FALSE,FALSE,0,5,5,0,0
+7,6,A coquettish fascinator,10 October 2018,1,Best key.,FALSE,FALSE,TRUE,1,4,5,2,3
+7,6,A coquettish fascinator,10 October 2018,2,Put exactly 50 different things in this bin.,FALSE,FALSE,FALSE,5,2,4,2,3
+7,6,A coquettish fascinator,10 October 2018,3,Write and perform the most suspenseful soap opera cliff-hanger. Your scene may last no more than one minute.,FALSE,TRUE,FALSE,3,2,2,3,3
+7,6,A coquettish fascinator,10 October 2018,4,"In the lab, there are 10 pairs of glasses. The pairs of glasses may not leave the lab. Without breaking any of the pairs of glasses, put all the pairs of glasses into the smallest of these boxes. You must select your box before leaving the caravan, and may not then change your mind.",FALSE,FALSE,FALSE,2,4,3,5,DQ
+7,6,A coquettish fascinator,10 October 2018,5,"Get your doughnut as high as possible. You must be holding hands with the people on either side of you at all times. If your doughnut is in the air after the 100 seconds, its height will be measured from where it lands.",TRUE,FALSE,FALSE,3,2,DQ,4,5
+7,7,The perfect stuff,17 October 2018,1,Most exciting thing beginning with G.,FALSE,FALSE,TRUE,2,1,1,1,2
+7,7,The perfect stuff,17 October 2018,2,"Throw something into the bin on the other side of this fence. You may not use ladders, you may not touch the fence and you must stay this side of the fence.",FALSE,FALSE,FALSE,1,3,2,4,5
+7,7,The perfect stuff,17 October 2018,3,Don't blink.,FALSE,FALSE,FALSE,3,4,1,2,5
+7,7,The perfect stuff,17 October 2018,4,Make the best extension to the Taskmaster House.,FALSE,TRUE,FALSE,2,4,4,1,1
+7,7,The perfect stuff,17 October 2018,5,Make the best Christmas cracker.,FALSE,FALSE,FALSE,3,3,3,5,3
+7,8,Mother honks her horn,24 October 2018,1,Creepiest thing.,FALSE,FALSE,TRUE,4,2,5,1,5
+7,8,Mother honks her horn,24 October 2018,2,Poke something out of the hole in the roof of this grotto.,FALSE,FALSE,FALSE,2,4,2,2,5
+7,8,Mother honks her horn,24 October 2018,3,Puzzle:C. Now look in the microwave (End task: Scream).,FALSE,FALSE,FALSE,5,4,3,2,1
+7,8,Mother honks her horn,24 October 2018,4,Compose the best 30 second piece of music.,FALSE,FALSE,FALSE,4,5,3,2,4
+7,8,Mother honks her horn,24 October 2018,5,Bob when you hear the surname of a famous Bob.Pat when you hear the surname of a famous Pat.Kneel when you hear the surname of a famous Neil.Stew when you hear the surname of a famous Stu.Wane when you hear the surname of a famous Wayne.,TRUE,FALSE,FALSE,1,4,3,2,5
+7,9,The pendulum draws the eye,31 October 2018,1,Most surprisingly beautiful thing.,FALSE,FALSE,TRUE,3,4,2,5,1
+7,9,The pendulum draws the eye,31 October 2018,2,"Put the most money in the small bowl. You may not touch the small bowl. The small bowl must not sink. Also, you must say your own name at least once every 30 seconds.",FALSE,FALSE,FALSE,DQ,DQ,5,DQ,DQ
+7,9,The pendulum draws the eye,31 October 2018,4,Hula.,FALSE,FALSE,FALSE,2,–,–,1,–
+7,9,The pendulum draws the eye,31 October 2018,5,"Find the sock with a satsuma inside. You may not look inside any of the socks. You may squeeze 5 socks, strike 10 socks and sniff 20 socks. You may put your hand inside 3 socks. You may put 11 socks on your feet.",FALSE,FALSE,FALSE,3,2,4,0,4
+7,9,The pendulum draws the eye,31 October 2018,7,Write your name and draw a happy horse on on your overhead projector acetate upside down. You must not rotate or manipulate acetate.,TRUE,FALSE,FALSE,5,4,3,4,2
+7,10,I can hear it gooping,7 November 2018,1,Most magnificent stationery.,FALSE,FALSE,TRUE,3,2,5,4,1
+7,10,I can hear it gooping,7 November 2018,3,Find the boiled egg. You may touch two eggs. You may damage two eggs. You may not damage the boiled egg.,FALSE,FALSE,FALSE,5,DQ,DQ,DQ,DQ
+7,10,I can hear it gooping,7 November 2018,4,Physically recreate a classic computer game.,FALSE,FALSE,FALSE,5,3,2,3,4
+7,10,I can hear it gooping,7 November 2018,5,"Prod the person in front of you with either a finger or a sausage. If the prodded person guesses incorrectly whether they were prodded by a finger or a sausage, they get eliminated.",TRUE,FALSE,FALSE,0,0,5,0,0
+8,1,Hello,8 May 2019,1,Most powerful smell.,FALSE,FALSE,TRUE,2,1,5,3,3
+8,1,Hello,8 May 2019,2,Find the receiver of this baby monitor. You must leave your hat on.,FALSE,FALSE,FALSE,5,3,2,1,4
+8,1,Hello,8 May 2019,3,Make the best ventriloquist dummy and be chatted up by it.,FALSE,FALSE,FALSE,5,1,4,4,4
+8,1,Hello,8 May 2019,4,"Alex is on that bridge in the distance with lights on his head. Get as close as you can to Alex without him noticing you. Alex will duck down behind the wall for 10 seconds, then pop up for 10 seconds, then back down for 10 seconds, and so on until he notice you.",FALSE,FALSE,FALSE,4,5,4,1,2
+8,1,Hello,8 May 2019,5,Get the greatest weight of doughnuts in your bucket. You must have your hands on your hips at all times.,TRUE,FALSE,FALSE,4,2,5,1,3
+8,2,A novel about Russian Gulags,15 May 2019,1,Best pair of things.,FALSE,FALSE,TRUE,4,1,3,4,5
+8,2,A novel about Russian Gulags,15 May 2019,2,"Put something on your face that looks like a moustache from a long distance away, but when you get up close, you realise it's something completely different to what you thought.",FALSE,FALSE,FALSE,2,3,4,5,1
+8,2,A novel about Russian Gulags,15 May 2019,4,"Tell your teammates what is in this chest. Your teammates must not see what is in the chest. After reading the task out, you may not speak until the task is over. In the first minute, you may only use facial expressions. In the second minute, you may only make noises. In the third minute, you may only shout adjectives. From then on, you may only whisper verbs.",FALSE,TRUE,FALSE,2,3,2,2,3
+8,2,A novel about Russian Gulags,15 May 2019,5,Travel the furthest distance while making a constant noise with your mouth.,FALSE,FALSE,FALSE,1,5,4,2,3
+8,2,A novel about Russian Gulags,15 May 2019,6,"Say a species of bird, eat a grape, then shout a competitor's name within five seconds of hearing your own name. If you fail to say a different species of bird, pop a grape in your mouth and shout a competitor's name within five seconds of hearing your own name, you will be eliminated. You must not say any bird that has previously been said during the task.",TRUE,FALSE,FALSE,1,3,4,5,2
+8,3,Stuck in a mammal groove,22 May 2019,1,Best burstable item.,FALSE,FALSE,TRUE,3,2,1,4,5
+8,3,Stuck in a mammal groove,22 May 2019,2,Build the best volcano.,FALSE,FALSE,FALSE,2,5,5,3,2
+8,3,Stuck in a mammal groove,22 May 2019,3,Work out what Alex Horne is wearing next door. Both you and Alex must stay in your seats at all times. Alex Horne may only communicate with Alex Horne's horn.,FALSE,FALSE,FALSE,3,0,4,2,5
+8,3,Stuck in a mammal groove,22 May 2019,4,"Alex is in the living room. In 20 minutes from now, you must apologise to Alex for something you've done in that time.",FALSE,FALSE,FALSE,4,2,5,1,3
+8,3,Stuck in a mammal groove,22 May 2019,5,"Get into one sleeping bag with your arms through the arm-holes, the zip zipped up and the hood on your head. Then stand to attention and salute the Taskmaster for a five full seconds. Then get into the other sleeping bag with your arms in the arm-holes, the zip zipped up and the hood on your head whilst still in your first sleeping bag. Then skip once.",TRUE,FALSE,FALSE,5[1],1,4[1],1,1
+8,4,The barrel dad,29 May 2019,1,Best present for a doctor.,FALSE,FALSE,TRUE,1,4,3,1,5
+8,4,The barrel dad,29 May 2019,2,Get this loo roll through the toilet seat. You must not lower the toilet seat.,FALSE,FALSE,FALSE,5,4,4,1,2
+8,4,The barrel dad,29 May 2019,3,Make the best thing to engage a toddler.,FALSE,FALSE,FALSE,4,4,3,5,5
+8,4,The barrel dad,29 May 2019,4,"Put the most weight in the hammock without anything falling out of the hammock. If anything falls out of the hammock, you are disqualified.",FALSE,TRUE,FALSE,DQ,3,DQ,DQ,3
+8,4,The barrel dad,29 May 2019,5,"Choose a hoop that you think you can throw a frying pan into. Choose a distance from which you can throw a frying pan into that hoop. If you choose the big hoop, you have one attempt. If you choose the medium hoop, you have two attempts. If you choose the small hoop, you have three attempts.",TRUE,FALSE,FALSE,0,0,5,4,0
+8,5,Stay humble,5 June 2019,1,Best face.,FALSE,FALSE,TRUE,5,1,2,4,3
+8,5,Stay humble,5 June 2019,2,Divert the sand from bucket A into bucket B. You may not touch the sand. You may not move the buckets. You may not leave the room.,FALSE,FALSE,FALSE,DQ,4,5,2,3
+8,5,Stay humble,5 June 2019,3,"Make the most realistic injury using food. If two or more people use tomato ketchup, they are disqualified.",FALSE,FALSE,FALSE,4,4,4,1,5
+8,5,Stay humble,5 June 2019,4,"Have a long-distance game of catch with this beach ball. One team member must be filmed in one location throwing the ball out of shot. Another team member must then be filmed in another location, catching the ball correctly and throwing the ball out of shot and so on.",FALSE,TRUE,FALSE,3,2,3,3,2
+8,5,Stay humble,5 June 2019,5,"Herd the most ping-pong balls into the ping-pong pen. You may only touch the ping-pong balls with the basketball, the string or one little finger. You may not move the ping-pong pens..Secret Instruction: Herd this ball and you halve your total.",FALSE,FALSE,FALSE,5,4,4,1,2
+8,5,Stay humble,5 June 2019,6,"Recreate the scene in the box. You will parade past it once, and must be touching the person in front of you throughout the parade.",TRUE,FALSE,FALSE,4,5,2,2,2
+8,6,Rock 'n' roll umlaut,12 June 2019,1,Best see-through item.,FALSE,FALSE,TRUE,1,4,1,1,1
+8,6,Rock 'n' roll umlaut,12 June 2019,2,Completely conceal yourself in this phone box. No part of you or your clothing may be visible from outside the phone box.,FALSE,FALSE,FALSE,5,2,4,1,2
+8,6,Rock 'n' roll umlaut,12 June 2019,3,Design the most iconic album cover.,FALSE,TRUE,FALSE,2,4,2,2,4
+8,6,Rock 'n' roll umlaut,12 June 2019,4,"In five minutes, you must return this pack of cards to Alex in the lab and tell Alex the order that the cards are currently in. You may not leave this room during the five minutes.",FALSE,FALSE,FALSE,2,4,DQ,5,3
+8,6,Rock 'n' roll umlaut,12 June 2019,6,"Standing behind the first line, roll your loo roll beyond the second line. If your loo roll fails to cross the second line or falls from the runway, you are eliminated from the task.",TRUE,FALSE,FALSE,0,DQ,5,DQ,0
+8,7,This is Trevor,19 June 2019,1,Best slippery thing.,FALSE,FALSE,TRUE,3,4,5,4,2
+8,7,This is Trevor,19 June 2019,2,"Find the pink ladies. If you touch or move a bowl, you must turn it over. If you find the green egg, you are disqualified.",FALSE,FALSE,FALSE,DQ,5,4,3,DQ
+8,7,This is Trevor,19 June 2019,3,Choose an outfit that the contestant whose first name comes after yours alphabetically must wear throughout a future task.,FALSE,FALSE,FALSE,4,5,2,3,2
+8,7,This is Trevor,19 June 2019,4,Do the most powerful thing with your little finger.,FALSE,FALSE,FALSE,3,5,2,3,2
+8,7,This is Trevor,19 June 2019,5,Team Live:Do not release the green egg. Each team will be asked a question in turn. If you pull the string with the correct answer you will not release the green egg. A different member of your team must answer each time.,FALSE,FALSE,FALSE,0,5,0,0,5
+8,8,Aquatic sewing machine,26 June 2019,1,Nicest thing to hold.,FALSE,FALSE,TRUE,3,4,2,5,3
+8,8,Aquatic sewing machine,26 June 2019,2,Make the best picture in the sand of a former Taskmaster contestant using one of these implements. You must roll the dice to choose your implement. Nothing but air may touch the sand at any point.,FALSE,FALSE,FALSE,5,2,2,4,1
+8,8,Aquatic sewing machine,26 June 2019,3,Catch all the red balls in things from the shed. Catch all the yellow balls in clothing. Don't let the green balls touch anything other than the grass. Catch the blue ball in something from the kitchen. You may not touch the ball machines. Any non-green ball that touches the ground at any point will not count.,FALSE,TRUE,FALSE,5,DQ,5,5,DQ
+8,8,Aquatic sewing machine,26 June 2019,4,Make this beach ball cross the finishing line. Only water can touch the beach ball.,FALSE,FALSE,FALSE,5,1,3[2],2,4[2]
+8,8,Aquatic sewing machine,26 June 2019,5,"Complete the five-syllable word started by the Taskmaster. Honk your horn if you think you know what word the Taskmaster is going to say. If you guess it correctly after one syllable, you get five points. If you guess it after two syllables - four points etc. Guess it incorrectly, you lose all your points. You may only guess once per word.",TRUE,FALSE,FALSE,0,0,0,5,0
+8,9,I've been a bit ill,3 July 2019,1,Best form of protection.,FALSE,FALSE,TRUE,4,3,5,4,3
+8,9,I've been a bit ill,3 July 2019,2,"Bounce one of these balls so that it lands in that bin. After propelling the ball, you may not touch or strike it on its way to that bin. You must use the ball you touch first.",FALSE,FALSE,FALSE,3,1,5,2,4
+8,9,I've been a bit ill,3 July 2019,3,Devise the most delicious dust.,FALSE,FALSE,FALSE,5,4,1,3,2
+8,9,I've been a bit ill,3 July 2019,4,Make yourselves look like one person.,FALSE,TRUE,FALSE,3,2,3,3,2
+8,9,I've been a bit ill,3 July 2019,5,"Stack the most bowls and plates on your head. You must stack them one at a time. Also, you must stand upright when you stack. Also, you may not touch a bowl or plate that is already stacked. Also, you must stack the bowls and plated alternately. Also, you must stay standing on your spot throughout the task.",TRUE,FALSE,FALSE,3,2,5,4,1
+8,10,Clumpy swayey clumsy man,10 July 2019,1,Best thing that will actually change your life for the better the most.,FALSE,FALSE,TRUE,5,4,3,3,2
+8,10,Clumpy swayey clumsy man,10 July 2019,3,Make yourself some tremendous pretend legs.,FALSE,FALSE,FALSE,3,1,4,2,5
+8,10,Clumpy swayey clumsy man,10 July 2019,4,"Follow the instructions on the signs and park this buggy in the parking bay. You have a maximum of 10 minutes to prepare your journey, during which you may not move any of the items on the course. Your journey must start from where the buggy is now. Also, you must be wearing this blindfold correctly at all times during your journey.",FALSE,FALSE,FALSE,5,3,1,2,4
+8,10,Clumpy swayey clumsy man,10 July 2019,5,"Correctly wearing these goggles, and with your eyes open at all times, retrieve your duck. You must stand on your spot and hold your stick by the handle. You must stay standing on your spot throughout the task.",TRUE,FALSE,FALSE,0,0,0,0,0
+9,1,Join our cult,4 September 2019,1,Most stressful thing.,FALSE,FALSE,TRUE,4,2,3,5,2
+9,1,Join our cult,4 September 2019,2,Hide three aubergines in this room.,FALSE,FALSE,FALSE,1,5,2[1],3[1],4
+9,1,Join our cult,4 September 2019,3,Arrange the lollies in rainbow order on the board in front of you. You may only take off your goggles if you find the dodo. You may only accuse one thing of being a dodo.,FALSE,FALSE,FALSE,3,5,3,1,5
+9,1,Join our cult,4 September 2019,4,Make the most dramatic entrance.,FALSE,FALSE,FALSE,1,4,4,3,5
+9,2,Butter in the microwave,11 September 2019,1,Best bag.,FALSE,FALSE,TRUE,1,2,3,4,5
+9,2,Butter in the microwave,11 September 2019,2,Correctly identify which bin Alex is in. You must adhere to the commandments behind the curtain. You may only have one guess. No bins are to be opened at any point during the task unless authorised.,FALSE,FALSE,FALSE,4,5,0,0,0
+9,2,Butter in the microwave,11 September 2019,3,"Draw a portrait of the Taskmaster using 16 A1 pages. You may not remove the A1 pages from the flipchart during your drawing. After the task, the A1 pages will be laid out in the pattern shown on the front page. You may only draw on the flipchart paper.",FALSE,FALSE,FALSE,1,3,4,5,3
+9,2,Butter in the microwave,11 September 2019,4,"Complete this adventure (by saying the word demeaning). Unless otherwise stated, you must stick together and only open one task when you've completed the previous one.",FALSE,TRUE,FALSE,3,5,3,5,5
+9,2,Butter in the microwave,11 September 2019,5,Make a lovely little ball arrangement.,TRUE,FALSE,FALSE,1,4,5,4,2
+9,3,Five miles per day,18 September 2019,1,Weirdest wooden thing.,FALSE,FALSE,TRUE,5,3,1,4,2
+9,3,Five miles per day,18 September 2019,2,Go to the caravan. You must enter the caravan within 2 minutes of Alex entering the caravan.,FALSE,FALSE,FALSE,4,3,1,5,2
+9,3,Five miles per day,18 September 2019,3,Build the most robust statue of the most delicate thing using the materials provided and place it on the red cross. Your delicate thing must be recognisable on the red cross an hour after you finish and should leave you feeling enormously proud of your creation.,FALSE,FALSE,FALSE,2,2,3,5,4
+9,3,Five miles per day,18 September 2019,4,Break something into the most pieces and completely fix it.,FALSE,FALSE,FALSE,2,1,5,3,4
+9,3,Five miles per day,18 September 2019,5,"Wearing your blindfold correctly at all times, fill a pint glass with water. If you make a big mess, you are disqualified.",TRUE,FALSE,FALSE,3,5,1,4,3
+9,4,Quisps,25 September 2019,1,Best thing to celebrate with on a stage.,FALSE,FALSE,TRUE,3,5,4,2,2
+9,4,Quisps,25 September 2019,2,Make the most striking water feature.,FALSE,FALSE,FALSE,4,5,2,1,3
+9,4,Quisps,25 September 2019,3,Bring a classic board game to life.,FALSE,TRUE,FALSE,3,3,3,3,3
+9,4,Quisps,25 September 2019,4,Say a letter of the alphabet.,FALSE,FALSE,FALSE,0,0,0,0,0
+9,4,Quisps,25 September 2019,5,"Throw your things far but not too far. Taking it in turns, you must select a thing and throw it beyond the line but not off the runway. If your thing does not end up in the safe zone, you are disqualified. If all the objects end up in the safe zone, the person who has thrown their thing the shortest distance is disqualified. You may not manipulate your things in any way before throwing them.",TRUE,FALSE,FALSE,1,1,4,1,5
+9,5,Another spoon,2 October 2019,1,Best defunct thing.,FALSE,FALSE,TRUE,5,2,3,4,1
+9,5,Another spoon,2 October 2019,2,Lasso Alex. You must stand behind this line at all times.,FALSE,FALSE,FALSE,1,2,5,3,4
+9,5,Another spoon,2 October 2019,3,"Make the most accurate and inventive egg timer. After which, Alex will boil an egg for as long as your egg timer lasts. The Taskmaster likes his eggs runny, but not too runny. You may not use any pre-existing timing devices.",FALSE,FALSE,FALSE,2,1,5,3,4
+9,5,Another spoon,2 October 2019,5,"Looking at your mirrors and facing forward at all times, build the highest tower of bricks on the table behind you.You must stay on your spot and use your litter pickers at all times.",TRUE,FALSE,FALSE,2,5,3,2[2],5
+9,6,Bready bready bready,9 October 2019,1,"The thing that, if you found it in a field, you'd be most pleased about.",FALSE,FALSE,TRUE,3,5,4,1,2
+9,6,Bready bready bready,9 October 2019,2,Make a part of your body look abnormally long.,FALSE,FALSE,FALSE,1,3,5,3,4
+9,6,Bready bready bready,9 October 2019,4,Serenade yourself.,FALSE,FALSE,FALSE,2,5,5,3,5
+9,6,Bready bready bready,9 October 2019,5,Slide a drink to the Taskmaster. The worst slider each round must leave the bar.,TRUE,FALSE,FALSE,4,1,2,5[3],3
+9,7,A cuddle,16 October 2019,1,Best thing they've taken from someone else's house.,FALSE,FALSE,TRUE,5,3,1,4,2
+9,7,A cuddle,16 October 2019,2,"Get an entire egg into one of those metal things. The highest single score wins. If you get an entire egg into one of these metal things without the egg breaking, the score is doubled. You may not move the chair or the metal things and you must release your egg while on the chair.",FALSE,FALSE,FALSE,3,4,2,5,1
+9,7,A cuddle,16 October 2019,3,Forge the best Mount Rushmore.,FALSE,FALSE,FALSE,5,4,3,5,4
+9,7,A cuddle,16 October 2019,4,Join your hands together so your palms are touching and each finger of one hand is touching the equivalent finger on the other hand. Your hands must stay in this position for the entirety of the task. Put the most gold rings on this drumstick.,FALSE,FALSE,FALSE,1,5,3,5,3
+9,7,A cuddle,16 October 2019,5,Read the Taskmaster's mind. The Taskmaster will choose a card. You must state if that card features a horse or a laminator. You will receive 1 point for every correct answer in a row.,TRUE,FALSE,FALSE,0,1,13,5,1
+9,8,Shaqinahat,23 October 2019,1,Best thing from a shed.,FALSE,FALSE,TRUE,2,4,5,1,3
+9,8,Shaqinahat,23 October 2019,2,Throw something into this pedal bin from the furthest distance. The pedal bin must be shut when you throw your thing.,FALSE,FALSE,FALSE,1,5,4,2[4],3[4]
+9,8,Shaqinahat,23 October 2019,3,Write the best lyrics to the Taskmaster theme tune and perform them in the most memorable way.,FALSE,FALSE,FALSE,2,4,1,3,5
+9,8,Shaqinahat,23 October 2019,4,Supply the sound for this film. You will have one chance to perform all the sounds in time with the film.,FALSE,TRUE,FALSE,2,3,2,3,3
+9,8,Shaqinahat,23 October 2019,5,"Without adjusting your welder's mask at any point, draw your own face on the front of your welder's mask. Your face should be the same size of your face and either very angry or very happy.",TRUE,FALSE,FALSE,3,4,3,5,4
+9,9,Don't like them go bang,30 October 2019,1,Most desirable smooth thing.,FALSE,FALSE,TRUE,5,4,4,4,4
+9,9,Don't like them go bang,30 October 2019,2,Give Alex a five-word instruction in the most spy-like way. You must not be seen or heard communicating with Alex in any way.,FALSE,FALSE,FALSE,5,2,4,3,2
+9,9,Don't like them go bang,30 October 2019,3,"Inflate, tie and pop as many balloons as possible in ten minutes. Once you pop your first balloon, you may not inflate any more balloons. If any balloons are still inflated after ten minutes, you are disqualified. Also, you may not look at a clock or any sort of timing device at any point.",FALSE,FALSE,FALSE,3,5,DQ,DQ,4
+9,9,Don't like them go bang,30 October 2019,4,"Make either a knee and an elbow, a knee and a knee or an elbow or an elbow look like a famous couple. You must only use your knees and elbows.",FALSE,FALSE,FALSE,3,3,1,5,2
+9,9,Don't like them go bang,30 October 2019,5,"Team Live:Standing in a queue, draw the most accurate pictures. Alex will show the person at the back of the queue a picture. The person at the back of the queue must draw this picture on the back of the person in front of them. The person at the front of the queue must draw the picture they think has been drawn on the back of their pad. No-one may communicate with anyone else.",FALSE,FALSE,FALSE,3,3,5,5,5
+9,10,Think about the spirit,6 November 2019,1,Best thing that is very long and thin.,FALSE,FALSE,TRUE,3,2,4,5,1
+9,10,Think about the spirit,6 November 2019,2,Do the most preposterous thing with this chickpea.,FALSE,FALSE,FALSE,2,4,1,3,5
+9,10,Think about the spirit,6 November 2019,3,Make the best cup of tea in this tea cup. You must use all the equipment on the table. You must not use anything from the kitchen. You must wear the washing-up gloves throughout the task.,FALSE,TRUE,FALSE,5,1,5,1,1
+9,10,Think about the spirit,6 November 2019,4,"Complete the seven tasks. When you touch a task in any way, you must complete it before looking inside another task.",FALSE,FALSE,FALSE,DQ,5,DQ,DQ,DQ
+9,10,Think about the spirit,6 November 2019,5,"Pull the short breadstick. Taking it in turns, you must pull a breadstick out of the apron of the person next to you. Before each pull, the breadstick's bearer must point to one of the breadsticks, wink, and say ""This is the short breadstick"". If you pull the short breadstick, the breadstick bearer is disqualified.",TRUE,FALSE,FALSE,0,0,0,0,5
+10,1,God's haemorrhoid,15 October 2020,1,Nicest thing to put in your mouth.,FALSE,FALSE,TRUE,5,3,2,1,4
+10,1,God's haemorrhoid,15 October 2020,2,Knock the coconut off its perch.,FALSE,FALSE,FALSE,DQ,DQ,DQ,DQ,DQ
+10,1,God's haemorrhoid,15 October 2020,3,Make the largest object properly vanish. You may not use any editing trickery.,FALSE,FALSE,FALSE,1,4,3,5,3
+10,1,God's haemorrhoid,15 October 2020,5,"Get the most balls in your bucket. At the end of the task, all the balls in your bucket must be the same colour as each other. You will lose 5 points for every different coloured ball in your bucket. You may only touch your litter pickers and you must stay on your spot at all times.",TRUE,FALSE,FALSE,4,3,1,2,5
+10,2,A documentary about a despot,22 October 2020,1,Best thing with loads of holes in it.,FALSE,FALSE,TRUE,2,1,4,5,3
+10,2,A documentary about a despot,22 October 2020,2,Find the treasure. Do not break the box.,FALSE,TRUE,FALSE,4,–,5,5,4
+10,2,A documentary about a despot,22 October 2020,3,"Make the best portrait of the Taskmaster and his favourite toy using only balloons, pegs, and your own clothes. Your portrait must fill this frame.",FALSE,FALSE,FALSE,1,5,4,2,2
+10,2,A documentary about a despot,22 October 2020,4,Get all the exercise balls in the hoops. You may not move the hoops or get out of the boat.,FALSE,FALSE,FALSE,5,2,3,DQ,4
+10,2,A documentary about a despot,22 October 2020,5,Guess the things that are making the noise.,TRUE,FALSE,FALSE,6,3,3,4,6
+10,3,Point of swivel,29 October 2020,1,Best thing that probably has a spring in its mechanism.,FALSE,FALSE,TRUE,1,5,2,4,3
+10,3,Point of swivel,29 October 2020,2,Make the best upside down film.,FALSE,FALSE,FALSE,2,5,3,4,1
+10,3,Point of swivel,29 October 2020,3,"Put all the spaghetti into the grapefruit. The grapefruit may not leave this room. For the last eight minutes, you must stand with both feet on the spot on the floor.",FALSE,FALSE,FALSE,5,3,1,4,2
+10,3,Point of swivel,29 October 2020,4,"Catapult this shoe into the bath using a home-made catapult contraption. Only your feet may operate your catapult contraption. You may not move the bath or this red green, and you must build your catapult contraption on this red green.",FALSE,FALSE,FALSE,5,4,1,2,3
+10,3,Point of swivel,29 October 2020,5,Team Live:Draw a picture of the object on your card. You may not speak or communicate with with your team mates in any way. You must stay on your spots and not move the canvas or turntable.,FALSE,FALSE,FALSE,6,0,0,0,6
+10,4,Toshwash,5 November 2020,1,Cheekiest food.,FALSE,FALSE,TRUE,2,1,4,5,3
+10,4,Toshwash,5 November 2020,2,Make this phone ring.,FALSE,FALSE,FALSE,4,1,2,3,5
+10,4,Toshwash,5 November 2020,3,Secretly puts something that looks amazing in your bag.,FALSE,TRUE,FALSE,5,5,0,0,0
+10,4,Toshwash,5 November 2020,4,Drop this water balloon from the greatest height without it bursting. You may not damage the water balloon or remove any water from it.,FALSE,FALSE,FALSE,5,5,5,3,4
+10,4,Toshwash,5 November 2020,5,"Roll an edible sphere across the finish line. The person whose edible sphere crosses the finish line first, each round, is eliminated. If your edible sphere stops moving before the finishing line, you are eliminated.",TRUE,FALSE,FALSE,3,5,4,2,1
+10,5,I hate your trainers,12 November 2020,1,Best pointy thing.,FALSE,FALSE,TRUE,2,3,4,1,5
+10,5,I hate your trainers,12 November 2020,2,Bag the heaviest thing from the furthest distance. Your attempt ends when you have bagged an item. Your score is the weight of the bagged object in grams multiplied by the distance from the bagging machine in centimetres.,FALSE,FALSE,FALSE,2,1,5,3,4
+10,5,I hate your trainers,12 November 2020,3,"Paint a picture of a howling wolf on this teapot. You may not touch the teapot or remove it from the turntable and you may not tamper with the turntable or its power. The turntable will keep speeding up until you have named 20 American states. If you do name 20 American states, the turntable will slow down.",FALSE,FALSE,FALSE,5,3,1,2,5
+10,5,I hate your trainers,12 November 2020,4,Do something out of character with this £20.,FALSE,FALSE,FALSE,5,4,3,5,4
+10,5,I hate your trainers,12 November 2020,5,Eat the most watermelon. You must be wearing a boiler suit and goggles while you're eating the watermelon. You must not feed yourself.,FALSE,TRUE,FALSE,5,3,3,3,5
+10,5,I hate your trainers,12 November 2020,6,Say the most different words without hesitating for more than two seconds. The person who says the fewest words each round is eliminated.,TRUE,FALSE,FALSE,5,1,4,3,3
+10,6,Hippopotamus,19 November 2020,1,Most narcissistic thing.,FALSE,FALSE,TRUE,2,4,3,5,2
+10,6,Hippopotamus,19 November 2020,2,"Silently, make the tastiest and prettiest cocktail with the coolest name. If you make any noise over 60 dB, you must pour anything you've prepared into the bucket, shout your given phrase at a volume of over 100 dB and start again.",FALSE,FALSE,FALSE,2,4,1,5,3
+10,6,Hippopotamus,19 November 2020,3,Draw the animal that is watching you. The animal is wearing a hat. You may not leave this room and you must look in the mirror at all times.,FALSE,FALSE,FALSE,4,5,1,3,2
+10,6,Hippopotamus,19 November 2020,4,Get the most water from butt A into butt B. You may not move a butt in the first five minutes.,FALSE,FALSE,FALSE,4,2,1,5,3
+10,6,Hippopotamus,19 November 2020,5,"Team Live:Draw the animal named on your card. Each artist may draw three straight lines in their turn. The artist's teammates may have one guess after these three lines. If the guess is incorrect, the other team's artist can draw their straight lines. You may not speak or communicate with your teammates in any way.",FALSE,FALSE,FALSE,2,4,4,4,2
+10,7,Legit glass,26 November 2020,1,Best thing that is bigger at the top than the bottom.,FALSE,FALSE,TRUE,2,3,4,5,1
+10,7,Legit glass,26 November 2020,2,"Get to that finish line clutching chicken number 2. Get chicken number 1 across the start line aboard radio-controlled [contestant's name]. You must sit on the office chair at all times. If anything touches the little robots, your attempt is over.",FALSE,FALSE,FALSE,DQ,4,DQ,5,3
+10,7,Legit glass,26 November 2020,3,Tell your team mate what is in this safe. You may speak into this microphone and they will hear your message played backwards.,FALSE,TRUE,FALSE,–,–,–,3,0
+10,7,Legit glass,26 November 2020,4,"Make the best marble run. After releasing your marble, you may not touch your marble, nor do anything to affect its movement.",FALSE,FALSE,FALSE,4,2,5,DQ,3
+10,7,Legit glass,26 November 2020,5,Communicate to the Taskmaster the item on your card. You may only make noises. You may not use any actions or anything that sounds like a word.,TRUE,FALSE,FALSE,5,4,1,3,2
+10,8,Moments of silence,3 December 2020,1,Best thing with wings.,FALSE,FALSE,TRUE,2,1,3,4,5
+10,8,Moments of silence,3 December 2020,2,Fill this cup so that it overfloweth. The cup must remain atop the cup pole at all times. Only liquids may touch the red green.,FALSE,FALSE,FALSE,DQ,DQ,DQ,DQ,DQ
+10,8,Moments of silence,3 December 2020,3,Learn your lines.,FALSE,FALSE,FALSE,3,4,2,2,5
+10,8,Moments of silence,3 December 2020,4,"Drink one full tablespoon of coconut water. If you use the same coconut water extraction method as another contestant, you will be disqualified.",FALSE,FALSE,FALSE,DQ,3,5,DQ,4
+10,8,Moments of silence,3 December 2020,5,Team Live:Stare at your opponent without blinking. You must both be pulling the face that the Taskmaster chooses.,FALSE,FALSE,FALSE,2,4,2,4,4
+10,9,Air Horn Andy,10 December 2020,1,Best bedding.,FALSE,FALSE,TRUE,3,2,2,4,5
+10,9,Air Horn Andy,10 December 2020,2,"Make the biggest beer mat house on this table. While making your biggest beer mat house, you must ring the doorbell after exactly one minute, then after 58 more seconds, then 56 seconds and so on until 0 seconds. If you make more than two mistakes with the doorbell timing, you will be disqualified.",FALSE,FALSE,FALSE,4,DQ,DQ,5,3
+10,9,Air Horn Andy,10 December 2020,3,"Complete the most tasks. There is one task behind each door. You may choose the order to open the doors. You may only move when the doors are moving and you must stay on this side of the white line. During the task, you must tell Alex which door to open within one minute of the previous door closing.",FALSE,FALSE,FALSE,5,3,1,2,4
+10,9,Air Horn Andy,10 December 2020,4,Work out how many balls are in the basket. Every ball must be in the basket when you make your guess.,FALSE,FALSE,FALSE,5,DQ,DQ,3,4
+10,9,Air Horn Andy,10 December 2020,5,Draw this monster the Taskmaster is going to describe.,TRUE,FALSE,FALSE,3,4,3,4,5
+10,10,Dog meat trifle,17 December 2020,1,Greatest collection.,FALSE,FALSE,TRUE,4,3,2,5,1
+10,10,Dog meat trifle,17 December 2020,3,Perform this song.,FALSE,TRUE,FALSE,5,2,2,2,5
+10,10,Dog meat trifle,17 December 2020,4,Neatly hang all of Bernard's clothes on that coat rail. You must stay behind the line at all times.,FALSE,FALSE,FALSE,1,4,5,2,3
+10,10,Dog meat trifle,17 December 2020,5,"Wearing mittens at all times, balance either all the mints or all the biscuits on a spaghetti bridge. The mints or biscuits must only touch spaghetti. The spaghetti must be balanced on the coconuts. The coconuts must remain on their stands.",TRUE,FALSE,FALSE,0,0,0,4,5
+11,1,It's not your fault,18 March 2021,1,"Best thing you can carry, but only just.",FALSE,FALSE,TRUE,1,2,4,5,3
+11,1,It's not your fault,18 March 2021,2,Do the most impressive thing under the table with one hand. You must be looking at the camera and waving with your other hand throughout your impressive thing.,FALSE,FALSE,FALSE,2,3[1],3,5,4
+11,1,It's not your fault,18 March 2021,3,Catch the rat. You must be at least three metres from the rat when you catch it. The rat will run across the red green in 30 minutes.,FALSE,FALSE,FALSE,DQ,1,5,3[2],3[2]
+11,1,It's not your fault,18 March 2021,4,"Deliver all the plates to Alex. When carrying the plates you must be traveling by scooter, or bicycle or hoverboard. For every plate fallen or broken you have 20 minutes added to your time.",FALSE,FALSE,FALSE,2,1,5,3[2],4[2]
+11,1,It's not your fault,18 March 2021,5,"Stack your buckets so that they are taller than you, then put one beanbag on top of the buckets. You may not leave your spot at any point.",TRUE,FALSE,FALSE,0,0,0,0,5
+11,2,The Lure of the Treacle Puppies,25 March 2021,1,Best drinking vessel.,FALSE,FALSE,TRUE,5,1,2,4,3
+11,2,The Lure of the Treacle Puppies,25 March 2021,2,Make the balloon hover untethered for 20 seconds. During the hovering the top of the balloon must not be higher than your chin and the bottom of the balloon must not be lower than your waist. Also you must sneer throughout the 20 seconds.,FALSE,FALSE,FALSE,0,5,0,4,3
+11,2,The Lure of the Treacle Puppies,25 March 2021,3,"Have an argument. You must take it in turns to angrily make a point using nor more than 10 words, and you must always end your point with a different four-letter word. You must look at each other throughout the argument and the person speaking must angrily wag their finger during their speech. The argument is over when there is ten seconds of silence, or when one of you looks away.",FALSE,TRUE,FALSE,2,2,5,5,2
+11,2,The Lure of the Treacle Puppies,25 March 2021,4,Make the house haunted.,FALSE,FALSE,FALSE,3,3,4,4,5
+11,2,The Lure of the Treacle Puppies,25 March 2021,5,Correctly guess your standing in the group. The Taskmaster will read out a category. Then you must hold the number that reflects your standing in the group.,TRUE,FALSE,FALSE,2,2,5,4,4
+11,3,Run up a tree to the moon,1 April 2021,1,Most shocking thing bigger than a cat but smaller than a pig.,FALSE,FALSE,TRUE,1,3,5,3,3
+11,3,Run up a tree to the moon,1 April 2021,2,Make the sauna stones hiss. You must be standing behind the rope when the sauna stones hiss. You may not move the sauna stones or this rope. You may not use a hose.,FALSE,FALSE,FALSE,4,1,2,3,5
+11,3,Run up a tree to the moon,1 April 2021,3,Create the best new way to remember how many days each of the months has.,FALSE,FALSE,FALSE,3,4,1,2,5
+11,3,Run up a tree to the moon,1 April 2021,4,"Get all of your luggage through security. You must stay inside the maze until your luggage has been through the x-ray machine. You may go under one rope, and release one rope. You may also disconnect one pole completely, but you must then pick up that pole and carry it for the rest of the task. If any of your luggage touches any of the barriers, the maze will restart and you must start again.",FALSE,FALSE,FALSE,DQ,DQ,5,DQ,4
+11,3,Run up a tree to the moon,1 April 2021,5,Team Live:Act out a nursery rhyme for the Taskmaster to guess. You must remain silent and on your spots throughout.,FALSE,FALSE,FALSE,3,3,5,5,3
+11,4,Premature conker,8 April 2021,1,Craziest thing.,FALSE,FALSE,TRUE,4,3,1,4,5
+11,4,Premature conker,8 April 2021,2,Get all of the banana in the bottle. You may not break the bottle. The bottle may not leave the lab.,FALSE,FALSE,FALSE,1,3,4,DQ,5
+11,4,Premature conker,8 April 2021,3,"Put the bag of salt on that table over there. No one may move whilst holding the bag of salt. If the bag of salt touches the ground at any point, you must return to your starting point. If any bell touches the ground at any point, you must return to your starting point. You may not touch the rope or your belts.",FALSE,TRUE,FALSE,5,5,DQ,DQ,5
+11,4,Premature conker,8 April 2021,4,Get this sheet of loo roll as far from here as possible. Only this sheet of loo roll may touch the ground. The loo roll must not break at any point and the loo roll inner tube must stay on the loo roll holder at all times.,FALSE,FALSE,FALSE,DQ,5,DQ,DQ,4
+11,4,Premature conker,8 April 2021,5,Write down what five things are in the bowl under the table and how many of each thing there are. You must look at the Taskmaster throughout this task. One of your hands must be in the bowl and the other must be holding your pen throughout the task.,TRUE,FALSE,FALSE,3,5,2,2,4
+11,5,Slap and tong,15 April 2021,1,Best thing you can operate with your hand.,FALSE,FALSE,TRUE,1,5,4,3,2
+11,5,Slap and tong,15 April 2021,2,Cover your lower half in biodegradable clingfilm and gaffer tape so that no part of your lower half isn't covered in biodegradable cling film and gaffer tape.,FALSE,FALSE,FALSE,3,5,1,2,4
+11,5,Slap and tong,15 April 2021,3,Make the best uniform for this bee. You must wear your beekeeping outfit throughout the task.,FALSE,FALSE,FALSE,4,1,5,3,2
+11,5,Slap and tong,15 April 2021,4,"Arrange the seven objects in a line on the table in order of how many sides they have. Fewest side on the left, most sides on your right. You may only touch the objects with your face. If anything falls from the table, you are disqualified. You must put on your darkness goggles now.",FALSE,FALSE,FALSE,5,DQ,DQ,4,DQ
+11,5,Slap and tong,15 April 2021,5,"Team Live:Grab the marshmallow with your tongs. When the Taskmaster says ""play"", you have 10 seconds to grab the marshmallow. Once your tongs are over the table, you must attempt to grab the marshmallow. If you successfully grab the marshmallow, you win.",FALSE,FALSE,FALSE,4,4,2,2,4
+11,6,Absolute casserole,22 April 2021,1,Most annoying thing.,FALSE,FALSE,TRUE,2,5,1,3,4
+11,6,Absolute casserole,22 April 2021,2,Make the best portrait of the Taskmaster on this door using only your feet.,FALSE,FALSE,FALSE,3,5,1,2,4
+11,6,Absolute casserole,22 April 2021,3,Vandalise this wall.,FALSE,TRUE,FALSE,1,1,5,5,1
+11,6,Absolute casserole,22 April 2021,4,"Identify the contents of the battered items in this fish and chips order. You may: lick and sniff all of the items, bite into two, squeeze one between your elbows, really stamp on one, look at one through a magnifying glass, and put one in a glass of water.",FALSE,FALSE,FALSE,3,5,1,2,4
+11,6,Absolute casserole,22 April 2021,5,"Tie the very ends of the string to the arms of the glasses, then put the glasses on.",TRUE,FALSE,FALSE,2,1,5,4,3
+11,7,You've got no chutzpah,29 April 2021,1,Best thing to hang on a wall that you wouldn't normally hang on a wall.,FALSE,FALSE,TRUE,4,2,5,1,4
+11,7,You've got no chutzpah,29 April 2021,2,Complete these tasks. You may not step beyond this line. You had ten minutes from when the fire was lit.,FALSE,FALSE,FALSE,2,4,3,5,1
+11,7,You've got no chutzpah,29 April 2021,3,Make the best babushka meal. Each course must be presented inside the previous course.,FALSE,FALSE,FALSE,2,5,4,1,4
+11,7,You've got no chutzpah,29 April 2021,4,"Get out of the front gate setting off the alarm the fewest times. Every time the alarm goes off, you must start again. You must only step on your stepping stones.",FALSE,TRUE,FALSE,0,0,5,5,0
+11,7,You've got no chutzpah,29 April 2021,5,Make your rubber gloves and wellies as heavy as possible whilst wearing your rubber gloves and wellies. You must only put things in your rubber gloves for the first minute.,TRUE,FALSE,FALSE,1,1,5,2,3
+11,8,An orderly species,6 May 2021,1,Most satisfying wobbly thing.,FALSE,FALSE,TRUE,3,3,3,3,3
+11,8,An orderly species,6 May 2021,2,"Say the word ""metronome"" between every tick of this metronome. You may not touch or stop the metronome. Also, you must blow up and tie a balloon so it's bigger than your head, neatly gift wrap the balloon, and eat three whole poppadoms.",FALSE,FALSE,FALSE,1,4,4,5,1
+11,8,An orderly species,6 May 2021,3,"Draw the best picture of a British animal. Each person must fill in one section at a time and may not look at any other section during that time. Every section must be used, and you may not communicate with each other in any way during the task.",FALSE,TRUE,FALSE,2,2,3,3,2
+11,8,An orderly species,6 May 2021,4,"Record the greatest aircraft safety announcement then perform the greatest aircraft safety demonstration. Your announcement must be in an accent or language other than your own, and your demonstration must be unforgettable.",FALSE,FALSE,FALSE,4,4,3,5,3
+11,8,An orderly species,6 May 2021,5,"Stand on either one leg or both legs. You must do so, one at a time, behind this curtain, with your hands on your head. The Taskmaster will then guess if your standing on either one leg or both legs. If he guesses correctly, you are eliminated.",TRUE,FALSE,FALSE,1,3,5,1,3
+11,9,Mr Octopus and Pottyhands,13 May 2021,1,Nattiest knitwear.,FALSE,FALSE,TRUE,5,3,4,4,2
+11,9,Mr Octopus and Pottyhands,13 May 2021,2,Make the most impressive and realistic weather for Taskmaster island. Your weather must last for no more than a minute.,FALSE,FALSE,FALSE,5,2,1,4,3
+11,9,Mr Octopus and Pottyhands,13 May 2021,3,"Build a tower, then topple your tower so that yoghurt lands in a numbered square. You have one yoghurt and one toppling attempt.",FALSE,FALSE,FALSE,5,3,0,0,4
+11,9,Mr Octopus and Pottyhands,13 May 2021,4,Look the most different in four different photos taken by the camera. The camera will spin round three times and take a picture every time it faces the frame. You must not hinder the camera or the spinning mechanism in any way. You must be in all four photos.,FALSE,FALSE,FALSE,4,2,3,5,3
+11,9,Mr Octopus and Pottyhands,13 May 2021,5,Shove your fish onto the target using your mop. You must shove your fish within 10 seconds of Alex laying down your fish. Furthest from the target ten seconds after each round is eliminated.,TRUE,FALSE,FALSE,1,3,1,5,4
+11,10,Activate Jamali,20 May 2021,1,The thing that makes you look the toughest.,FALSE,FALSE,TRUE,3,4,2,5,1
+11,10,Activate Jamali,20 May 2021,2,Make the best picture of a big scary dinosaur using this photocopier. You may not leave the garage.,FALSE,FALSE,FALSE,2,3,4,1,5
+11,10,Activate Jamali,20 May 2021,3,Scientifically work out how much Alex's feet and head weigh. You may not use the internet.,FALSE,FALSE,FALSE,4[3],1,5,2,3[3]
+11,10,Activate Jamali,20 May 2021,4,Direct your teammate into the red circle. You must stay on your chair at all times. You may only issue one instruction of three words every 30 seconds.,FALSE,TRUE,FALSE,2,2,5,5,2
+11,10,Activate Jamali,20 May 2021,5,"Keeping your head still at all times, correctly don your special outfit. For every second your head is out of the frame, 10 seconds will be added to your time. Put your hands in the air when you are correctly dressed.",TRUE,FALSE,FALSE,5,2,3,4,1
+12,1,An imbalance in the poppability,23 September 2021,1,"The thing that if you put it in a bag and sat on it, it would feel the nicest.",FALSE,FALSE,TRUE,4,5,1,2,3
+12,1,An imbalance in the poppability,23 September 2021,3,Paint the most flattering picture of the Taskmaster in action on the canvas in the lab. The canvas will either be six inches or six feet above you. You must lie flat on your back on the creeper at all times. You must tell Alex if you want the canvas to be six inches or six feet above you within the next ten seconds.,FALSE,FALSE,FALSE,4,3,5,2,1
+12,1,An imbalance in the poppability,23 September 2021,4,Pop the balloon. You must stay behind the rope at all times. You must not move the rope. You may buy the tools you need with time. Fastest wins.,FALSE,FALSE,FALSE,5,1,3,2,4
+12,1,An imbalance in the poppability,23 September 2021,5,"Write down a cool hobby, a fun animal and a famous person.",TRUE,FALSE,FALSE,1,3,3,5,1
+12,2,Oatmeal and death,30 September 2021,1,Most awesome square.,FALSE,FALSE,TRUE,4,1,5,2,3
+12,2,Oatmeal and death,30 September 2021,2,Scale the mountain. Your attempt must last exactly five minutes and will be sped up by five times afterwards. Most thrilling ascent wins.,FALSE,TRUE,FALSE,3,5,5,5,3
+12,2,Oatmeal and death,30 September 2021,3,"Work out the contents of these bags. You may not open the bags. You can either ask Alex to make one tiny hole in each bag and have five minutes examination time during which you must eat at least one big spoonful from each bag, or ask Alex to put all the contents in a blender for one minute and then have ten minutes examination time during which eating is optional.",FALSE,FALSE,FALSE,3,4,1,3,5
+12,2,Oatmeal and death,30 September 2021,4,"Completely paint this space hopper green without making any mess. The entire space hopper must be green. The entire space hopper must stay in the dome. When you are satisfied that you are finished, put your hands on your hips and bow deeply at your green space hopper. Fastest and least messy wins.",FALSE,FALSE,FALSE,3,2,4,5,1
+12,2,Oatmeal and death,30 September 2021,5,Put on the medallion. You must not take off your jacket or break the box. Fastest wins.,TRUE,FALSE,FALSE,3,4,5,2,1
+12,3,The end of the franchise,7 October 2021,1,Most old-fashioned thing that you still use.,FALSE,FALSE,TRUE,3,5,4,2,1
+12,3,The end of the franchise,7 October 2021,2,"Copy Alex. Alex will demonstrate his actions twice, then you will have one attempt to copy Alex. Closest copy wins.",FALSE,FALSE,FALSE,1,4,2,3,5
+12,3,The end of the franchise,7 October 2021,4,Film the most thrilling 30-second sequence wearing the welly-cam.,FALSE,FALSE,FALSE,2,5,3,4,3
+12,3,The end of the franchise,7 October 2021,5,Team Live:Correctly guess your teammate's object. Your teammate will represent their object through the medium of shadows on the screen. Fastest correct guess wins two actual points per round.,FALSE,FALSE,FALSE,2,4,4,4,2
+12,4,The customised inhaler,14 October 2021,1,Best thing that has quite a few layers.,FALSE,FALSE,TRUE,5,4,3,1,2
+12,4,The customised inhaler,14 October 2021,2,"Complete the course as slowly as possible. You must be riding the bicycle forwards within the limits of the course at all times. Every time you put a foot on the ground, the clock will be paused and your final time will be halved. If you leave the course or miss an instruction, your time will also be halved and the clock will be paused until you are back in position. Slowest wins.",FALSE,FALSE,FALSE,4,5,3,1,2
+12,4,The customised inhaler,14 October 2021,3,Spread jam on a slice of toast in a really cool way. Coolest jam spreading wins.,FALSE,FALSE,FALSE,4,2,5,2,3
+12,4,The customised inhaler,14 October 2021,5,Get the most forks in your bucket. You may only throw a fork after a full spin on your chair. You must stay sat in your chair at all times and you may not move your chair.,TRUE,FALSE,FALSE,3,2,1,5,4
+12,5,Croissants is croissants,21 October 2021,1,Most elegant thing beginning with G.,FALSE,FALSE,TRUE,4,1,5,3,2
+12,5,Croissants is croissants,21 October 2021,3,"Get the most balls in the net. Everyone must stay on their spots at all times. If anyone other than the task reader touches or handles a ball, you lose five balls from your ball total. Also, the person on the middle spot must sit for ten seconds and then stand up straight for ten seconds on repeat. Any balls remaining between the task reader and the middle person will be deducted from your ball total.",FALSE,TRUE,FALSE,0,0,0,0,0
+12,5,Croissants is croissants,21 October 2021,4,Prevent Alex from scoring a goal. The ball and goalpost must be on their spots when Alex attempts to score a goal. You must be 12 yards from the ball when Alex attempts to score. Slowest goal scored by Alex wins.,FALSE,FALSE,FALSE,4,1,3,5,2
+12,5,Croissants is croissants,21 October 2021,5,"Pop the most balloons. You may pop between one and ten balloons each turn. If you pop one of the five bad balloons, you are disqualified. The eventual winner gets ten actual points.",TRUE,FALSE,FALSE,4,2,10,3,1
+12,6,A chair in a sweet,28 October 2021,1,"Most desirable thing for the person below you in the alphabet, or the highest alphabetically if you're the lowest alphabetically.",FALSE,FALSE,TRUE,2,5,3,4,1
+12,6,A chair in a sweet,28 October 2021,2,Land the iron on the ironing board from the furthest distance. The ironing board must be standing at it's maximum height when the iron lands on it and the iron must remain on the ironing board for the attempt to count.,FALSE,FALSE,FALSE,5,1,4,2,3
+12,6,A chair in a sweet,28 October 2021,3,Make a cute toy for a cute dog. The dog will have five minutes with your cute toy. Most engaged dog wins.,FALSE,FALSE,FALSE,3,1,5,4,2
+12,6,A chair in a sweet,28 October 2021,4,"Sit on the red chair in the secret tower. You may only step on circles on your way. You may only stand on each circle once, unless it is black. You may stand on a black circle twice, but never twice in a row. Also you must put this task in the shredder within the first minute. If you fail for any reason, Alex will blow his whistle. Return everything to its starting position and you must start again. Fastest wins.",FALSE,FALSE,FALSE,3,5,2,4,1
+12,6,A chair in a sweet,28 October 2021,5,Choose the number of sheets you want for the second part of the task. Each sheet will reduce your points total by five.,TRUE,FALSE,FALSE,1,5,5,3,2
+12,7,The integrity of the product,4 November 2021,1,Most ridiculous thin thing.,FALSE,FALSE,TRUE,3,4,1,2,5
+12,7,The integrity of the product,4 November 2021,2,Put up a shelf for all the Taskmaster's snooker balls. All the Taskmaster's snooker balls must be at the Taskmaster's eyeline. Only the Taskmaster's snooker balls may be on the finished shelf. Fastest wins.,FALSE,FALSE,FALSE,4,3,3,3,3
+12,7,The integrity of the product,4 November 2021,3,"Write and perform a 30-second jingle. You must reach into the barrel to find the subject of your jingle, then pop a balloon to discover the instrument that you must play under your jingle.",FALSE,FALSE,FALSE,4,5,4,5,2
+12,7,The integrity of the product,4 November 2021,4,Either get the pipe through the box and everything in it then get the box and everything in it through the pipe or get the box and everything in it through the pipe then get the pipe through the box and everything in it. Fastest wins.,FALSE,FALSE,FALSE,0,5,0,4,3
+12,7,The integrity of the product,4 November 2021,5,"Each person must direct their fellow contestants to draw an image. The drawing director may only use the following words: line, circle, square, big, small, up, down, left, right, middle, please, bendy. At the end of one minute, the drawers must write down what they think the image is. The drawers will receive one point per correct guess. The drawing director will also receive one point per correct guess. Most points overall wins.",TRUE,FALSE,FALSE,5,0,0,0,5
+12,8,A couple of Ethels,11 November 2021,1,Best thing you use for something other than its actual purpose.,FALSE,FALSE,TRUE,4,5,3,2,1
+12,8,A couple of Ethels,11 November 2021,2,"Make and wear a popcorn necklace with at least five pieces of popcorn and then do the opposite of the following: You must under no circumstances not avoid not making the bell not ring. The task is over when you have either rung the bell or not rung the bell and said ""I did the right thing"" three times. Fastest to not do the wrong thing wins. If you don't do the right thing, you lose five points.",FALSE,FALSE,FALSE,4,-5,5,3,-5
+12,8,A couple of Ethels,11 November 2021,3,Play the most brilliant minute of socially-distanced sport.,FALSE,TRUE,FALSE,5,5,5,5,5
+12,8,A couple of Ethels,11 November 2021,4,Make your face look like another face when your face is turned upside-down. Most expressive and radically different upside-down face wins.,FALSE,FALSE,FALSE,5,2,4,4,5
+12,8,A couple of Ethels,11 November 2021,5,"Pop up before the object, but only just. You are only allowed to pop up once. Closest to the pop before the pop wins the round. If you pop up after the object, you get no points that round.",TRUE,FALSE,FALSE,3,2,4,5,3
+12,9,Nothing matters,18 November 2021,1,40 things that are all the same and can all fit on a towel and are the best.,FALSE,FALSE,TRUE,5,4,3,1,2
+12,9,Nothing matters,18 November 2021,2,"Have the longest telephone conversation without the other person knowing you are trying to have a long telephone conversation. During the call, you must not mention television or Taskmaster. Every minute, you must reveal and carry out an action from the board. If the person you call says any of the key words, you must hang up immediately. You must call someone within two minutes from now.",FALSE,FALSE,FALSE,1,5,3,2,4
+12,9,Nothing matters,18 November 2021,3,Strike the soldier with your throwing paint. The soldier will say your name every five seconds. You may not remove or tamper with your helmet. Fastest wins.,FALSE,FALSE,FALSE,1,4,3,5,2
+12,9,Nothing matters,18 November 2021,4,Get goosebumps. Your goosebumps must be revealed in the lab. Fastest wins.,FALSE,FALSE,FALSE,4,3,0,5,0
+12,9,Nothing matters,18 November 2021,5,"Team Live:Get the highest score by sliding your ducks. Each team will slide a pair of ducks three times. The duck slider must smirk at the Taskmaster whilst sliding their ducks. The winning team will receive five points per person, the losing team will get zero.",FALSE,FALSE,FALSE,0,5,5,5,0
+12,10,Caring Uncle Minpict,25 November 2021,1,Most magnificent floppy thing.,FALSE,FALSE,TRUE,4,5,4,2,1
+12,10,Caring Uncle Minpict,25 November 2021,2,Drink all this drink with your mouth open. Your mouth must be visibly open throughout. Fastest wins.,FALSE,FALSE,FALSE,3,5,4,2,1
+12,10,Caring Uncle Minpict,25 November 2021,3,"Using your whole body to make individual characters, describe the Taskmaster. Your description must be a minimum of 20 characters long. Most vivid description wins.",FALSE,TRUE,FALSE,5,-,-,4,-
+12,10,Caring Uncle Minpict,25 November 2021,4,Propose to Alex in the most irresistible way.,FALSE,FALSE,FALSE,4,4,5,5,3
+12,10,Caring Uncle Minpict,25 November 2021,5,"One at a time, make a noise without the Taskmaster identifying you. The person who makes the most unidentifiable noises wins.",TRUE,FALSE,FALSE,3,3,5,5,3
+12,10,Caring Uncle Minpict,25 November 2021,1,"Most beguiling, unwieldy, shiny thing.",FALSE,FALSE,TRUE,3,1,4,5,2
+12,10,Caring Uncle Minpict,25 November 2021,2,"Put the egg in the egg cup in the most daring way. If the egg breaks, you are disqualified.",FALSE,FALSE,FALSE,5,2,DQ,3,4
+12,10,Caring Uncle Minpict,25 November 2021,3,Drink all the vinegar.,FALSE,FALSE,FALSE,5,0,4,0,0
+12,10,Caring Uncle Minpict,25 November 2021,4,"Choose a length for this pole, then guide it through the course. The person who completes the course with the longest pole wins. Every time your pole touches something other than your hands, 10cm will be taken from its length.",FALSE,FALSE,FALSE,5,1,4,3,2
+12,10,Caring Uncle Minpict,25 November 2021,5,Choose a ball.,TRUE,FALSE,FALSE,4,2,3[1],1,5
+13,1,The noise that blue makes,14 April 2022,1,"The thing that, if you found it in a skip, you would be most excited by.",FALSE,FALSE,TRUE,1,5,4,2,3
+13,1,The noise that blue makes,14 April 2022,2,Find all 10 ducks. You must stay in the lab. Fastest wins.,FALSE,FALSE,FALSE,1,3,5,4,3
+13,1,The noise that blue makes,14 April 2022,3,Create the best picture of the Taskmaster using only lipstick on your lips.,FALSE,FALSE,FALSE,3,4,5,1,3
+13,1,The noise that blue makes,14 April 2022,4,Devise a duel and have the duel with Alex. Most exhilarating duel wins.,FALSE,FALSE,FALSE,2,3,4,1,5
+13,1,The noise that blue makes,14 April 2022,5,"Count to 13 as a group, each player taking it in turns to say a number. Every time you say an odd number, you must also squat. Every time you say an even number, you must also jump. If you make a mistake, you are out. If you reach 13 or someone is eliminated, other rules will be introduced. If the Taskmaster thinks you have hesitated for too long, you will be eliminated.",TRUE,FALSE,FALSE,3,1,5,2,4
+13,2,Birdy hand finger,21 April 2022,1,The object that you would most like to show to an alien.,FALSE,FALSE,TRUE,5,2,2,2,2
+13,2,Birdy hand finger,21 April 2022,2,Either tie a ribbon round the maypole or strike it with a ping pong ball. You must be properly blindfolded at all times and must never step beyond the rope. Fastest wins.,FALSE,FALSE,FALSE,3,1,4,2,5
+13,2,Birdy hand finger,21 April 2022,3,Reveal the coolest photo in your phone.,FALSE,FALSE,FALSE,1,5,4,3,2
+13,2,Birdy hand finger,21 April 2022,4,Score a goal with each of the exercise balls. You may only move the exercise balls on the pitch when driving the buggy. Each person must score a goal using their own personal wheels to drive the buggy and no-one may score two goals in a row. Fastest hat-trick wins.,FALSE,TRUE,FALSE,5,3,5,3,3
+13,2,Birdy hand finger,21 April 2022,5,Identify the object under your table and draw it on the canvas on the underside of your table. You must also write down three words to describe your object. Most accurate drawing wins. You must also stare menacingly at the Taskmaster at all times.,TRUE,FALSE,FALSE,1,5,3,4,1
+13,3,I think I've got this,28 April 2022,1,The item that sounds funniest when you say its name over and over again.,FALSE,FALSE,TRUE,3,4,3,5,2
+13,3,I think I've got this,28 April 2022,2,Accurately and emotionally recreate a great moment from history using these two traffic cones. Most accurate and emotional recreation wins.,FALSE,FALSE,FALSE,4,5,2,1,3
+13,3,I think I've got this,28 April 2022,3,Make all of these things happen at the same time. The monsters must be squatting. The robot must be walking. The marble must be rolling. The cradle must be clicking. The sand must be falling. The fidget spinner must be spinning. The candles must be out. You must applaud when you think you've finished. Fastest wins.,FALSE,FALSE,FALSE,0,4,5,0,0
+13,3,I think I've got this,28 April 2022,5,"Team Live:As a team, put one of your faces and one of your legs through the hole. The Taskmaster will guess whether the leg belongs to the face or the other contestant. Most wrong guesses after three rounds wins.",FALSE,FALSE,FALSE,2,6,2,6,6
+13,4,Shoe Who,5 May 2022,1,Best night-time thing.,FALSE,FALSE,TRUE,5,4,2,1,3
+13,4,Shoe Who,5 May 2022,2,Display the shoe Alex is thinking of. All the other shoes must be out of sight at the end of the attempt. You may only ask yes or no questions and you must say/do your given phrase/action after every answer. Fewest questions wins.,FALSE,FALSE,FALSE,2,1,5,4,3
+13,4,Shoe Who,5 May 2022,3,"Give Alex the best stag minute. By the end of the stag minute, Alex must be ready to get married.",FALSE,TRUE,FALSE,5,4,5,4,4
+13,4,Shoe Who,5 May 2022,4,Make a stirring speech for the Taskmaster out of this bunting. Longest speech that is deemed to be stirring by the Taskmaster wins. You may only use the letters currently on the bunting.,FALSE,FALSE,FALSE,1,2,4,5,3
+13,4,Shoe Who,5 May 2022,5,"Taking it in turns, roll a tyre down the Knappett. You must roll from on the stage. If your tyre does not pass the line, you may not roll any further tyres. If both your dolls topple, you may not roll any further tyres. Last doll standing wins.",TRUE,FALSE,FALSE,4,5,1,2,3
+13,5,Having a little chuckle,12 May 2022,1,Most surprising thing from their wardrobes.,FALSE,FALSE,TRUE,4,5,1,3,2
+13,5,Having a little chuckle,12 May 2022,3,"Give Alex a high-five. The third-fastest high-fiver wins. If you are the first or the last, you will receive no points. You must high-five Alex within 10 minutes.",FALSE,FALSE,FALSE,4,0,4,0,5
+13,5,Having a little chuckle,12 May 2022,4,"Make the water level rise to the top of the big fish tank. You have 15 minutes to gather six things, then you must put all six things in the big fish tank. You may not put anything in the big fish tank before the 15 minutes are up and if any water leaves the big fish tank at any point, you are disqualified. Closest water level to the top of the big fish tank wins. No fish tanks may leave this room.",FALSE,FALSE,FALSE,5,DQ,DQ,4,DQ
+13,5,Having a little chuckle,12 May 2022,5,"Pop three red balls out of your hole. You may only pop out one ball at a time. If you pop out a black ball, you must stop popping out balls and scream for five seconds. If you pop out a white ball, everyone must stop popping out balls and dance like a worm for five seconds. If you pop out a duck, you are disqualified. Also, you must stare lovingly at the Taskmaster throughout the task. Fastest wins.",TRUE,FALSE,FALSE,3,5,2,1,4
+13,6,The 75th question,19 May 2022,1,Most calming item.,FALSE,FALSE,TRUE,5,1,4,2,3
+13,6,The 75th question,19 May 2022,2,Use the cement mixer for something other than mixing cement. Best use of a cement mixer other than mixing cement wins. Your time starts when Alex does an impression of you.,FALSE,FALSE,FALSE,1,2,5,3,1
+13,6,The 75th question,19 May 2022,3,Record the highest number on this pedometer.,FALSE,FALSE,FALSE,2,5,4,1,3
+13,6,The 75th question,19 May 2022,4,Hold a meeting with yourselves. There must be eight of you at the meeting. Most dramatic meeting moment wins.,FALSE,FALSE,FALSE,4,1,2,5,3
+13,6,The 75th question,19 May 2022,5,"Correctly guess this person's first name. You must ask a yes or no question on your turn. If you take more than ten seconds to ask your question, you miss a go. The person who guesses correctly wins five points.",TRUE,FALSE,FALSE,0,0,0,0,5
+13,7,Heg,26 May 2022,1,Nicest thing to put your finger in.,FALSE,FALSE,TRUE,5,3,3,3,4
+13,7,Heg,26 May 2022,2,Show off. Biggest show-off wins.,FALSE,FALSE,FALSE,3,2,5,4,5
+13,7,Heg,26 May 2022,3,"Deliver a cocktail to Greg. Your cocktail must have the following ingredients: three different liquids shaken and stirred, one piece of fruit, quite a bit of ice. Every ingredient must pass through a head pipe before entering the Taskmaster's glass. Fastest wins.",FALSE,TRUE,FALSE,2,5,2,5,5
+13,7,Heg,26 May 2022,4,Sculpt the most beautiful sculpture. Your sculpture must weigh exactly 150g and be entirely edible.,FALSE,FALSE,FALSE,4,5,5,4,5
+13,7,Heg,26 May 2022,5,"Build the tallest tower of toilet rolls in front of your spot. After 100 seconds, you will throw both of your shoes at the towers one at a time from the throwing spot. Whoever builds the tallest tower will throw first. Tallest toilet roll tower after all shoes are thrown wins.",TRUE,FALSE,FALSE,4,3,1,3,5
+13,8,You tuper super,2 June 2022,1,Loveliest thing to hold above your head.,FALSE,FALSE,TRUE,1,5,3,2,5
+13,8,You tuper super,2 June 2022,2,"Learn Swedish. You'll have a five-minute conversation with a Swedish person in 15 minutes from now. The phrasebook and tablet must remain in the caravan. Best demonstration of the Swedish language wins. Your time started when you first said ""Swedish"".",FALSE,FALSE,FALSE,5,4,1,2,3
+13,8,You tuper super,2 June 2022,3,"Stick your tongue out as far as it will go and keep it out until further notice. Every time Alex blows his whistle, you must lick the lemon, then the sherbet, then the ice lolly. Every time Alex honks his horn, you must hold your tongue in front of the fan for five seconds. The tongue that sticks out for the longest time wins.",FALSE,FALSE,FALSE,2,3,4,1,5
+13,8,You tuper super,2 June 2022,5,"Team Live:Write down five things that fit the category given by the Taskmaster. Your team will receive a point if both player write down the same thing. If someone from the other team writes the same word as you, that word must be wiped from the boards. The team with the most points wins. You have 30 seconds to write your things and must be silent and still throughout.",FALSE,FALSE,FALSE,5,3,5,3,3
+13,9,It might be wind,9 June 2022,1,Best object with a handle.,FALSE,FALSE,TRUE,5,2,1,4,3
+13,9,It might be wind,9 June 2022,2,Get the most surprising thing delivered to the Taskmaster house.,FALSE,FALSE,FALSE,2,4,5,4,2
+13,9,It might be wind,9 June 2022,3,Make the longest cup snake and lie down next to it outside this building. You may only leave the building twice.,FALSE,FALSE,FALSE,2,1,4,5,3
+13,9,It might be wind,9 June 2022,4,Poke a part of your body out of the shower curtain and waggle it about for 10 seconds. The Taskmaster will guess what part of the body it is. Biggest part of the body that the Taskmaster incorrectly identifies wins.,FALSE,FALSE,FALSE,0,0,5,4,5
+13,9,It might be wind,9 June 2022,5,"Write down how many tin cans you think can fit in your bag. The highest predicted number fitted in a zipped-up bag within one minute wins. If you don't zip up your bag or fit your predicted number of tin cans in your bag, you will be disqualified.",TRUE,FALSE,FALSE,5,DQ,4,DQ,DQ
+13,10,The House Queens,16 June 2022,1,Finest family heirloom.,FALSE,FALSE,TRUE,4,5,4,2,4
+13,10,The House Queens,16 June 2022,2,Identify the liquids. Most accurately identified liquids wins.,FALSE,FALSE,FALSE,4,3,4,4,5
+13,10,The House Queens,16 June 2022,3,"Get the most ducks in Alex's basket. You may only hold one duck at a time. If Alex rings his backwards bell, you must walk backwards until he honks his forwards horn. Alex will pedal as fast as he can unless you say one of the magic words. If you say a magic word, Alex will rest for 10 seconds. All the magic words are single-use magic words.",FALSE,FALSE,FALSE,3,DQ,5,DQ,4
+13,10,The House Queens,16 June 2022,4,Record the best multi-track song about your team. You must record all six tracks with your voice or body and each person must record the same number of tracks. Most powerful multi-track song wins.,FALSE,TRUE,FALSE,3,5,3,5,5
+13,10,The House Queens,16 June 2022,5,Draw a life-size self-portrait. Your nose must be poking through your nose hole at all times. Most accurate self-portrait wins.,TRUE,FALSE,FALSE,1,5,5,2,4
+CoC2,1,The Alpine Darling,23 June 2022,1,"The thing that makes everyone go ""Wow, that really is the greatest thing"".",FALSE,FALSE,TRUE,5,2,3,1,4
+CoC2,1,The Alpine Darling,23 June 2022,2,Feed yourself a grape in the most elaborate way.,FALSE,FALSE,FALSE,2,4,3,2,5
+CoC2,1,The Alpine Darling,23 June 2022,3,"Cut holes in and create a scene on this board so that when you and Alex stick parts of your body through the holes, it looks wonderful.",FALSE,FALSE,FALSE,3,2,5,4,1
+CoC2,1,The Alpine Darling,23 June 2022,4,Get this duck into that pond. The duck must be launched from behind this rope and you must stay behind this rope during its journey. You may not move the rope or the pond.,FALSE,FALSE,FALSE,1,4,3,5,2
+CoC2,1,The Alpine Darling,23 June 2022,5,"Pack either five bricks or five balloons in your bag. One at a time, you must then walk across the stage and place your bag on the circle near the Taskmaster, who will guess whether you were packing bricks or balloons. if he guesses correctly, you are eliminated. If you deceive him, you qualify for another round.",TRUE,FALSE,FALSE,0,0,0,0,5
+14,1,"The chassis, the wings",29 September 2022,1,Most jaw-dropping item.,FALSE,FALSE,TRUE,4,5,1,2,4
+14,1,"The chassis, the wings",29 September 2022,2,What 10 films are you in?,FALSE,FALSE,FALSE,1,3,2,5,4
+14,1,"The chassis, the wings",29 September 2022,3,Land loo roll in the loo. You must stay on the spot at all times.,FALSE,FALSE,FALSE,5,4,1,2,3
+14,1,"The chassis, the wings",29 September 2022,4,Create the best picture of a bird on the black square. You may not step on or do anything to the black square. Alex will walk towards you every time you name a different bird. Alex will stop moving every time you name a different fish.,FALSE,TRUE,FALSE,2,2,2,5,5
+14,1,"The chassis, the wings",29 September 2022,5,"Get the most weight on the seesaw without popping the balloon. Taking it in turns, you must place a single item of your additional clothing in the triangular basket. If you pop the balloon, you get zero points.",TRUE,FALSE,FALSE,5,3,5,0,2
+14,2,Enormous hugeness,6 October 2022,1,Best thing you nearly keep throwing away but can't quite bring yourself to.,FALSE,FALSE,TRUE,5,3,1,4,3
+14,2,Enormous hugeness,6 October 2022,2,"Print, laminate and distribute the most signs. Each of your signs must be placed on a different seat and all your signs must have a different instruction.",FALSE,FALSE,FALSE,5,4,1,2,3
+14,2,Enormous hugeness,6 October 2022,3,Put five grapes in the little bowl. You must wear the flippers as gloves for the entire five minutes.,FALSE,FALSE,FALSE,5,0,3,4,2
+14,2,Enormous hugeness,6 October 2022,4,"Sort the ducks and socks. Ducks go in the front bucket. Socks go in the back bucket. All ducks and socks must travel along both treadmills then fall directly into the correct bucket. If a duck or sock lands on the floor, you may not retrieve it.",FALSE,FALSE,FALSE,5,2,1,4,3
+14,2,Enormous hugeness,6 October 2022,5,"Team Live:Make the Taskmaster say your words. Each team will ask one question at a time and each question must be made up of exactly six words. Also, each team member must take it in turns to say two words of each question.",FALSE,FALSE,FALSE,3,3,3,2,2
+14,3,Dafty in the middle,13 October 2022,1,The thing that you most want on a Sunday morning.,FALSE,FALSE,TRUE,4,3,5,1,2
+14,3,Dafty in the middle,13 October 2022,2,"Place half your hands on half your hips and leave them there until the second part of the task is over. Also, the hands that are on hips must only touch those hips until the second part of the task is over.",FALSE,TRUE,FALSE,0,0,0,5,5
+14,3,Dafty in the middle,13 October 2022,3,Identify the ice cream flavours. You must find every flavour delicious.,FALSE,FALSE,FALSE,5,4,4,1,2
+14,3,Dafty in the middle,13 October 2022,4,Catch something.,FALSE,FALSE,FALSE,5,4,2,1,3
+14,3,Dafty in the middle,13 October 2022,5,"Predict whether an item will create a higher or lower number of decibels than the previous item. If you are wrong, you are out.",TRUE,FALSE,FALSE,3,3,4,3,5
+14,4,Crumbs in my bralette,20 October 2022,1,Greatest addition to a garden.,FALSE,FALSE,TRUE,4,1,3,2,5
+14,4,Crumbs in my bralette,20 October 2022,2,Turn on the bubble machine. You may not step off or move the doormat.,FALSE,FALSE,FALSE,4,3,2,1,5
+14,4,Crumbs in my bralette,20 October 2022,3,"Get this tarpaulin completely in one of the containers. You have a maximum of five minutes and you must select your container before you touch the tarpaulin. Also, you must tidy everything up within those five minutes.",FALSE,FALSE,FALSE,4,3,2,1,5
+14,4,Crumbs in my bralette,20 October 2022,4,Write down five wonderful words.,FALSE,FALSE,FALSE,2,4,4,2,5
+14,4,Crumbs in my bralette,20 October 2022,5,"Throw your egg and your spoon the same distance. Both egg and spoon must cross the qualifying line. If either your egg or your spoon fall off the Knappett, you are disqualified. The most distanced egg and spoon each round are out. If your egg doesn't break, your distance is halved.",TRUE,FALSE,FALSE,5,4,1,3,2
+14,5,Chip Biffington,27 October 2022,1,Most useless thing that you've bought that costs over £20.,FALSE,FALSE,TRUE,4,3,5,3,2
+14,5,Chip Biffington,27 October 2022,2,Get the most pleasure from all of these rubber chutes.,FALSE,FALSE,FALSE,2,5,3,4,4
+14,5,Chip Biffington,27 October 2022,3,Perform the best routine to this musical backing.,FALSE,TRUE,FALSE,5,5,5,4,4
+14,5,Chip Biffington,27 October 2022,4,"Place one luggage trolley a certain distance away from the line. Then, starting behind the line, strike that trolley with another luggage trolley. If you strike the first luggage trolley with another luggage trolley, you may move the first luggage trolley further away. You may not move any unsuccessful luggage trolleys.",FALSE,FALSE,FALSE,3,1,5,4,2
+14,5,Chip Biffington,27 October 2022,5,Team Live:One member of your team must write down 10 animals in two minutes.,FALSE,FALSE,FALSE,5,5,5,5,5
+14,6,Long-legged lobster,3 November 2022,1,Best thing you've ever received in the post.,FALSE,FALSE,TRUE,2,1,3,4,5
+14,6,Long-legged lobster,3 November 2022,2,"Within 30 seconds of opening this task, you must pick up both milk bottles and hold them directly above the microwaves. The clock stops when a milk bottle, hand or arm touches a microwave or is no longer directly above a microwave. Lowest number on the clock wins, but if the clock reaches zero, you are disqualified.",FALSE,FALSE,FALSE,1,2,4,3,5
+14,6,Long-legged lobster,3 November 2022,3,"Get to the end of the lanes in exactly the same amount of time. That time must be under one minute. Also, you must mirror yourself during your attempts.",FALSE,FALSE,FALSE,2,1,4,3,5
+14,6,Long-legged lobster,3 November 2022,4,"Strike the bullseye with your paint. You must only step on the stepping stones and you must step on all the stepping stones. Also, your hands must be below your waist at all times.",FALSE,FALSE,FALSE,DQ,DQ,DQ,DQ,DQ
+14,6,Long-legged lobster,3 November 2022,5,Paint a picture of a unicorn using your head brush. You may not handle your head brush at any point.,TRUE,FALSE,FALSE,5,2,1,3,4
+14,7,The system of endless plates,10 November 2022,1,The thing you would most like to have with you on a car journey.,FALSE,FALSE,TRUE,3,4,2,1,5
+14,7,The system of endless plates,10 November 2022,2,"Choose a room and a weapon, then wait further instructions.",FALSE,FALSE,FALSE,4,0,5,0,0
+14,7,The system of endless plates,10 November 2022,3,"Get this feather into the bath. You must not touch the feather and the feather must not touch the ground. After the feather has left its cushion, it must not touch a single thing for more than five seconds in total. The cushion must not leave the lab. If you make any mistake at all, Alex will blow his whistle and you must start all over again. Finally, you must not say any words at any point from now on.",FALSE,TRUE,FALSE,5,5,5,2,2
+14,7,The system of endless plates,10 November 2022,4,Make an exercise ball touch Bernard. Bernard can't move. You may launch an exercise ball from behind the line and may not touch any balls after each launch.,FALSE,FALSE,FALSE,4,2,5,DQ,3
+14,7,The system of endless plates,10 November 2022,5,"Blow an item the furthest on the Knappett. If your item falls from the Knappett, you are disqualified. The person who blows something the least far each round is eliminated unless someone is disqualified. You must all select your blowers and items for each round before any blowing commences and you must not use the same blower or item twice.",TRUE,FALSE,FALSE,5,5,1,5,5
+14,8,The one that bats do,17 November 2022,1,Best fancy dress.,FALSE,FALSE,TRUE,3,5,1,3,2
+14,8,The one that bats do,17 November 2022,2,Come up with a secret language that doesn't use words.,FALSE,TRUE,FALSE,0,0,0,5,5
+14,8,The one that bats do,17 November 2022,3,Pin an alluring tail on the alluring animal while blindfolded.,FALSE,FALSE,FALSE,4,1,3,5,2
+14,8,The one that bats do,17 November 2022,4,Find the back of your hand.,FALSE,FALSE,FALSE,0,4,0,5,5
+14,8,The one that bats do,17 November 2022,5,Team Live:Guess the fully-extended length of the extendable item.,FALSE,FALSE,FALSE,2,2,2,3,3
+14,9,A new business end,24 November 2022,1,Most underestimated item.,FALSE,FALSE,TRUE,3,3,2,1,3
+14,9,A new business end,24 November 2022,2,"Snort, then blow a raspberry, then whistle, then repeat that sequence for one minute.",FALSE,FALSE,FALSE,3,2,2,5,4
+14,9,A new business end,24 November 2022,3,Write a one-minute one-person play.,FALSE,FALSE,FALSE,4,5,5,1,5
+14,9,A new business end,24 November 2022,4,Choose one item from each plinth and bring them into the lab.,FALSE,FALSE,FALSE,2,5,4,3,1
+14,9,A new business end,24 November 2022,5,Tie your towel as tightly as possible around your body.,TRUE,FALSE,FALSE,5,3,2,4,2
+14,10,Did I meet these potatoes before?,1 December 2022,1,The thing of yours that the Taskmaster would most like to own.,FALSE,FALSE,TRUE,2,1,3,1,1
+14,10,Did I meet these potatoes before?,1 December 2022,3,Eat the grape. You must not damage the caravan or climb out the window.,FALSE,FALSE,FALSE,5,3,1,2,4
+14,10,Did I meet these potatoes before?,1 December 2022,4,Sculpt your team. Only one person may look at the clay and that person may not touch the clay.,FALSE,TRUE,FALSE,3,3,3,5,5
+14,10,Did I meet these potatoes before?,1 December 2022,5,"Land a balloon nearest the Taskmaster. You must stay on your spot at all times. If you strike the Taskmaster with a balloon, you're disqualified.",TRUE,FALSE,FALSE,5,DQ,2,4,3
+14,10,Did I meet these potatoes before?,1 December 2022,1,The thing which Greg would be most surprised that you own.,FALSE,FALSE,TRUE,3,4,1,5,2
+14,10,Did I meet these potatoes before?,1 December 2022,2,Count all the dots on this card. You may not touch or mark the card. You must answer the door and obey the instructions every time the doorbell rings.,FALSE,FALSE,FALSE,3,4,5,2,1
+14,10,Did I meet these potatoes before?,1 December 2022,3,Recreate the picture that Alex is holding. Your face must not move from this position. Alex will show you the picture for five seconds when you've finished reading the task and then for a further three seconds every time you land a ball in the bucket.,FALSE,FALSE,FALSE,2,1,4,3,4
+14,10,Did I meet these potatoes before?,1 December 2022,4,Put the most carp pellets in the fishbowl. You must not bend at the waist or knees at any point.,FALSE,FALSE,FALSE,1,2,3,5,4
+14,10,Did I meet these potatoes before?,1 December 2022,5,"Obey Greg's instructions. You must only obey the instructions which start with ""Greg says"".",TRUE,FALSE,FALSE,5,3,1,5,3
+15,1,The curse of politeness,30 March 2023,1,Most dependable thing that weighs about 1kg.,FALSE,FALSE,TRUE,3,1,2,4,5
+15,1,The curse of politeness,30 March 2023,2,"Have the best first dance at a wedding with Alex. You can choose whatever music you want, but must be wearing these headphones throughout. Your first dance must last no more than a minute.",FALSE,FALSE,FALSE,1,2,3,5,4
+15,1,The curse of politeness,30 March 2023,3,Completely unwind this ball of string. Your time started when you said Alex's name.,FALSE,FALSE,FALSE,1,2,4,3,5
+15,1,The curse of politeness,30 March 2023,4,Get all the rubber rings on your bargepole. You may not touch the bargepole or rubber rings at any point.,FALSE,FALSE,FALSE,2,4,2,3,5
+15,1,The curse of politeness,30 March 2023,5,"Throw your items into your bucket. You must select one item when Alex blows his whistle. You must then throw that item when Alex blows his whistle again. If your bucket falls, you are disqualified. You must stay on your spot and you must not move your spot.",TRUE,FALSE,FALSE,5,DQ,5,DQ,DQ
+15,2,Trapped in a loveless marriage,6 April 2023,1,"The object which, whenever you look at it, makes you feel the weirdest.",FALSE,FALSE,TRUE,4,3,1,5,1
+15,2,Trapped in a loveless marriage,6 April 2023,2,Compose a solo for this musician. The solo must be original and less than 30 seconds long.,FALSE,FALSE,FALSE,4,5,5,5,4
+15,2,Trapped in a loveless marriage,6 April 2023,3,"Build the highest bridge over the middle of the red green and balance the potato on the middle of the bridge. The potato may not be anchored in any way. If anything touches the red green, you must put everything back where you found it, tut and go back to the drawing board.",FALSE,TRUE,FALSE,5,5,3,3,3
+15,2,Trapped in a loveless marriage,6 April 2023,4,Achieve the most impressive effect with a single breath.,FALSE,FALSE,FALSE,3,1,1,1,4
+15,2,Trapped in a loveless marriage,6 April 2023,5,"Create a recognisable picture of an animal on the back of your t-shirt using the equipment provided. You must stay on your spot, and you must not move your spot. If you create the same animal as someone else, you will both be disqualified.",TRUE,FALSE,FALSE,DQ,3,5,DQ,4
+15,3,I love to squander promise,13 April 2023,1,Most heroic thing.,FALSE,FALSE,TRUE,3,4,5,1,2
+15,3,I love to squander promise,13 April 2023,2,"Exit the caravan exactly 20 minutes after you entered the caravan. Also, to complete the task, you must write down and say 40 words. Each word must either be the same length or shorter than the previous word.",FALSE,FALSE,FALSE,4,5,3,DQ,DQ
+15,3,I love to squander promise,13 April 2023,3,Catch the potatoes in the potato hat. You must be sitting on the catching stool wearing your potato hat and you must not touch anything at any point. Anything in your hat that is not a potato will be subtracted from your potato total.,FALSE,FALSE,FALSE,1,2,4,3,5
+15,3,I love to squander promise,13 April 2023,4,"Choreograph the most elaborate and enthralling fight scene, then perform it in slow motion. Your fight scene must take five minutes and will then be sped up so that it lasts one minute.",FALSE,TRUE,FALSE,5,5,4,4,4
+15,3,I love to squander promise,13 April 2023,5,Know the most facts about sausages.,TRUE,FALSE,FALSE,3,5,4,1,3
+15,4,How heavy is the water?,20 April 2023,1,Most fun thing to wear on your head that you aren't supposed to wear on your head.,FALSE,FALSE,TRUE,5,1,4,3,2
+15,4,How heavy is the water?,20 April 2023,2,Strike the most drum skins and cymbals with a single throw of a bouncy ball.,FALSE,FALSE,FALSE,4,1,3,2,5
+15,4,How heavy is the water?,20 April 2023,3,"Make the fastest egg boat. Your egg boat must look like a boat and transport an egg. If your egg boat sinks or loses its egg, you are disqualified. Also, all your materials must start with the same letter and you can't order anything boaty.",FALSE,FALSE,FALSE,DQ,3,4,5,2
+15,4,How heavy is the water?,20 April 2023,4,Complete a line or four corners.,FALSE,FALSE,FALSE,3[1],2,4[1],3,1
+15,4,How heavy is the water?,20 April 2023,5,"Pour your sand into the other bottle. You must pour your sand from at least a foot above your other bottle. If there is a break in your sand stream, you are disqualified.",TRUE,FALSE,FALSE,DQ,DQ,DQ,DQ,DQ
+15,5,Old Honkfoot,27 April 2023,1,Luckiest thing.,FALSE,FALSE,TRUE,3,3,2,5,4
+15,5,Old Honkfoot,27 April 2023,2,Fake something.,FALSE,FALSE,FALSE,5,4,2,2,4
+15,5,Old Honkfoot,27 April 2023,3,"Play the instrument indicated by the light. Each time you play an instrument correctly, another will be added to the sequence until you make a mistake.",FALSE,FALSE,FALSE,5,2,3,2,5
+15,5,Old Honkfoot,27 April 2023,4,"Salvage the most spoons. You may not leave the lab and all spoons must be salvaged with a magnet. Your salvager must not remove their headwear. Also, from now on, you must speak in a very high-pitched voice.",FALSE,TRUE,FALSE,DQ,DQ,5,5,5
+15,5,Old Honkfoot,27 April 2023,5,"Team Live:Stuff all these things in your teammate's outfit. If you're wearing a special outfit, you must stay on your spot with your hands on your head at all times.",FALSE,FALSE,FALSE,0,0,5,5,5
+15,6,It's my milk now,4 May 2023,1,Best thing to play about with in your bathroom.,FALSE,FALSE,TRUE,5,3,1,4,2
+15,6,It's my milk now,4 May 2023,2,"Invent an imaginary companion, then complete a domestic task with your imaginary companion. Your imaginary companion must either be much taller or much littler than you.",FALSE,FALSE,FALSE,5,4,2,3,4
+15,6,It's my milk now,4 May 2023,3,Efficiently shell an egg. You may not touch any part of any egg with your hands and you may only break the shell of one of the eggs.,FALSE,FALSE,FALSE,1,3,2,4,5
+15,6,It's my milk now,4 May 2023,4,"Bash the big bell with the bowling ball. Fastest gets five points. Slowest gets four points. Nobody else gets any points. You must stay off the grass unless you are wearing gold shoes. If anything other than the bowling ball or gold shoes touches the grass, you are disqualified.",FALSE,FALSE,FALSE,4,DQ,DQ,DQ,5
+15,6,It's my milk now,4 May 2023,5,"Walk around the chairs listening to Greg's story, then sit on a chair when you hear a word containing two letter Ls. If you stop walking or touch a chair incorrectly, you are disqualified. If you fail to sit on a chair when you hear a word containing two letter Ls, you are disqualified.",TRUE,FALSE,FALSE,3,4,2,1,5
+15,7,Schrödinger's egg,11 May 2023,1,Most brilliant thing that pops up.,FALSE,FALSE,TRUE,5,4,3,2,1
+15,7,Schrödinger's egg,11 May 2023,2,"Rotate the pulper wheel without pulping the egg. You must not move from this spot at any point. If you pulp the egg, you are disqualified.",FALSE,FALSE,FALSE,4,5,DQ,3,DQ
+15,7,Schrödinger's egg,11 May 2023,3,Completely free yourselves and have a team hug.,FALSE,TRUE,FALSE,2,2,5,5,5
+15,7,Schrödinger's egg,11 May 2023,4,"Write down a number between 0 and 100, a length of time between 1 minute and 20 minutes, five ingredients, a country, a noun and an adjective.",FALSE,FALSE,FALSE,1,1,1,5,4
+15,7,Schrödinger's egg,11 May 2023,5,Say the word given to you by the Taskmaster in the accent on the card you choose. The Taskmaster will guess what accent you are doing.,TRUE,FALSE,FALSE,5,2,2,5,5
+15,8,100% Bosco,18 May 2023,1,Best thing you take everywhere with you but struggle to fit in your bag.,FALSE,FALSE,TRUE,4,4,5,4,4
+15,8,100% Bosco,18 May 2023,2,Pile the pineapples on the path. You must not get wet.,FALSE,FALSE,FALSE,1,4,3,2,5
+15,8,100% Bosco,18 May 2023,3,Repurpose this umbrella and demonstrate its new purpose.,FALSE,FALSE,FALSE,3,1,2,5,4
+15,8,100% Bosco,18 May 2023,4,"Put the most stuff on top of this jelly without breaking the jelly. If anything other than jelly touches the duck, you are disqualified.",FALSE,FALSE,FALSE,5,DQ,1,4,DQ
+15,8,100% Bosco,18 May 2023,5,"Team Live:Using only the scratching posts, remove as many balls from your suit as possible. Your teammates may throw balls from the throwing spots throughout. The throwing spots may not be moved. Also, if you're in a team of three, the two non-suit wearers must hold hands throughout.",FALSE,FALSE,FALSE,3,3,5,5,5
+15,9,A show about pedantry,25 May 2023,1,Sneakiest thing.,FALSE,FALSE,TRUE,4,2,4,5,4
+15,9,A show about pedantry,25 May 2023,2,Make these things the same colour as those things. People and bottles must stay on their spots at all times. You may perform 10 bottle stamps and two bottle squeezes.,FALSE,TRUE,FALSE,5,5,5,5,5
+15,9,A show about pedantry,25 May 2023,3,Put three single-digit numbers in the slots then open the second task.,FALSE,FALSE,FALSE,4,5,2,2,3
+15,9,A show about pedantry,25 May 2023,4,"Make exactly 99 holes in this piece of paper. Your holes must have a diameter of at least three millimetres and form a recognisable picture or pattern. If you make more or fewer than 99 holes, you are disqualified. Also, if you look at Alex or speak to Alex at any point, you are disqualified.",FALSE,FALSE,FALSE,5,DQ,DQ,4,DQ
+15,9,A show about pedantry,25 May 2023,5,Combine two of your things to equal the height of the thing said by Greg. You may not use any of your things twice. Worst guess each round is eliminated.,TRUE,FALSE,FALSE,2,4,1,5,3
+15,10,A yardstick for failure,1 June 2023,1,Best Greg Davies merchandise that isn't on the market but should be on the market.,FALSE,FALSE,TRUE,1,4,3,2,5
+15,10,A yardstick for failure,1 June 2023,2,"Fill the glass up to the line from the furthest distance. If you use a hose and someone else uses a hose, both hose users are disqualified.",FALSE,FALSE,FALSE,0,0,4,0,5
+15,10,A yardstick for failure,1 June 2023,3,"Do what Alex does immediately after Alex does it in exactly the same time as Alex does it. You must press your button when you're satisfied you have done what Alex has done. If you do not complete an activity, 10 seconds will be added to your time.",FALSE,FALSE,FALSE,5,4,1,2,3
+15,10,A yardstick for failure,1 June 2023,4,"Write the name of a profession in this hole, then open the task.",FALSE,TRUE,FALSE,4,4,5,5,5
+15,10,A yardstick for failure,1 June 2023,5,"Convince the Taskmaster that your feet are not in ice when they are in ice or that your feet are in ice when they aren't in ice. You must keep your feet either in ice or not in ice for 30 seconds before the Taskmaster makes his judgement. If the Taskmaster is correct, you are disqualified.",TRUE,FALSE,FALSE,DQ,DQ,5,DQ,DQ
+16,1,The natural friends,21 September 2023,1,Most wonderful wooden thing that they've owned for a while.,FALSE,FALSE,TRUE,5,1,3,4,2
+16,1,The natural friends,21 September 2023,2,Build a tower out of the cans in the lab. You must put on your blindfold in this room and wear it properly for the rest of the task.,FALSE,FALSE,FALSE,4,2,5,1,3
+16,1,The natural friends,21 September 2023,3,Connect the most individual parts of one person to individual parts of another person. All members of your team must be connected.,FALSE,TRUE,FALSE,5,5,5,2,2
+16,1,The natural friends,21 September 2023,4,"Get the duck into the lake. You must not touch the beak. If the duck leaves the course, it must re-enter at the point it left the course. If your duck touches the boundary or a flamingo or a pineapple, one minute will be added to your time.",FALSE,FALSE,FALSE,DQ,DQ,3,4,5
+16,1,The natural friends,21 September 2023,5,"Say whether you think the next item is heavier or lighter than the previous item. If you are wrong, you are eliminated.",TRUE,FALSE,FALSE,5,5,5,2,2
+16,2,Hell is here,28 September 2023,1,Best sign.,FALSE,FALSE,TRUE,1,2,3,5,4
+16,2,Hell is here,28 September 2023,2,Pull the sword from the stone. You may not force the sword or break the stone.,FALSE,FALSE,FALSE,5,3,2,1,4
+16,2,Hell is here,28 September 2023,3,"Make a cheeky picture on this piece of wood using nails and one continuous piece of wire. Also, if any egg timers stop, you must stare at the camera shaking your head for 10 seconds.",FALSE,FALSE,FALSE,2,1,5,5,3
+16,2,Hell is here,28 September 2023,4,Make mischief.,FALSE,FALSE,FALSE,3,2,1,4,5
+16,2,Hell is here,28 September 2023,5,Write down one thing you like and one thing you don't like.,TRUE,FALSE,FALSE,5,2,1,4,3
+16,3,Languidly,5 October 2023,1,The present you've been given that raises the most questions.,FALSE,FALSE,TRUE,4,3,5,2,1
+16,3,Languidly,5 October 2023,2,"Get the ball in the hole. Nothing may touch the ball. After you touch one tool, you may not touch another tool for one minute. If you decide to touch the welly, you must only do so with your foot.",FALSE,FALSE,FALSE,5,3,4,1,2
+16,3,Languidly,5 October 2023,3,"Get underneath the most unique things. Alex will write down your things when you shout ""I'm underneath it"". If you get underneath something that someone else gets underneath, you both lose five things from your total.",FALSE,FALSE,FALSE,4,2,5,4,1
+16,3,Languidly,5 October 2023,4,Choose a new nickname based on something you do in the next 20 minutes.,FALSE,FALSE,FALSE,1,4,5,3,2
+16,3,Languidly,5 October 2023,5,"Team Live:One member of your team must lie on three of the squares and go to sleep. After they have taken their position, they must not move until the task is over. Taking it in turns, the other team members must try to land their cushion in each of the three sleep squares.",FALSE,FALSE,FALSE,5,5,5,0,0
+16,4,Dynamite chicks,12 October 2023,1,Best thing for a grown-up that is meant for a child.,FALSE,FALSE,TRUE,4,5,1,3,2
+16,4,Dynamite chicks,12 October 2023,2,"Make a sausage. You can only use seven ingredients, each beginning with the letters of the word ""sausage"". You may not order sausages.",FALSE,FALSE,FALSE,4,3,1,5,2
+16,4,Dynamite chicks,12 October 2023,3,"Complete all the tasks, then put the tubs back on your heads. One person must be looking at a teammate at all times during the tasks. Also, one person must be shaking their head and smiling at all times during the tasks and one person must only shout.",FALSE,TRUE,FALSE,5,5,5,2,2
+16,4,Dynamite chicks,12 October 2023,4,"Recreate a well-known piece of art on these memo squares. You must draw on every memo square, but you may only look at one memo square at a time.",FALSE,FALSE,FALSE,3,1,5,5,3
+16,4,Dynamite chicks,12 October 2023,5,Write the name of a different animal on each face of your dice. The most boring animal rolled will be eliminated.,TRUE,FALSE,FALSE,1,4,5,3,2
+16,5,Skateboard Division,19 October 2023,1,Best thing that has five things on it.,FALSE,FALSE,TRUE,4,2,1,3,5
+16,5,Skateboard Division,19 October 2023,2,Burst this balloon from the furthest distance. You must not be looking at the balloon when you burst it.,FALSE,FALSE,FALSE,3,1,4,5,2
+16,5,Skateboard Division,19 October 2023,3,Make the most cool but scary gang using these eyes.,FALSE,FALSE,FALSE,3,1,5,2,4
+16,5,Skateboard Division,19 October 2023,4,"Get all the water in the vase. If you spill any water from the plate, you are disqualified. You may not leave the lab.",FALSE,FALSE,FALSE,DQ,DQ,DQ,DQ,DQ
+16,5,Skateboard Division,19 October 2023,5,Sip your drink. You may only touch the loo roll and you may not reach over the line.,TRUE,FALSE,FALSE,5,3,4,2,2
+16,6,Brother Alex,26 October 2023,1,Greatest thing that makes quite a loud noise when you shake it.,FALSE,FALSE,TRUE,2,4,5,3,1
+16,6,Brother Alex,26 October 2023,2,Avoid the rubbish robots. You may not remove your blindfold at any point and at least one of your knees must be touching the floor throughout.,FALSE,FALSE,FALSE,1,5,2,3,4
+16,6,Brother Alex,26 October 2023,3,Recreate your teammate's garage scene.,FALSE,TRUE,FALSE,3,-,3,-,3
+16,6,Brother Alex,26 October 2023,4,"Present a piece called ""Heads, Shoulders, Knees and Toes"".",FALSE,FALSE,FALSE,2,5,5,4,4
+16,6,Brother Alex,26 October 2023,5,"Pass the pineapples amongst you for 15 seconds while the Taskmaster shuts his eyes and has a little think. When the Taskmaster opens his eyes, he will say if he thinks you are holding a pineapple behind your back or not. If he accuses you wrongly, you will get a point.",TRUE,FALSE,FALSE,1,3,3,4,5
+16,7,I'm off to find a robin,2 November 2023,1,The thing that is most guaranteed to make you groan.,FALSE,FALSE,TRUE,3,2,2,5,4
+16,7,I'm off to find a robin,2 November 2023,2,Do whatever you like with these switches for five minutes. You will then do a task in the lab for five minutes. The conditions in the lab will change according to when you switch the switches in here.,FALSE,FALSE,FALSE,DQ,5,DQ,DQ,DQ
+16,7,I'm off to find a robin,2 November 2023,3,"Pie Wayne in the face. Wayne is outside the front door. You may not touch Wayne nor step on the red green. If you miss Wayne with the pie, you must copy Wayne's dance moves for 10 seconds.",FALSE,FALSE,FALSE,4,DQ,3,DQ,5
+16,7,I'm off to find a robin,2 November 2023,4,"Put yourself somewhere within the boundary. The person furthest from everyone else wins. The people closest together both lose two points. Also, throughout the task, you must behave really weirdly.",FALSE,FALSE,FALSE,1[1],4,5,0[1],1
+16,7,I'm off to find a robin,2 November 2023,5,"Catch three balls on your head. After you've caught a ball, you must shout ""ball"". You may not step off your circles, move your circles, adjust your arms or touch the balls with your hands.",TRUE,FALSE,FALSE,5,3,4,1,2
+16,8,Never packed a boot,9 November 2023,1,Best single-word object you own and love that gets the best reaction when introduced following a drum roll.,FALSE,FALSE,TRUE,4,3,2,5,4
+16,8,Never packed a boot,9 November 2023,2,"This is not a team task. Find the secret task. You must never be in the same room as each other. Whenever the air horn sounds, you must replace anything you are holding and change rooms. Everyone must find the secret task before the task ends.",FALSE,FALSE,FALSE,0,0,1,-1,0
+16,8,Never packed a boot,9 November 2023,3,Complete the fortune trail.,FALSE,FALSE,FALSE,5,DQ,4,DQ,3
+16,8,Never packed a boot,9 November 2023,4,"Convince a child you're asleep. You must either have a nap lasting one minute with your face visible throughout - during this nap, you must snore and sleepwalk - or you must have a nap lasting one minute where you are not in bed at all, but the child thinks you are. During this nap, you must snore and sleeptalk.",FALSE,FALSE,FALSE,3,1,5,2,5
+16,8,Never packed a boot,9 November 2023,5,"Team Live:Mime the proverb on your card. There will be three minute-long rounds. You must be waving at each other throughout your attempt, but you can make a single noise of the Taskmaster's choosing.",FALSE,FALSE,FALSE,3,3,3,5,5
+16,9,Fagin at the disco,16 November 2023,1,The bit of old crap that Greg likes the best.,FALSE,FALSE,TRUE,3,1,4,5,2
+16,9,Fagin at the disco,16 November 2023,2,"Drive across the finish line. You must obey all the rules of the road and must only stop your vehicle at a traffic signal. If you disobey a rule, Alex will blow his whistle and you must return to the start for a 10-second driving lesson.",FALSE,FALSE,FALSE,DQ,3,2,5,4
+16,9,Fagin at the disco,16 November 2023,3,Make Greg the best gift. Your items must cost no more than £50.,FALSE,FALSE,FALSE,4,4,2,5,3
+16,9,Fagin at the disco,16 November 2023,4,Feed the clown the most cards. No part of you must cross the threshold of the stage.,FALSE,FALSE,FALSE,5,DQ,DQ,DQ,DQ
+16,9,Fagin at the disco,16 November 2023,5,Watch Alex's parade then answer the questions. You may not make any notes during the parade.,TRUE,FALSE,FALSE,3,1,2,5,5
+16,10,Always forks and marbles,23 November 2023,1,"The thing that, when you turn it round, gives you the biggest shock.",FALSE,FALSE,TRUE,5,4,2,1,3
+16,10,Always forks and marbles,23 November 2023,2,Do something shocking but family-friendly with this doughnut.,FALSE,FALSE,FALSE,4,5,3,1,4
+16,10,Always forks and marbles,23 November 2023,3,"Demonstrate the most effective high-intensity four-part exercise routine. Each of your four exercises must be original and must take place on this mat. The first must last eight seconds, the second four, the third two and the fourth one second long.[2]",FALSE,FALSE,FALSE,5,2,4,3,3
+16,10,Always forks and marbles,23 November 2023,4,Give your guest the best service.,FALSE,TRUE,FALSE,2,2,2,5,5
+16,10,Always forks and marbles,23 November 2023,5,"Throw a ball into the bathtub from behind the rope. You may not touch the rope. If a ball ends up not in the bathtub, you are eliminated.",TRUE,FALSE,FALSE,1,1,5,1,1
+16,10,Always forks and marbles,23 November 2023,1,Most fun thing to be carrying when you enter a room full of people you don't know.,FALSE,FALSE,TRUE,1,5,5,3,2
+16,10,Always forks and marbles,23 November 2023,2,"Eat these poppadoms. After each mouthful, you must lose a letter of the alphabet from your vocabulary, then either compliment Greg or insult Alex. Your insults and compliments must all be different. If you use a lost letter at any time, 10g will be added to your final poppadom weight.",FALSE,FALSE,FALSE,5,1,2,4,3
+16,10,Always forks and marbles,23 November 2023,3,"Draw a picture of yourself eating some fruit on this tablet. You may not touch the touchscreen with any part of your hands. Also, throughout the task, you must become increasingly angry.",FALSE,FALSE,FALSE,1,5,3,2,4
+16,10,Always forks and marbles,23 November 2023,4,Make these things pop when the timer hits zero.,FALSE,FALSE,FALSE,3,2,4,5,1
+16,10,Always forks and marbles,23 November 2023,5,"Say whether the item will fit through the hole or not fit through the hole. If you get it right, you lose an egg.",TRUE,FALSE,FALSE,3,1,5,4,3
+CoC3,1,Spider in my pocket,14 January 2024,1,Best thing that you would wish for if you had one wish from a genie.,FALSE,FALSE,TRUE,3,4,5,1,2
+CoC3,1,Spider in my pocket,14 January 2024,2,"Be the best waiter. You must serve Alex all his food, drink and cutlery as it is currently set. If you drop or spill any items, you must clap for a full minute or else you will be disqualified. No running.",FALSE,FALSE,FALSE,4,DQ,DQ,3,5
+CoC3,1,Spider in my pocket,14 January 2024,3,Give yourself a disadvantage for the next task.,FALSE,FALSE,FALSE,3,5,5,3,3
+CoC3,1,Spider in my pocket,14 January 2024,4,Do something really stupid. You must not hurt yourself or anyone else.,FALSE,FALSE,FALSE,4,1,5,2,3
+CoC3,1,Spider in my pocket,14 January 2024,5,"Don't say the Taskmaster's favourite thing. Alex will say a category. One at a time, you must shout a thing that falls into that category within two seconds of the previous person. If you pause, repeat, make a mistake or say the Taskmaster's favourite thing, you are eliminated.",TRUE,FALSE,FALSE,3,1,2,4,5
+17,1,Grappling with my life,28 March 2024,1,"Most glorious thing that sounds a bit like ""Greg Davies"" if you mumble it.",FALSE,FALSE,TRUE,1,4,2,3,5
+17,1,Grappling with my life,28 March 2024,2,Do the riskiest thing involving this egg without breaking this egg.,FALSE,FALSE,FALSE,4,5,DQ,DQ,DQ
+17,1,Grappling with my life,28 March 2024,3,"Create the best single picture of an animal doing something surprising. All six blinds must be fully and equally involved in your picture. You may not see each other's work and you may only say two words at a time. After the task, your pieces will be lined up next to each other in this order: 1) Shortest Wikipedia entry, 2) Best show at the Edinburgh Fringe winner, 3) Smallest shoe size, 4) The person whom Alex said ""hello"" to first, 5) Most Twitter followers, 6) Lowest-scoring full name in Scrabble. You may not move outside of your segment.",FALSE,TRUE,FALSE,3,3,5,3,5
+17,1,Grappling with my life,28 March 2024,4,Hoopla Gary before he crosses the finish line. Your time is doubled every time one of your limbs gets wet.,FALSE,FALSE,FALSE,5,3,2,0,4
+17,1,Grappling with my life,28 March 2024,5,Bring your sausage to life. You may not write any words on your drawing.,TRUE,FALSE,FALSE,5,3,1,2,4
+17,2,Jumungo,4 April 2024,1,Most fun thing to turn upside down.,FALSE,FALSE,TRUE,5,3,4,1,5
+17,2,Jumungo,4 April 2024,2,Rescue the cat. The cat must come out of the top hole. Your head may not enter the dome. The door must remain closed.,FALSE,FALSE,FALSE,2,4,3,1,5
+17,2,Jumungo,4 April 2024,3,Do the most epic thing using green material and this green screen onesie.,FALSE,TRUE,FALSE,5,5,4,5,4
+17,2,Jumungo,4 April 2024,4,"Stick the heaviest thing to the board using three of the ingredients on the shelves. Once you've chosen your ingredients, you may not change your mind. You must choose your thing in the first two minutes.",FALSE,FALSE,FALSE,3,DQ,DQ,5,4
+17,2,Jumungo,4 April 2024,5,Team Live:Guess the movie that your teammate is saying. Your teammate can only say the first three letters of each word of the movie title.,FALSE,FALSE,FALSE,5,5,3,5,3
+17,3,Some impropriety?,11 April 2024,1,Best thing for a person that is meant for an animal.,FALSE,FALSE,TRUE,4,5,1,3,2
+17,3,Some impropriety?,11 April 2024,2,"Work out who is following you. You must stare at the duck at all times and take an average-length step towards the duck every time it quacks. If the person following you agrees with you, they will say the name of a mammal. If the person following you disagrees with you, they will say the name of a bird. If the person following you doesn't know if they agree or disagree with you, they will say the name of an amphibian.",FALSE,FALSE,FALSE,5,4,2,DQ,3
+17,3,Some impropriety?,11 April 2024,3,Complete the jobstacle course. Each job must be completed to a satisfactory-quality level. The baby must remain in the baby carrier at all times except during nappy change.,FALSE,FALSE,FALSE,3,5,1,2,4
+17,3,Some impropriety?,11 April 2024,4,Create tension.,FALSE,FALSE,FALSE,5,3,4,1,4
+17,3,Some impropriety?,11 April 2024,5,Catch the most monsters in your boxes. The monsters must propel themselves from the table.,TRUE,FALSE,FALSE,1,5,2,3,4
+17,4,Apropos of Apoppo,18 April 2024,1,Greatest thing to give to a granny.,FALSE,FALSE,TRUE,1,5,3,2,4
+17,4,Apropos of Apoppo,18 April 2024,2,"Work out who you are shaking hands with. You must only shake hands with the hands and you may not handle the hands in any other way. You may chop off a total of three fingers and one thumb but if you set off the health and safety emergency alarm, you are disqualified. Also, you may not look around, over, under or through the fence.",FALSE,FALSE,FALSE,4,3,5,2,1
+17,4,Apropos of Apoppo,18 April 2024,3,Create the biggest and best dot-to-dot picture.,FALSE,FALSE,FALSE,2,5,1,5,3
+17,4,Apropos of Apoppo,18 April 2024,4,"Fastest team to (go to the lab,) discover the (cake, eat one half, put the) other half (in the post box, put a flower on top) of this (task and then sit on top of this) task wins (five points.) You must (not necessarily) always hold hands. (That's up to you.)",FALSE,TRUE,FALSE,5,5,4,5,4
+17,4,Apropos of Apoppo,18 April 2024,5,"Pass all your loo roll through your loo roll inner tube. If your loo roll breaks at any point, you must put down your loo roll and put both your hands in the air for 10 seconds before carrying on.",TRUE,FALSE,FALSE,5,DQ,DQ,DQ,DQ
+17,5,Snooker cue umbrella chin,25 April 2024,1,Most extraordinary picture.,FALSE,FALSE,TRUE,1,5,4,3,2
+17,5,Snooker cue umbrella chin,25 April 2024,2,"Be the most impressive load bearer. You must stand on the doormat, wave with one hand above your head and give a nice big thumbs up with the other whilst bearing the most impressive load. Your load must not be touching anything other than you.",FALSE,FALSE,FALSE,1,4,5,2,3
+17,5,Snooker cue umbrella chin,25 April 2024,3,Take the most dramatic photo of yourself in mid-air. You may take five photos.,FALSE,FALSE,FALSE,4,4,1,5,4
+17,5,Snooker cue umbrella chin,25 April 2024,4,"Tie yourself to the bed. You must be horizontal whilst in the lab. If you pull down the terrible tie, you are disqualified.",FALSE,FALSE,FALSE,4,3,2,5,DQ
+17,5,Snooker cue umbrella chin,25 April 2024,5,Park a vehicle in the parking bay. Your vehicle must be rolled whilst standing on the spot and the worst parker each round is eliminated.,TRUE,FALSE,FALSE,2,4,3,1,5
+17,6,A three ring man,2 May 2024,1,Best thing that you can get into.,FALSE,FALSE,TRUE,4,2,1,3,5
+17,6,A three ring man,2 May 2024,3,Have the most exciting thumb war with Alex.,FALSE,FALSE,FALSE,4,3,3,1,5
+17,6,A three ring man,2 May 2024,4,"Make the most moves on the movement circles. Your teammate must flip a bottle, then throw a dart at each dartboard to create a move. If they get a bulls-eye, you have free choice. Also, if they successfully land the bottle flip, your teammate may place a dart anywhere in the dartboard.",FALSE,TRUE,FALSE,5,5,2,5,2
+17,6,A three ring man,2 May 2024,5,Team Live:Completely cover your teammate in rubber rings. Catchers must face the Taskmaster at all times with their hands above their head. Throwers must stay behind the white line.,FALSE,FALSE,FALSE,5,5,DQ,5,DQ
+17,7,Dream date territory,9 May 2024,1,Snazziest hollow thing.,FALSE,FALSE,TRUE,2,1,3,5,4
+17,7,Dream date territory,9 May 2024,2,What have you caught? You may only give one answer.,FALSE,FALSE,FALSE,3,4,5,2,0
+17,7,Dream date territory,9 May 2024,3,"Perform a recognisable piece of classical music without using any musical instrument. You may not hum, sing, whistle or that sort of thing.",FALSE,FALSE,FALSE,3,4,5,2,1
+17,7,Dream date territory,9 May 2024,4,"Take Alex to one side and do the following things to him: Confess your favourite piece of kitchen equipment, scream a body part of your choice in his face, declare a gardening tool in a silly voice.",FALSE,FALSE,FALSE,4,5,3,2,1
+17,7,Dream date territory,9 May 2024,5,"Paint a face on your ball. You may not touch your balls with anything other than your tools. Also, you may not remove your helmet.",TRUE,FALSE,FALSE,1,4,3,5,2
+17,8,The umbrella wink,16 May 2024,1,The thing of yours Greg would most like to squeeze in his mighty hands.,FALSE,FALSE,TRUE,4,2,5,2,3
+17,8,The umbrella wink,16 May 2024,2,"Flick, flip and flap a flip-flop, flan and flapjack. You may only flick, flip and flap once.",FALSE,FALSE,FALSE,3,5,1,2,4
+17,8,The umbrella wink,16 May 2024,3,"In the next task, you must say the word ""umbrella"" five times. If you say the word ""umbrella"" five times and no-one else says the word ""umbrella"", you get two bonus points. Your teammates must hear you say your umbrellas and you must not mention the concept of a bonus task. If you fail, you lose two points.",FALSE,FALSE,FALSE,-,-,2,2,-
+17,8,The umbrella wink,16 May 2024,4,Make this mannequin come alive.,FALSE,FALSE,FALSE,1,3,3,2,5
+17,8,The umbrella wink,16 May 2024,5,Write down a letter of the alphabet.,TRUE,FALSE,FALSE,2,5,4,1,3
+17,9,Assistantbury,23 May 2024,1,Most splendid spherical thing.,FALSE,FALSE,TRUE,3,4,1,2,5
+17,9,Assistantbury,23 May 2024,2,Create a new tradition to celebrate Assistant's Day.,FALSE,FALSE,FALSE,4,3,5,1,2
+17,9,Assistantbury,23 May 2024,3,"Peg a sock, bin a sock, then don a sock on an appendage. Each single action must take place between bleeps.",FALSE,FALSE,FALSE,4,5,2,3,1
+17,9,Assistantbury,23 May 2024,4,Make the back of your head look like the front of a head. You may not just make a mask. You must demonstrate your new front-of-head in action.,FALSE,FALSE,FALSE,3,5,2,2,4
+17,9,Assistantbury,23 May 2024,5,"Bounce a ball on the bar. In round one, your ball must bounce once before falling off the bar. In round two, your ball must bounce twice before falling off the bar, and so on. Each player has one life.",TRUE,FALSE,FALSE,5,4,4,2,2
+17,10,Ambience and information,30 May 2024,1,The thing that gives the most hope for the future of the human race.,FALSE,FALSE,TRUE,5,1,2,3,4
+17,10,Ambience and information,30 May 2024,2,Find and complete the real task. Each task has a 1% chance of being the real task.,FALSE,FALSE,FALSE,DQ,4,DQ,3,5
+17,10,Ambience and information,30 May 2024,3,"Hug your special friend. Every time you touch a letter, you must turn it over and one minute will be added to your time.",FALSE,FALSE,FALSE,4,3,1,5,2
+17,10,Ambience and information,30 May 2024,4,"Present the best new short-form shiny floor American gameshow. Alex will be the contestant, one of you must be his rival and somebody must win.",FALSE,TRUE,FALSE,5,5,3,5,3
+17,10,Ambience and information,30 May 2024,5,"Crawl around behind the wall for 20 seconds. On Greg's command, you must then pop up from behind the wall. If Greg correctly predicts where you will pop up, you will be eliminated. If there is a tie in the final, the round is replayed.",TRUE,FALSE,FALSE,2,4,5,4,2
+18,1,The faceless facilitators,12 September 2024,1,Best thing that has been inside you.,FALSE,FALSE,TRUE,1,2,4,3,5
+18,1,The faceless facilitators,12 September 2024,2,"Do not say any of this out loud. Carry out each instruction before reading the next. You must remain silent until you've completed all four instructions. Stare at camera number one for at least thirty seconds without smiling. Eat an imaginary fly that has just landed on you. Act like you don't like how it feels in your stomach at all. Look under the 6th, 33rd, 56th, and 91st letters of this task.",FALSE,FALSE,FALSE,3,1,4,5,2
+18,1,The faceless facilitators,12 September 2024,3,Knock over exactly 100 cans. You must throw all five balls and pull one rope nice and hard. You must stay on the spot at all times and you may not move the spot.,FALSE,FALSE,FALSE,DQ,2,3,5,4
+18,1,The faceless facilitators,12 September 2024,4,Do the most beautiful thing with bubbles.,FALSE,FALSE,FALSE,5,4,2,3,1
+18,1,The faceless facilitators,12 September 2024,5,"Drink the vinegar. On your turn, you can either drink from one straw or not drink at all and get a clue from Alex instead. You must stand on the spot when choosing your straw and you must never stray from the spot. Only the vinegar drinker wins.",TRUE,FALSE,FALSE,0,0,0,0,5
+18,2,...and then a detective comes in,19 September 2024,1,Most serious object that looks quite silly.,FALSE,FALSE,TRUE,4,1,2,3,5
+18,2,...and then a detective comes in,19 September 2024,3,"Become the best multi-headed creature. Your creature must prove they are the best by doing something impressive. Also, during that impressive thing, they must speak one word at a time and explain what it is they are doing and why it is impressive.",FALSE,TRUE,FALSE,2,2,2,2,2
+18,2,...and then a detective comes in,19 September 2024,4,Capture the most remarkable footage on this doorbell camera.,FALSE,FALSE,FALSE,2,2,3,4,5
+18,2,...and then a detective comes in,19 September 2024,5,"Spin the wheel the same number of times or more as the person before you. You must land on the same color each time or else you're eliminated. If you land on gold, you are automatically through to the next round and the next person has to spin it one more time than the previous person.",TRUE,FALSE,FALSE,2,5,4,3,1
+18,3,The gangsters of the sea,26 September 2024,1,The object with the most soul.,FALSE,FALSE,TRUE,4,5,2,3,1
+18,3,The gangsters of the sea,26 September 2024,2,Put a rocket in your pocket.,FALSE,FALSE,FALSE,2,3,1,5,4
+18,3,The gangsters of the sea,26 September 2024,3,Recreate a famous 2D piece of art in 3D.,FALSE,FALSE,FALSE,5,5,5,5,5
+18,3,The gangsters of the sea,26 September 2024,4,"Win the pub quiz by cheating. If the quizmaster notices you cheating, you will lose a point and you must use a different method of cheating.",FALSE,TRUE,FALSE,5,5,5,4,4
+18,3,The gangsters of the sea,26 September 2024,5,"Rustle Russell, fill Phil, mark Mark, rob Rob and pat Pat. When Alex blows his whistle, you must all either immediately say one word to the person next to you or perform one action. The people may only say yes or no. If you perform the wrong action, you are disqualified. You will then meet a new person.",TRUE,FALSE,FALSE,5,DQ,0,DQ,0
+18,4,I'm a girl who likes a clean line,3 October 2024,1,"The thing most likely to make Greg say ""Oh, Christ, now that is badass!"".",FALSE,FALSE,TRUE,5,2,2,2,4
+18,4,I'm a girl who likes a clean line,3 October 2024,2,Push the envelope the furthest.,FALSE,FALSE,FALSE,4,2,1,5,3
+18,4,I'm a girl who likes a clean line,3 October 2024,3,Take a bite out of Alex's carrot. Alex will ring his bell every 10 seconds. You must laugh constantly throughout. You must both only walk at  gentle pace.,FALSE,FALSE,FALSE,4,10[1],1,3,2
+18,4,I'm a girl who likes a clean line,3 October 2024,4,"Pick the Taskmaster's locket from its pocket. Every time you pick an incorrect pocket, you must high-five Alex. If you touch, tamper or peek into a pocket you must pick it.",FALSE,FALSE,FALSE,0,3,5,2,4
+18,4,I'm a girl who likes a clean line,3 October 2024,5,"Team Live:Gather a herd of animals with exactly 22 legs. You may not harm any animals. You may only use animals on this side of the wall and you may not use each other. On Alex's whistle, you must hurl one of your herd over the wall. When your herd has 22 legs, only then may you don your tutus.",FALSE,FALSE,FALSE,5,5,5,0,0
+18,5,Big stupid things,10 October 2024,1,The thing that is best when you add liquid to it.,FALSE,FALSE,TRUE,4,1,5,3,2
+18,5,Big stupid things,10 October 2024,2,Direct the robot to its charging station and plug it in. You must give the robot an instruction every 10 seconds. The robot will ignore any instructions that contain the letter O or E. You may not touch the robot.,FALSE,FALSE,FALSE,1,4,5,3,2
+18,5,Big stupid things,10 October 2024,3,Make the strongest smell. You must seal your smell in this jar and the Taskmaster will open it in the studio.,FALSE,FALSE,FALSE,3,4,2,5,1
+18,5,Big stupid things,10 October 2024,4,Present the most heart-warming final story for a local news programme.,FALSE,TRUE,FALSE,4,4,4,3,3
+18,5,Big stupid things,10 October 2024,5,Land your skydiver closest to the seal. You must catapult your skydiver with the catapult. Furthest from the target each round is eliminated.,TRUE,FALSE,FALSE,1,2,3,5,4
+18,6,A dance as old as time itself,17 October 2024,1,Most fun thing to put in Alex's pocket without him knowing.,FALSE,FALSE,TRUE,5,4,4,3,3
+18,6,A dance as old as time itself,17 October 2024,2,Put one fish in the frying pan. Dottiest fish wins. Your task ends when you put a fish in the frying pan.,FALSE,FALSE,FALSE,5,4,3,1,2
+18,6,A dance as old as time itself,17 October 2024,3,"Create, handle and voice the most charismatic new children's television puppet sidekick for Alex.",FALSE,FALSE,FALSE,3,5,1,4,2
+18,6,A dance as old as time itself,17 October 2024,4,"Defuse the robot. You must cut all the wires but one. If you cut the danger wire, the robot will spew and you will be disqualified. You must keep your goggles on at all times.",FALSE,FALSE,FALSE,5,DQ,DQ,4,3
+18,6,A dance as old as time itself,17 October 2024,5,"Correctly guess this person's job. You must ask a yes or no question on your turn. If you take more than 10 seconds to ask your question, you miss a go.",TRUE,FALSE,FALSE,0,0,0,5,0
+18,7,Captain Jackie and the hotdog,24 October 2024,1,The object that is bigger than your head that you would most like to carry with you for the rest of your life if you had to carry an object with you for the rest of your life.,FALSE,FALSE,TRUE,4,2,5,3,4
+18,7,Captain Jackie and the hotdog,24 October 2024,2,Ring the bell. You may not look up.,FALSE,FALSE,FALSE,0,3,4,3,5
+18,7,Captain Jackie and the hotdog,24 October 2024,3,"You must lie throughout the next task. Every time you tell the truth, everyone in your team will lose an actual Taskmaster point.",FALSE,FALSE,FALSE,5,-,-,-3,-
+18,7,Captain Jackie and the hotdog,24 October 2024,4,Eat and obey five fortune cookies.,FALSE,FALSE,FALSE,2,1,5,4,3
+18,7,Captain Jackie and the hotdog,24 October 2024,5,"Throw a beanbag onto the island. If you knock over a can, you are disqualified. If you miss the island, you are disqualified.",TRUE,FALSE,FALSE,5,4,3,3,3
+18,8,The Nexus of Truth,31 October 2024,1,The thing that most makes Greg scratch his chin.,FALSE,FALSE,TRUE,4,3,1,3,5
+18,8,The Nexus of Truth,31 October 2024,2,Put on the special glasses.,FALSE,FALSE,FALSE,5,2,3,1,4
+18,8,The Nexus of Truth,31 October 2024,3,"Be at the highest number barrel when Alex blows his whistle again. You may only move to the next barrel when you have completed the challenge at the previous barrel. If you fail a barrel challenge twice in a row, you must move back to the first barrel. If you are at an even-numbered barrel at the end of the barrel task, you are disqualified.",FALSE,FALSE,FALSE,5,3,1,5,3
+18,8,The Nexus of Truth,31 October 2024,4,"Label a part of your body, make a surprising noise and do something interesting with your legs.",FALSE,FALSE,FALSE,3,4,2[1],5,2
+18,8,The Nexus of Truth,31 October 2024,5,"Team Live:Say the same word at the same time. Alex will give you a category. Taking it in turns, team members must both say one word that fits the category at the same time. If both team members say the same word at the same time, they win the round. Also, you must not say word that has been said before.",FALSE,FALSE,FALSE,2,2,2,3,3
+18,9,The cockle children,7 November 2024,1,Best item for keeping things in that isn't just a regular item for keeping things in.,FALSE,FALSE,TRUE,4,1,5,2,3
+18,9,The cockle children,7 November 2024,2,"Walk exactly one furlong in exactly 10 minutes. You may not make use of technology except to make three five-second phone calls. Also, you may not remove the hat.",FALSE,FALSE,FALSE,4,5,3,2,1
+18,9,The cockle children,7 November 2024,3,Clean the most profound picture of majestic nature on a dirty thing.,FALSE,FALSE,FALSE,2,4,5,4,3
+18,9,The cockle children,7 November 2024,4,"Place all the balls in the gutter and the gutter on the cow. The gutter must not enter the dome. You must not use anything floppy during your attempt. For every ball you touch, one minute will be added to your time. For every ball that touches the floor, 10 minutes will be added to your time. The task is over when the full gutter of balls is balancing by itself on the cow.",FALSE,TRUE,FALSE,5,5,5,3,3
+18,9,The cockle children,7 November 2024,5,Predict whether each item will float or not float.,TRUE,FALSE,FALSE,5,3,3,4,3
+18,10,Le Goose,14 November 2024,1,The thing most likely to make your buttocks clench.,FALSE,FALSE,TRUE,3,2,5,5,4
+18,10,Le Goose,14 November 2024,2,"Say how many chairs are in this cinema. You may only give one answer. You must not say any numbers until you give your answer and you must say the name of every object that appears on the screen. If you miss an object, one minute will be added to your time. For every chair you get wrong, one minute will be added to your time.",FALSE,FALSE,FALSE,4,5,3,1,2
+18,10,Le Goose,14 November 2024,3,Either throw five fives in a row or do 100 press-ups or eat a raw onion or find the needle in the haystack or sit silently for 10 minutes. You may only attempt two of these things.,FALSE,FALSE,FALSE,4,2,5,1,3
+18,10,Le Goose,14 November 2024,4,"Present ""The Goose"".",FALSE,FALSE,FALSE,3,1,4,2,5
+18,10,Le Goose,14 November 2024,5,"When Greg says ""eyes down"", you must look down. When Greg says ""eyes up"", you must immediately look at another contestant. If the contestant is also looking at you, you are both eliminated.",TRUE,FALSE,FALSE,0[1],0,0,5,0
+18,10,Le Goose,14 November 2024,1,The source of the greatest pride.,FALSE,FALSE,TRUE,5,4,1,2,5
+18,10,Le Goose,14 November 2024,2,Don as many gloves as possible.,FALSE,FALSE,FALSE,2,5,3,1,4
+18,10,Le Goose,14 November 2024,3,Do something you regret.,FALSE,FALSE,FALSE,1,3,4,2,5
+18,10,Le Goose,14 November 2024,4,"Transfer the most water from the bucket to the bottle using only the contents of one of these bins. You may open one bin every minute, but you must use the contents of the bin you open last. You may not touch or move the bucket or the bottle.",FALSE,FALSE,FALSE,DQ,DQ,3,5,4
+18,10,Le Goose,14 November 2024,5,"Draw the most accurate picture of the contents of the box. If you answer Greg's question correctly, you may look in the box for 0.1 seconds. If you answer Greg's question incorrectly, you must start your picture again. You may only answer Greg's question if you are the first to shout your surname.",TRUE,FALSE,FALSE,5,4,3,2,1
+19,1,Sometimes spit,1 May 2025,1,The object that reminds you of school the most in a good way.,FALSE,FALSE,TRUE,1,5,4,3,2
+19,1,Sometimes spit,1 May 2025,2,"Put your hands on the hands, shut your eyes and keep them shut until you hear the whistle.",FALSE,FALSE,FALSE,4,1,3,2,5
+19,1,Sometimes spit,1 May 2025,3,Do something really cool.,FALSE,FALSE,FALSE,1,3,5,2,4
+19,1,Sometimes spit,1 May 2025,4,Win the Pealympics. There are five events. The top two performers in each event get a medal.,FALSE,FALSE,FALSE,3,5,2,5,2
+19,1,Sometimes spit,1 May 2025,5,"Get the most raisins in your wine glass. You may only touch raisins with your mouth. You must not bend at the waist and your hands must be behind your back at all times. Also, every time you drop a raisin into your wine glass, you must shout the name of one of your competitors. That competitor must immediately shout their name too. If they don't, Alex will empty their wine glass.",TRUE,FALSE,FALSE,1,2,5,4,4
+19,2,An invisible jump rope,8 May 2025,1,Snootiest thing.,FALSE,FALSE,TRUE,1,3,5,2,4
+19,2,An invisible jump rope,8 May 2025,2,"Commentate on yourself achieving something really tricky, then achieve that really tricky thing.",FALSE,FALSE,FALSE,4,1,5,3,2
+19,2,An invisible jump rope,8 May 2025,3,"Give Alex exactly 100 marbles on a plate and an eggcup full of tepid water. One of you must always be sitting down, one of you must always be jumping and one of you must always be clapping your hands. You must each change your action every 30 seconds and no-one may hold anything for more than five seconds at a time.",FALSE,TRUE,FALSE,5,1,5,5,1
+19,2,An invisible jump rope,8 May 2025,4,Get the most liquid in this can. You may not leave the Submaravan.,FALSE,FALSE,FALSE,3,5,4,2,1
+19,2,An invisible jump rope,8 May 2025,5,Choose an item from each box and place them on the corresponding half of your table.,TRUE,FALSE,FALSE,2,3,4,1,5
+19,3,My presumably scrotum,15 May 2025,1,Best thing for a middle-aged man to keep on his bedside table.,FALSE,FALSE,TRUE,4,5,3,2,1
+19,3,My presumably scrotum,15 May 2025,2,"Answer the cheese phone. Every time you move, Alex will play the French horn. If you choose to only use your sense of smell, Alex will not play the French horn and your final time will be halved.",FALSE,FALSE,FALSE,3,1,4,2,5
+19,3,My presumably scrotum,15 May 2025,3,"Move the most cushions from one bin to the other bin without Alex correctly saying what colour cape you're wearing. You must be wearing a cape on the outside of your clothes throughout. You may not move the bins. If a cushion touches the ground, the task is over. Alex will alternately open then shut his eyes for as many seconds as there are letters in each of the words of this task.",FALSE,FALSE,FALSE,0,0,DQ,0,0
+19,3,My presumably scrotum,15 May 2025,4,Paint the best picture of the Taskmaster and his assistant having fun on the canvas in the lab. You may only enter the lab when there are 30 seconds left in the task.,FALSE,FALSE,FALSE,4,1,5,3,2
+19,3,My presumably scrotum,15 May 2025,5,"Team Live:Take it in turns as teams to obey Greg's previous order. If you hesitate, your team loses the round.",FALSE,FALSE,FALSE,1,3,1,1,3
+19,4,Midnight picnic,22 May 2025,1,The thing that least suits its name if you shout it loudly while we're all looking at it on the screen.,FALSE,FALSE,TRUE,3,1,2,4,5
+19,4,Midnight picnic,22 May 2025,2,"Put the most wetsuits on mannequins. The mannequins must be wearing their wetsuits properly. Also, you must tiptoe throughout and put your finger on your lips and say ""shhh"" at least once every 20 seconds.",FALSE,FALSE,FALSE,2,3,1,5,4
+19,4,Midnight picnic,22 May 2025,3,Convince the other team that the following things are the opposite of what they are.,FALSE,TRUE,FALSE,5,3,5,5,3
+19,4,Midnight picnic,22 May 2025,4,Tell Alex why the light bulb turns on. You may not touch or tamper with the light bulb.,FALSE,FALSE,FALSE,5,1,4,3,2
+19,4,Midnight picnic,22 May 2025,5,"Win a game of Front Ham. One at a time, each person must discard three socks from the washing line and add one. If all your coloured socks are removed, you are eliminated.",TRUE,FALSE,FALSE,5,2,3,4,1
+19,5,Maybe we're the monsters,29 May 2025,1,Best object to bestow in your will to a relative against whom you are seeking revenge.,FALSE,FALSE,TRUE,2,5,5,3,1
+19,5,Maybe we're the monsters,29 May 2025,2,"Be the least annoying person round the campfire. You must either sing a folk song, tell a ghost story or recite a beat poem and not be annoying. Your song, story or poem must either be about fast cars, barbecues or DIY and it can contain no more than 100 words.",FALSE,FALSE,FALSE,DQ,2,DQ,5,4
+19,5,Maybe we're the monsters,29 May 2025,3,"Draw the monster. You must not turn around or leave the car. If you fail to honk your horn when you see a lollipop lady, you must surrender your picture for 30 seconds.",FALSE,FALSE,FALSE,3,5,4,1,2
+19,5,Maybe we're the monsters,29 May 2025,4,Shorten these pencils and place your shortened pencils in the pencil case.,FALSE,FALSE,FALSE,4,3,1,5,2
+19,5,Maybe we're the monsters,29 May 2025,5,"Pop a balloon when you hear its colour. Last to pop is eliminated. If you pop early, you are eliminated.",TRUE,FALSE,FALSE,2,2,4,3,5
+19,6,It's got to be obsolete,5 June 2025,1,The thing that is nicest to open.,FALSE,FALSE,TRUE,3,4,5,2,1
+19,6,It's got to be obsolete,5 June 2025,2,"Work out what Alex has on the very top of his head. The very top of your head must never be more than five foot six inches from the ground. You may ask Alex yes-or-no questions, but Alex will only answer using his exciting new numbers system.",FALSE,FALSE,FALSE,3,1,2,5,4
+19,6,It's got to be obsolete,5 June 2025,3,"Make yourselves look like one of you is the parent of the others, then capture your relationship with a classic family home video moment.",FALSE,TRUE,FALSE,5,4,5,5,4
+19,6,It's got to be obsolete,5 June 2025,4,Teach the Taskmaster's Assistant a lesson he'll never forget.,FALSE,FALSE,FALSE,5,4,3,3,3
+19,6,It's got to be obsolete,5 June 2025,5,"Don't blow the last thing off the table. If you don't blow anything off the table, you are eliminated. If you do blow the last thing off the table, you are eliminated. You must stay on the spot and you must not touch the table.",TRUE,FALSE,FALSE,4,5,1,3,2
+19,7,Glass half most,12 June 2025,1,Biggest anticlimax.,FALSE,FALSE,TRUE,1,3,5,4,2
+19,7,Glass half most,12 June 2025,2,What is in the one yellow box? You may only give one answer. All the information is in the task.,FALSE,FALSE,FALSE,5,2,4,3,1
+19,7,Glass half most,12 June 2025,3,Eat this yoghurt with the most/least dignity.,FALSE,FALSE,FALSE,4,1,5,3,3
+19,7,Glass half most,12 June 2025,4,"Put at least six litres of water in the vase. You must either use bucket A and route A or bucket B and route B. If you choose A, you must complete one of the tasks at every obstacle. If you choose B, you must trot throughout. You must stay within the arena at all times and must never touch the vase.",FALSE,FALSE,FALSE,3,DQ,4,5,DQ
+19,7,Glass half most,12 June 2025,5,"Team Live:Get one of your balls into your bucket.  Your spoons must be poking through the fence when touching the ball, and only your spoons may touch your ball. You may not touch the other team's balls or buckets or spoons. You must always be on your side of the fence and your balls must always be on the other. If your ball touches the ground, you must start again.",FALSE,FALSE,FALSE,5,0,5,5,0
+19,8,Science all your life,19 June 2025,1,Best object that you've borrowed from a fairly close friend.,FALSE,FALSE,TRUE,5,3,2,1,4
+19,8,Science all your life,19 June 2025,2,"Knock over all 10 skittles in 10 minutes. The final skittle should fall exactly when the whistle sounds. If any skittle is left standing after 10 minutes, you have failed. You must stay behind the rope at all times.",FALSE,FALSE,FALSE,2,4,3,-1,5
+19,8,Science all your life,19 June 2025,3,Each person must write down three words to describe a memorable scene. You must be silent throughout and your teammates must not see what you have written.,FALSE,TRUE,FALSE,3,5,3,3,5
+19,8,Science all your life,19 June 2025,4,Obey the autocue.,FALSE,FALSE,FALSE,3,3,3,5,4
+19,8,Science all your life,19 June 2025,5,"Say whether the next person will have a higher or lower number of things than the previous person. The category of things will change each time. If you make two mistakes, you are eliminated.",TRUE,FALSE,FALSE,1,2,4,3,5
+19,9,Getaway sticks,26 June 2025,1,Most satisfying thing you could use as a jelly mould.,FALSE,FALSE,TRUE,2,5,4,1,3
+19,9,Getaway sticks,26 June 2025,2,Place something somewhere surprising.,FALSE,FALSE,FALSE,1,5,2,4,
+19,9,Getaway sticks,26 June 2025,3,Create the most exciting new bodies so that you and Alex become a dynamic duo. You must then do something dynamic together for no more than a minute.,FALSE,FALSE,FALSE,2,3,5,3,4
+19,9,Getaway sticks,26 June 2025,4,Conquer the multitask. You must complete every task in every room you enter.,FALSE,FALSE,FALSE,5,4,1,2,3
+19,9,Getaway sticks,26 June 2025,5,"Team Live:Say a word that fits the category given by the Taskmaster, then press your button and the time will pass to the other team. Team members must take it in turns to say words and no words may be repeated during the task.",FALSE,FALSE,FALSE,3,5,3,3,5
+19,10,The clever side?,3 July 2025,1,The thing most likely to make you do a double-take.,FALSE,FALSE,TRUE,1,3,2,4,5
+19,10,The clever side?,3 July 2025,2,"Completely fill the yellow box with sand. Once you have touched a box, you must hold that box for the rest of the task.",FALSE,FALSE,FALSE,2,4,5,1,3
+19,10,The clever side?,3 July 2025,3,Freeze on your spot in the most powerful pose in five minutes from now. You must be touching two of the objects.,FALSE,FALSE,FALSE,1,3,2,4,5
+19,10,The clever side?,3 July 2025,4,Provide the best drive-through experience.,FALSE,TRUE,FALSE,3,5,3,3,5
+19,10,The clever side?,3 July 2025,5,Get the most carrot in your bucket. You must hold your hands behind your back at all times.,TRUE,FALSE,FALSE,1,5,3,2,4
+20,1,9 x 7,11 September 2025,1,A very soft thing which would be most beneficial for Greg Davies.,FALSE,FALSE,TRUE,3,4,2,5,1
+20,1,9 x 7,11 September 2025,2,Honk the horn.,FALSE,FALSE,FALSE,3,5,4,2,1
+20,1,9 x 7,11 September 2025,3,"Roll an object onto the target. You must release your object from behind this line. You may not move the line or target and you may not affect your object after release. You must use the first type of object you touch and can have three attempts with that type of object, and must not go within Greg's height of the target.",FALSE,FALSE,FALSE,1,5,4,3,2
+20,1,9 x 7,11 September 2025,4,Do something behind this curtain that sounds disgusting but is actually really nice.,FALSE,FALSE,FALSE,3,1,4,2,5
+20,1,9 x 7,11 September 2025,5,End up on your spot. You must obey the Taskmaster's instructions.,TRUE,FALSE,FALSE,5,4,2,1,3
+20,2,Cows are made of milk,18 September 2025,1,The object that is hardest to describe.,FALSE,FALSE,TRUE,3,5,1,4,2
+20,2,Cows are made of milk,18 September 2025,2,"Identify Alex's five things. You may only use one sense. If you choose hearing, you get five points per item; smell, four points; taste, three points; touch, two points; sight, one point.",FALSE,FALSE,FALSE,2,4,3,5,1
+20,2,Cows are made of milk,18 September 2025,3,Write a superpower on the little clipboard.,FALSE,FALSE,FALSE,-,-,-,-,-
+20,2,Cows are made of milk,18 September 2025,4,Take the most surprising thing out of this bag.,FALSE,FALSE,FALSE,5,1,4,5,3
+20,2,Cows are made of milk,18 September 2025,5,Guess how many things the Taskmaster's assistant has on him. Worst answer is eliminated.,TRUE,FALSE,FALSE,5,4,1,3,2
+20,3,Thompson,25 September 2025,1,The thing you were least likely to bring in from your home.,FALSE,FALSE,TRUE,5,5,2,1,5
+20,3,Thompson,25 September 2025,2,Make the most accurate little model of the Chesham United mascot. You may only see what is inside two of the toilet tents. Go Generals.,FALSE,FALSE,FALSE,5,2,4,3,1
+20,3,Thompson,25 September 2025,3,Discover the name of the person in the lab. You must take it in turns to ask one question and the person may only say yes or no. The other team members must remain in this room until the questioner returns. Each person in your team must address the person in the lab by the correct name before the task is complete.,FALSE,TRUE,FALSE,1,5,1,5,1
+20,3,Thompson,25 September 2025,4,Create your own Snakes and Steps board. You must add one snake and one set of steps. You must also add one mystery box. The instruction inside the mystery box is up to you.,FALSE,FALSE,FALSE,2,5,3,1,5
+20,3,Thompson,25 September 2025,5,"Turn your cup triangle completely upside down. Your upside-down cup triangle must be free-standing and you must obey the instructions written on each layer. If any cups fall, you must completely start again. You may not affect other people's cup triangles.",TRUE,FALSE,FALSE,5,2,4,1,3
+20,4,Hey mate,2 October 2025,1,"The present that would most make you say this if you received it on your birthday: ""Oh, that's just the most gorgeous gift ever!"".",FALSE,FALSE,TRUE,1,2,4,5,3
+20,4,Hey mate,2 October 2025,2,"What number has Alex written down? You may ask no more than 20 questions. Alex may only say yes or no, and you must be increasingly surprised by every answer.",FALSE,FALSE,FALSE,5,1,3,2,4
+20,4,Hey mate,2 October 2025,3,"Make a love heart using your body, the body of your teammates and any other items of your choosing.",FALSE,TRUE,FALSE,5,3,3,5,3
+20,4,Hey mate,2 October 2025,4,"Win the horse race. You must do one of the following things: Eat something without looking at the food, spin the wheel at least 720 degrees, throw a dart at the dartboard. If you eat an olive, your horse will advance two steps. If you eat a grape, your horse will retreat three steps. If you throw a dart in an olive, your horse will advance five steps. If you throw a dart in a grape, your horse will retreat eight steps. If the wheel lands on an olive, your horse will advance 10 steps. If the wheel lands on a grape, your horse will retreat 15 steps. You must stay on the spot and you must not move the spot.",FALSE,FALSE,FALSE,3,4,2,1,5
+20,4,Hey mate,2 October 2025,5,Fill out your form.,TRUE,FALSE,FALSE,5,4,4,4,4
+20,5,"Bats, bats, hang up",9 October 2025,1,A possession that would most confuse a future archaeologist if you were buried holding it.,FALSE,FALSE,TRUE,1,5,2,3,4
+20,5,"Bats, bats, hang up",9 October 2025,2,"Pull something from that red green onto this red green using this string. Throughout your pull, you must remain on this red green. Your thing must travel through or over all the obstacles.",FALSE,FALSE,FALSE,3,0,5,0,4
+20,5,"Bats, bats, hang up",9 October 2025,3,Make things genuinely awkward.,FALSE,TRUE,FALSE,5,4,5,4,5
+20,5,"Bats, bats, hang up",9 October 2025,4,Do the most accurate finger painting of the person on the other end of the phone. You may only use four-letter words when speaking to them and every other reply will be a lie.,FALSE,FALSE,FALSE,5,1,3,4,2
+20,5,"Bats, bats, hang up",9 October 2025,5,"Eat the lamé duck or don't eat the lamé duck. If you are the only person to eat the lamé duck, you win five points and everybody else loses one point. If more than one person eats the lamé duck, all lamé duck eaters lose three points and the lamé duck refusers gain three points. If no one eats the lamé duck, you must each give Greg £25. If everyone eats the lamé duck, Alex will give you each £25.",TRUE,FALSE,FALSE,-3,-3,3,3,-3
+20,6,Is that number got curves?,16 October 2025,1,The thing Greg would most like to see Alex wearing.,FALSE,FALSE,TRUE,3,5,5,2,4
+20,6,Is that number got curves?,16 October 2025,2,Cut a single string to cause the greatest effect.,FALSE,FALSE,FALSE,1,2,3,4,5
+20,6,Is that number got curves?,16 October 2025,3,Write an autobiographical 10-word story.,FALSE,FALSE,FALSE,4,1,3,2,5
+20,6,Is that number got curves?,16 October 2025,4,Wear the flippers correctly.,FALSE,FALSE,FALSE,5,4,DQ,DQ,DQ
+20,6,Is that number got curves?,16 October 2025,5,"Find the age of the mystery person. You must stay on your seats at all times. You may ask one question at a time, going from oldest to youngest and you may only say two numbers each. The person may only say yes or no.",TRUE,FALSE,FALSE,0,0,5,0,0
+20,7,"Drier than you think, chalk",23 October 2025,1,Best thing you can either ride or rip.,FALSE,FALSE,TRUE,5,4,3,2,5
+20,7,"Drier than you think, chalk",23 October 2025,2,Steal the statue of Archimedes.,FALSE,TRUE,FALSE,5,3,5,3,5
+20,7,"Drier than you think, chalk",23 October 2025,3,Dribble a technicolour picture of your hero. Your technicolour picture must only be made from things that have travelled directly from your mouth to the tray through the air and cannot be tampered with post-dribble.,FALSE,FALSE,FALSE,1,3,4,5,2
+20,7,"Drier than you think, chalk",23 October 2025,4,"Get exactly 63 points by bopping Alex on the head. You must shout a different type of food on each bop to register the bop. If you bop anyone other than Alex, five bops will be deducted from your total score. You must stay in the hutch.",FALSE,FALSE,FALSE,5,2,4,1,3
+20,7,"Drier than you think, chalk",23 October 2025,5,"Avoid the Taskmaster's big ball. You must stand on the circle but you must not step on any gold. You must be facing and staring at the Taskmaster sign at all times and after the Taskmaster releases his big ball, you may each take one step. The first person touched by the Taskmaster's big ball each round is eliminated.",TRUE,FALSE,FALSE,4,5,1,2,3
+20,8,Am I an idiom?,30 October 2025,1,Best thing that has a surprise aspect to it.,FALSE,FALSE,TRUE,5,4,2,3,1
+20,8,Am I an idiom?,30 October 2025,2,"Go and sit in the entrance lobby on Alex's horn and return on Alex's whistle. Every time you return, you must answer Alex's question within 30 seconds. You cannot change your answer. Alex will ask you 10 questions.",FALSE,FALSE,FALSE,3,1,2,4,5
+20,8,Am I an idiom?,30 October 2025,3,Paint the best picture of one animal sitting on top of another animal. You must paint on the paper below. You must not leave the balcony.,FALSE,FALSE,FALSE,2,4,5,4,2
+20,8,Am I an idiom?,30 October 2025,4,You must read each of these instructions out and do them immediately. Stand on one leg and keep standing on one leg. Put one finger in your ear and keep it there. Put your other hand on your head and keep it there. Pull an extreme facial expression and keep that expression on your face.,FALSE,FALSE,FALSE,4,2,3,1,5
+20,8,Am I an idiom?,30 October 2025,5,Team Live:Demonstrate to the Taskmaster the idiom demonstrated to you by your teammate. All team members must remain silent and on their spots during a round.,FALSE,FALSE,FALSE,0,5,0,5,0
+20,9,A 1970s camping kettle,6 November 2025,1,Most respected item that retains its credibility when you talk about it in a high-pitched voice.,FALSE,FALSE,TRUE,4,2,5,4,1
+20,9,A 1970s camping kettle,6 November 2025,2,"Build a tower of bricks on this trolley, then push it down the slope. You may not touch the trolley after it passes the start line. As well as bricks, all the contents of one of these bins must be part of your tower, but nothing else. You may only look inside the bins once, and only for as long as you can scream. You must replace each lid before looking in the next bin. You have three attempts, during which you must also scream.",FALSE,FALSE,FALSE,0,3,5,2,4
+20,9,A 1970s camping kettle,6 November 2025,3,"Make your jockey weigh almost exactly the same as Alex. If your jockey weighs more than Alex, you are disqualified. You may only get two readings from the scales.",FALSE,FALSE,FALSE,4,3,5,DQ,1
+20,9,A 1970s camping kettle,6 November 2025,4,Make the most fantastic 15-second film featuring your face in full frame.,FALSE,FALSE,FALSE,5,5,5,5,5
+20,9,A 1970s camping kettle,6 November 2025,5,"Become the person the Taskmaster shouts. You will have one minute to draw yourself a new bottom of your face and body. Also, you must bob up and down throughout your attempt.",TRUE,FALSE,FALSE,3,2,1,5,4
+20,10,Supping from the fountain,13 November 2025,1,Best tube.,FALSE,FALSE,TRUE,4,5,1,3,3
+20,10,Supping from the fountain,13 November 2025,2,Make exactly the same-looking drinks as your teammate's drinks. Your entire team may only open two doors.,FALSE,TRUE,FALSE,DQ,5,DQ,5,DQ
+20,10,Supping from the fountain,13 November 2025,3,Drink almost all the apple juice. You must not touch the cup and the cup must not move.,FALSE,FALSE,FALSE,4,2,1,3,5
+20,10,Supping from the fountain,13 November 2025,4,"Make water squirt out of you in a surprising way. Alex will guess whence the water will squirt. For every incorrect guess, you may squirt him for one second at the end of the task.",FALSE,FALSE,FALSE,1,3,5,2,4
+20,10,Supping from the fountain,13 November 2025,5,"Respond to the Taskmaster correctly. When he says ""wibble"", you say ""bibble"". When he says ""bibble"", you say ""bam"". When he says ""bam"", you say ""wibble bibble bam"". If you dither or err, you are eliminated.",TRUE,FALSE,FALSE,1,2,5,3,4
+CoC4,1,Put that on my gravestone,22 December 2025,1,Biggest betrayal.,FALSE,FALSE,TRUE,2,3,5,4,1
+CoC4,1,Put that on my gravestone,22 December 2025,2,"Write, memorise and perform the most powerful poem about being a champion. You must perform the entirety of your poem sat on the special chair.",FALSE,FALSE,FALSE,2,5,3,4,2
+CoC4,1,Put that on my gravestone,22 December 2025,3,"Win the two-metre race. You must start the race after the starter's bang and behind the starting line. If any part of you moves beyond the starting line or you break the tape before the starter's bang, you are disqualified. Finally, every time the bike wheel stops spinning, your final time will be doubled and throughout the task, you must big yourself up.",FALSE,FALSE,FALSE,2,3,5,4,1
+CoC4,1,Put that on my gravestone,22 December 2025,4,Be brilliant for a minute.,FALSE,FALSE,FALSE,3,2,1,4,5
+CoC4,1,Put that on my gravestone,22 December 2025,5,"Using only tape, turn yourself into a famous person from the previous millennium who you'd like to see on Taskmaster.",TRUE,FALSE,FALSE,2,3,5,4,1

@@ -1,0 +1,36 @@
+Series,EpisodeNumber,EpisodeTitle,AirDate,TaskNumber,Description,IsLive,IsTeam,IsPrize,Contestant1,Contestant2,Contestant3,Contestant4,Contestant5
+NYT1,1,The fastest duck,1 Jan 21,1,Best thing to bring to a party.,FALSE,FALSE,TRUE,1,2,4,3,5
+NYT1,1,The fastest duck,1 Jan 21,2,Get the biggest thing through the doughnut without breaking the doughnut.,FALSE,FALSE,FALSE,2,3,1,5,4
+NYT1,1,The fastest duck,1 Jan 21,3,Sculpt the scene on the other side of this wall.,FALSE,FALSE,FALSE,3,4,2,5,1
+NYT1,1,The fastest duck,1 Jan 21,4,"Build the lightest tower on this set of scales. You may not move the scales or tape anything to them, and you may not tamper with or block the fan. The fan will be on for 1 minute every other minute. Your tower must be taller than a wolf and stand by itself for 10 seconds. Bonus: Every time Alex rings his little bell, you have to pretend you've had a brilliant idea.",FALSE,FALSE,FALSE,5,4,0,DQ,3
+NYT1,1,The fastest duck,1 Jan 21,5,"Without your fellow contestants seeing, select one object from your box. If you select the same object as one of your fellow contestants, you will both lose 1 actual point.",TRUE,FALSE,FALSE,-1,-1,-1,0,-1
+NYT2,1,Basic recipe 28,1 Jan 22,1,"Most beguiling, unwieldy, shiny thing.",FALSE,FALSE,TRUE,3,1,4,5,2
+NYT2,1,Basic recipe 28,1 Jan 22,2,"Put the egg in the egg cup in the most daring way. If the egg breaks, you are disqualified.",FALSE,FALSE,FALSE,5,2,DQ,3,4
+NYT2,1,Basic recipe 28,1 Jan 22,3,Drink all the vinegar.,FALSE,FALSE,FALSE,5,0,4,0,0
+NYT2,1,Basic recipe 28,1 Jan 22,4,"Choose a length for this pole, then guide it through the course. The person who completes the course with the longest pole wins. Every time your pole touches something other than your hands, 10cm will be taken from its length.",FALSE,FALSE,FALSE,5,1,4,3,2
+NYT2,1,Basic recipe 28,1 Jan 22,5,Choose a ball.,TRUE,FALSE,FALSE,4,2,3[1],1,5
+NYT3,1,That's a swizz,1 Jan 23,1,The thing which Greg would be most surprised that you own.,FALSE,FALSE,TRUE,3,4,1,5,2
+NYT3,1,That's a swizz,1 Jan 23,2,Count all the dots on this card. You may not touch or mark the card. You must answer the door and obey the instructions every time the doorbell rings.,FALSE,FALSE,FALSE,3,4,5,2,1
+NYT3,1,That's a swizz,1 Jan 23,3,Recreate the picture that Alex is holding. Your face must not move from this position. Alex will show you the picture for five seconds when you've finished reading the task and then for a further three seconds every time you land a ball in the bucket.,FALSE,FALSE,FALSE,2,1,4,3,4
+NYT3,1,That's a swizz,1 Jan 23,4,Put the most carp pellets in the fishbowl. You must not bend at the waist or knees at any point.,FALSE,FALSE,FALSE,1,2,3,5,4
+NYT3,1,That's a swizz,1 Jan 23,5,"Obey Greg's instructions. You must only obey the instructions which start with ""Greg says"".",TRUE,FALSE,FALSE,5,3,1,5,3
+NYT4,1,Huh?,2 Jan 24,1,Most fun thing to be carrying when you enter a room full of people you don't know.,FALSE,FALSE,TRUE,1,5,5,3,2
+NYT4,1,Huh?,2 Jan 24,2,"Eat these poppadoms. After each mouthful, you must lose a letter of the alphabet from your vocabulary, then either compliment Greg or insult Alex. Your insults and compliments must all be different. If you use a lost letter at any time, 10g will be added to your final poppadom weight.",FALSE,FALSE,FALSE,5,1,2,4,3
+NYT4,1,Huh?,2 Jan 24,3,"Draw a picture of yourself eating some fruit on this tablet. You may not touch the touchscreen with any part of your hands. Also, throughout the task, you must become increasingly angry.",FALSE,FALSE,FALSE,1,5,3,2,4
+NYT4,1,Huh?,2 Jan 24,4,Make these things pop when the timer hits zero.,FALSE,FALSE,FALSE,3,2,4,5,1
+NYT4,1,Huh?,2 Jan 24,5,"Say whether the item will fit through the hole or not fit through the hole. If you get it right, you lose an egg.",TRUE,FALSE,FALSE,3,1,5,4,3
+NYT5,1,412 Steps,29 Dec 24,1,The source of the greatest pride.,FALSE,FALSE,TRUE,5,4,1,2,5
+NYT5,1,412 Steps,29 Dec 24,2,Don as many gloves as possible.,FALSE,FALSE,FALSE,2,5,3,1,4
+NYT5,1,412 Steps,29 Dec 24,3,Do something you regret.,FALSE,FALSE,FALSE,1,3,4,2,5
+NYT5,1,412 Steps,29 Dec 24,4,"Transfer the most water from the bucket to the bottle using only the contents of one of these bins. You may open one bin every minute, but you must use the contents of the bin you open last. You may not touch or move the bucket or the bottle.",FALSE,FALSE,FALSE,DQ,DQ,3,5,4
+NYT5,1,412 Steps,29 Dec 24,5,"Draw the most accurate picture of the contents of the box. If you answer Greg's question correctly, you may look in the box for 0.1 seconds. If you answer Greg's question incorrectly, you must start your picture again. You may only answer Greg's question if you are the first to shout your surname.",TRUE,FALSE,FALSE,5,4,3,2,1
+NYT6,1,Welcome to my pumpathon,2 January 2026,1,Most wonderful thing to whack.,FALSE,FALSE,TRUE,3,3,5,2,4
+NYT6,1,Welcome to my pumpathon,2 January 2026,2,Prod the bear.,FALSE,FALSE,FALSE,1,4,5,3,2
+NYT6,1,Welcome to my pumpathon,2 January 2026,3,"Throw one or more dice to get a number, then clap, cough, nod and blink that number of times before the next flash. If you do not complete the sequence before the next flash, the task is over. At the end of the task, your total number of completed sequences will be multiplied by your number of dice to give you a score. You must berate yourself throughout the task.",FALSE,FALSE,FALSE,4,3,2,1,5
+NYT6,1,Welcome to my pumpathon,2 January 2026,4,Do a something-athon for a full 20 minutes.,FALSE,FALSE,FALSE,4,5,3,2,2
+NYT6,1,Welcome to my pumpathon,2 January 2026,5,"Put your items in Greg's special order. After each shuffle, Greg will tell you how many items are in the correct position, but not which ones.",TRUE,FALSE,FALSE,0,0,0,5,0
+NYT6,2,The Opposite of ducking?,3 January 2026,1,Most exotic thing from their actual home.,FALSE,FALSE,TRUE,1,5,2,4,3
+NYT6,2,The Opposite of ducking?,3 January 2026,2,Split something in half in a really exciting way.,FALSE,FALSE,FALSE,3,1,5,4,2
+NYT6,2,The Opposite of ducking?,3 January 2026,3,Hold a number of yellow balls in your hand.,FALSE,FALSE,FALSE,1,4,5,3,2
+NYT6,2,The Opposite of ducking?,3 January 2026,4,Complete the most instructions in the order they are presented.,FALSE,FALSE,FALSE,5,1,4,3,2
+NYT6,2,The Opposite of ducking?,3 January 2026,5,Win the shoe games.,TRUE,FALSE,FALSE,4,5,1,2,3

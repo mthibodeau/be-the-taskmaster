@@ -21,12 +21,12 @@ export interface Contestant {
 }
 
 /**
- * Represents a contestant with its rank
- * Used for managing rankings where multiple contestants can share the same rank
+ * Represents a contestant with their score from a task
+ * Contestants are grouped by points (5, 4, 3, 2, 1, 0 for DQ)
  */
-export interface RankedContestant extends Contestant {
-  /** Rank position (1-5, can be shared with other contestants) */
-  rank: number;
+export interface ScoredContestant extends Contestant {
+  /** Points scored in the task (5 = best, 0 = disqualified, can be >5 with bonus) */
+  points: number;
 }
 
 /**
@@ -47,37 +47,52 @@ export interface Series {
 }
 
 /**
- * Helper function to generate image URL from series ID and contestant name
- * @param seriesId - The series number
- * @param contestantName - The contestant's full name
- * @param extension - File extension (default: 'jpg')
- * @returns Formatted image URL path
+ * Official score from database
+ * Represents the actual, canonical score from the show
  */
-export function getImageUrl(
-  seriesId: number, 
-  contestantName: string,
-  extension: string = 'jpg'
-): string {
-  const slug = contestantName
-    .toLowerCase()
-    .replace(/\s+/g, '-')
-    .replace(/[^a-z0-9-]/g, ''); // Remove special characters
+export interface OfficialScore {
+  /** ID of the contestant */
+  contestantId: string;
   
-  const seriesFolder = `series-${String(seriesId).padStart(2, '0')}`;
-  return `/images/${seriesFolder}/${slug}.${extension}`;
+  /** Points awarded for this task */
+  points: number;
+  
+  /** Additional notes about the score (e.g., "Disqualified", "Tie with 2 others") */
+  notes: string | null;
 }
 
 /**
- * Helper function to create a contestant ID from series and name
- * @param seriesId - The series number
- * @param contestantName - The contestant's full name
- * @returns Formatted contestant ID
+ * Task with full score data from database
+ * Used when fetching complete task information including all scores
  */
-export function createContestantId(seriesId: number, contestantName: string): string {
-  const slug = contestantName
-    .toLowerCase()
-    .replace(/\s+/g, '-')
-    .replace(/[^a-z0-9-]/g, '');
+export interface TaskWithScores {
+  /** Database ID of the task */
+  id: number;
   
-  return `s${seriesId}-${slug}`;
+  /** ID of the episode this task belongs to */
+  episodeId: number;
+  
+  /** ID of the series this task belongs to */
+  seriesId: number;
+  
+  /** Task number within the episode (1-5 typically) */
+  number: number;
+  
+  /** Display name of the task */
+  name: string;
+  
+  /** Detailed description of the task */
+  description: string | null;
+  
+  /** Exact wording given to contestants */
+  taskWording: string | null;
+  
+  /** Whether this is a prize task */
+  isPrizeTask: boolean;
+  
+  /** Whether this is a live task */
+  isLiveTask: boolean;
+  
+  /** Array of official scores for this task */
+  officialScores: OfficialScore[];
 }
