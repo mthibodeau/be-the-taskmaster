@@ -4,8 +4,11 @@ import { useState, useEffect } from 'react';
 import SeriesSelector from '@/components/SeriesSelector';
 import ContestantGallery from '@/components/ContestantGallery';
 import EpisodeTaskSidebar from '@/components/EpisodeTaskSidebar';
+import UsernameForm from '@/components/UsernameForm';
+import { useUser } from '@/contexts/UserContext';
 
 export default function Home() {
+  const { user, logout } = useUser();
   const [selectedSeries, setSelectedSeries] = useState(1);
   const [selectedEpisode, setSelectedEpisode] = useState(1);
   const [selectedTask, setSelectedTask] = useState(1);
@@ -43,6 +46,25 @@ export default function Home() {
             <p className="text-zinc-600 dark:text-zinc-400">
               Select a series, episode, and task to score contestants
             </p>
+
+            <div className="mt-4">
+              {user.status === 'anonymous' ? (
+                <UsernameForm />
+              ) : (
+                <div className="flex flex-wrap items-center gap-3">
+                  <div className="text-sm text-zinc-600 dark:text-zinc-400">
+                    Signed in as <span className="font-medium text-zinc-900 dark:text-zinc-100">{user.username}</span>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={logout}
+                    className="h-8 rounded-md border border-zinc-200 bg-white px-3 text-sm font-medium text-zinc-900 hover:bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-50 dark:hover:bg-zinc-900"
+                  >
+                    Switch user
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
           
           {/* Series Selector */}

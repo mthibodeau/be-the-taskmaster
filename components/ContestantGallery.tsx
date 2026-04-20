@@ -25,6 +25,7 @@ import { ScoredContestant } from '@/types/contestant';
 import PointsSeal from './PointsSeal';
 // Note: clsx needs to be installed: npm install clsx
 import clsx from 'clsx';
+import { useUser } from '@/contexts/UserContext';
 
 interface ContestantGalleryProps {
   /** The series ID to display contestants for */
@@ -41,10 +42,12 @@ interface ContestantGalleryProps {
  */
 function SortableContestantImage({ 
   contestant,
-  isLarge = false
+  isLarge = false,
+  disabled = false,
 }: { 
   contestant: ScoredContestant;
   isLarge?: boolean;
+  disabled?: boolean;
 }) {
   const {
     attributes,
@@ -53,7 +56,7 @@ function SortableContestantImage({
     transform,
     transition,
     isDragging,
-  } = useSortable({ id: contestant.id });
+  } = useSortable({ id: contestant.id, disabled });
 
   const style = {
     transform: CSS.Transform.toString(transform),
@@ -66,7 +69,8 @@ function SortableContestantImage({
       ref={setNodeRef}
       style={style}
       className={clsx(
-        'relative group cursor-grab active:cursor-grabbing rounded-lg',
+        'relative group rounded-lg',
+        disabled ? 'cursor-default' : 'cursor-grab active:cursor-grabbing',
         'focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2',
         isDragging && 'z-50',
         isLarge && 'scale-125'
@@ -84,12 +88,13 @@ function SortableContestantImage({
           priority={false}
         />
         
-        {/* Drag handle indicator on hover */}
-        <div className="absolute inset-0 flex items-center justify-center group-hover:bg-black/10 transition-colors duration-200">
-          <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-white text-sm font-medium bg-black/50 px-3 py-1 rounded-full backdrop-blur-sm">
-            Drag to reorder
+        {!disabled ? (
+          <div className="absolute inset-0 flex items-center justify-center group-hover:bg-black/10 transition-colors duration-200">
+            <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-white text-sm font-medium bg-black/50 px-3 py-1 rounded-full backdrop-blur-sm">
+              Drag to reorder
+            </div>
           </div>
-        </div>
+        ) : null}
       </div>
     </div>
   );
@@ -102,10 +107,12 @@ function SortableContestantImage({
  */
 function PointsGroup({ 
   points, 
-  contestants 
+  contestants,
+  dragDisabled,
 }: { 
   points: number;
   contestants: ScoredContestant[];
+  dragDisabled: boolean;
 }) {
   const { setNodeRef, isOver } = useDroppable({
     id: `points-${points}`,
@@ -126,6 +133,7 @@ function PointsGroup({
             key={contestant.id} 
             contestant={contestant}
             isLarge={points === 5}
+            disabled={dragDisabled}
           />
         ))}
       </div>
@@ -145,8 +153,23 @@ function PointsGroup({
  * @param taskId - The task number to display
  */
 export default function ContestantGallery({ seriesId, episodeId, taskId }: ContestantGalleryProps) {
-  const { scoredContestants, contestantsByPoints, allPoints, isLoading, handleDragEnd } = useSeriesGallery(seriesId, episodeId, taskId);
+  const { user } = useUser();
+  const userId = user.status === 'authenticated' ? user.userId : undefined;
+
+  const {
+    scoredContestants,
+    contestantsByPoints,
+    allPoints,
+    isLoading,
+    handleDragEnd,
+    viewMode,
+    setViewMode,
+    isDirty,
+    save,
+    resetToOfficial,
+  } = useSeriesGallery(seriesId, episodeId, taskId, userId);
   const [activeId, setActiveId] = useState<string | null>(null);
+  const isReadOnly = viewMode === 'official' || !userId;
 
   // Configure sensors for drag detection
   const sensors = useSensors(
@@ -166,6 +189,7 @@ export default function ContestantGallery({ seriesId, episodeId, taskId }: Conte
 
   const handleDragEndWrapper = (event: DragEndEvent) => {
     setActiveId(null);
+    if (isReadOnly) return;
     handleDragEnd(event);
   };
 
@@ -200,6 +224,80 @@ export default function ContestantGallery({ seriesId, episodeId, taskId }: Conte
 
   return (
     <div className="w-full max-w-5xl mx-auto p-4">
+      {/* Mode + Save controls */}
+      <div
+        className={clsx(
+          'mb-4 flex flex-wrap items-center justify-between gap-3 rounded-lg border p-3',
+          viewMode === 'user'
+            ? 'border-blue-200 bg-blue-50/60 dark:border-blue-900 dark:bg-blue-950/30'
+            : 'border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-950'
+        )}
+      >
+        <div className="flex items-center gap-3">
+          <div className="inline-flex rounded-md border border-zinc-200 bg-white p-1 dark:border-zinc-800 dark:bg-zinc-950">
+            <button
+              type="button"
+              onClick={() => setViewMode('user')}
+              disabled={!userId}
+              className={clsx(
+                'h-8 rounded px-3 text-sm font-medium disabled:opacity-50',
+                viewMode === 'user'
+                  ? 'bg-blue-600 text-white'
+                  : 'text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-900'
+              )}
+            >
+              My Scores
+            </button>
+            <button
+              type="button"
+              onClick={() => setViewMode('official')}
+              className={clsx(
+                'h-8 rounded px-3 text-sm font-medium',
+                viewMode === 'official'
+                  ? 'bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900'
+                  : 'text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-900'
+              )}
+            >
+              Official
+            </button>
+          </div>
+
+          <div className="text-sm text-zinc-600 dark:text-zinc-400">
+            {viewMode === 'official'
+              ? 'Viewing official scores'
+              : isDirty
+                ? 'Unsaved changes'
+                : 'Saved'}
+          </div>
+        </div>
+
+        {userId && viewMode === 'user' ? (
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={resetToOfficial}
+              className="h-8 rounded-md border border-zinc-200 bg-white px-3 text-sm font-medium text-zinc-900 hover:bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-50 dark:hover:bg-zinc-900"
+            >
+              Reset to official
+            </button>
+            <button
+              type="button"
+              disabled={!isDirty}
+              onClick={async () => {
+                const result = await save();
+                if (!result.success) {
+                  // Keep it simple: alert for now (no toast system yet)
+                  alert(result.error);
+                }
+              }}
+              className="h-8 rounded-md bg-blue-600 px-3 text-sm font-medium text-white disabled:opacity-50"
+            >
+              Save
+            </button>
+          </div>
+        ) : null}
+      </div>
+
       <DndContext
         sensors={sensors}
         collisionDetection={closestCenter}
@@ -216,6 +314,7 @@ export default function ContestantGallery({ seriesId, episodeId, taskId }: Conte
                   key={points}
                   points={points}
                   contestants={contestantsByPoints[points] || []}
+                  dragDisabled={isReadOnly}
                 />
               ))}
             </div>
@@ -247,7 +346,11 @@ export default function ContestantGallery({ seriesId, episodeId, taskId }: Conte
       </DndContext>
 
       <div className="mt-8 text-center text-sm text-zinc-500">
-        <p>💡 Drag contestants to reorder or stack them on top of each other to share points.</p>
+        {isReadOnly ? (
+          <p>Switch to “My Scores” to edit.</p>
+        ) : (
+          <p>💡 Drag contestants to reorder or stack them on top of each other to share points.</p>
+        )}
       </div>
     </div>
   );

@@ -1,41 +1,139 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useEffect, useMemo, useState, useCallback } from 'react';
 import { DragEndEvent } from '@dnd-kit/core';
 import { ScoredContestant } from '@/types/contestant';
 import { hasDBData } from '@/data/series';
 import { fetchScoresAction, fetchContestantsAction } from '@/app/actions/fetch-scores';
+import { fetchUserScoresAction } from '@/app/actions/fetch-user-scores';
+import { saveUserScoresAction } from '@/app/actions/save-user-scores';
 
 // Constants - possible point values (0 for DQ, 1-5 standard, higher with bonus)
 const ALL_POINTS = [0, 1, 2, 3, 4, 5] as const;
+
+type ViewMode = 'user' | 'official';
+
+function pointsMap(items: ScoredContestant[]): Map<string, number> {
+  return new Map(items.map((c) => [c.id, c.points]));
+}
+
+function pointsEqual(a: ScoredContestant[], b: ScoredContestant[]): boolean {
+  const am = pointsMap(a);
+  const bm = pointsMap(b);
+  if (am.size !== bm.size) return false;
+  for (const [id, points] of am) {
+    if (bm.get(id) !== points) return false;
+  }
+  return true;
+}
+
+function hydrateUserScores(
+  official: ScoredContestant[],
+  userScores: ScoredContestant[]
+): ScoredContestant[] {
+  const userPoints = new Map(userScores.map((s) => [s.id, s.points]));
+  return official.map((c) => ({
+    ...c,
+    points: userPoints.get(c.id) ?? c.points,
+  }));
+}
 
 /**
  * Custom hook for managing contestant gallery with series, episode, and task support
  * 
  * This hook handles:
  * - Loading official scores from database for specific tasks (all series)
- * - Loading contestants with default points when no task is specified
- * - Managing drag-and-drop ordering in memory (not persisted)
+ * - Loading user scores for a task (optional, per user)
+ * - Managing drag-and-drop ordering as a draft until explicitly saved
  * 
  * @param seriesId - The series number to display
  * @param episodeId - The episode number to display (optional)
  * @param taskId - The task number to display (optional)
+ * @param userId - The user ID (optional). When present, enables \"My Scores\".
  * @returns contestants array, grouped scores, and drag handler function
  */
-export function useSeriesGallery(seriesId: number, episodeId?: number, taskId?: number) {
-  const [scoredContestants, setScoredContestants] = useState<ScoredContestant[]>([]);
+export function useSeriesGallery(seriesId: number, episodeId?: number, taskId?: number, userId?: string) {
+  const [activeSeriesId, setActiveSeriesId] = useState(seriesId);
+  const [activeEpisodeId, setActiveEpisodeId] = useState(episodeId);
+  const [activeTaskId, setActiveTaskId] = useState(taskId);
+
+  const [officialScores, setOfficialScores] = useState<ScoredContestant[]>([]);
+  const [baselineScores, setBaselineScores] = useState<ScoredContestant[]>([]);
+  const [draftScores, setDraftScores] = useState<ScoredContestant[]>([]);
+  const [viewMode, setViewMode] = useState<ViewMode>('official');
+  const [hasUserScoresForTask, setHasUserScoresForTask] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+
+  const isDirty = useMemo(() => {
+    if (viewMode !== 'user') return false;
+    return !pointsEqual(draftScores, baselineScores);
+  }, [draftScores, baselineScores, viewMode]);
+
+  // If selection changes while dirty, confirm discard (keep active selection unless user accepts).
+  useEffect(() => {
+    const nextSeries = seriesId;
+    const nextEpisode = episodeId;
+    const nextTask = taskId;
+
+    const changed =
+      nextSeries !== activeSeriesId ||
+      nextEpisode !== activeEpisodeId ||
+      nextTask !== activeTaskId;
+
+    if (!changed) return;
+
+    if (isDirty) {
+      const ok = window.confirm('You have unsaved changes. Discard them and navigate away?');
+      if (!ok) return;
+    }
+
+    setActiveSeriesId(nextSeries);
+    setActiveEpisodeId(nextEpisode);
+    setActiveTaskId(nextTask);
+  }, [
+    seriesId,
+    episodeId,
+    taskId,
+    activeSeriesId,
+    activeEpisodeId,
+    activeTaskId,
+    isDirty,
+  ]);
 
   // Load contestants for the selected series
   useEffect(() => {
     async function loadData() {
       setIsLoading(true);
 
+      const sid = activeSeriesId;
+      const eid = activeEpisodeId;
+      const tid = activeTaskId;
+
       // Check if series has database data and specific task is requested
-      if (hasDBData(seriesId) && episodeId !== undefined && taskId !== undefined) {
+      if (hasDBData(sid) && eid !== undefined && tid !== undefined) {
         // Fetch official scores from database via Server Action
-        const result = await fetchScoresAction(seriesId, episodeId, taskId);
+        const result = await fetchScoresAction(sid, eid, tid);
 
         if (result.success) {
-          setScoredContestants(result.data);
+          const official = result.data;
+          setOfficialScores(official);
+
+          if (userId) {
+            const userResult = await fetchUserScoresAction(userId, sid, eid, tid);
+            if (userResult.success && userResult.data) {
+              const hydrated = hydrateUserScores(official, userResult.data);
+              setHasUserScoresForTask(true);
+              setBaselineScores(hydrated);
+              setDraftScores(hydrated);
+              setViewMode('user');
+              setIsLoading(false);
+              return;
+            }
+          }
+
+          // No user scores (or not logged in): default to official
+          setHasUserScoresForTask(false);
+          setBaselineScores(official);
+          setDraftScores(official);
+          setViewMode('official');
           setIsLoading(false);
           return;
         } else {
@@ -45,19 +143,25 @@ export function useSeriesGallery(seriesId: number, episodeId?: number, taskId?: 
       }
 
       // Fallback: fetch just contestants with default points
-      const contestantsResult = await fetchContestantsAction(seriesId);
+      const contestantsResult = await fetchContestantsAction(activeSeriesId);
       if (contestantsResult.success) {
-        setScoredContestants(contestantsResult.data);
+        setOfficialScores(contestantsResult.data);
+        setHasUserScoresForTask(false);
+        setBaselineScores(contestantsResult.data);
+        setDraftScores(contestantsResult.data);
+        setViewMode('official');
       } else {
         console.error('Failed to load contestants:', contestantsResult.error);
-        setScoredContestants([]);
+        setOfficialScores([]);
+        setBaselineScores([]);
+        setDraftScores([]);
       }
 
       setIsLoading(false);
     }
 
     loadData();
-  }, [seriesId, episodeId, taskId]);
+  }, [activeSeriesId, activeEpisodeId, activeTaskId, userId]);
 
   /**
    * Handle drag end event from dnd-kit
@@ -70,8 +174,9 @@ export function useSeriesGallery(seriesId: number, episodeId?: number, taskId?: 
     const { active, over } = event;
 
     if (!over) return;
+    if (viewMode !== 'user') return;
 
-    setScoredContestants((items) => {
+    setDraftScores((items) => {
       const draggedItem = items.find((item) => item.id === active.id);
       if (!draggedItem) return items;
 
@@ -99,10 +204,39 @@ export function useSeriesGallery(seriesId: number, episodeId?: number, taskId?: 
       // If dropped in empty space, don't change anything
       return items;
     });
-  }, []);
+  }, [viewMode]);
+
+  const save = useCallback(async () => {
+    if (!userId) return { success: false as const, error: 'Not logged in' };
+    if (viewMode !== 'user') return { success: false as const, error: 'Not in My Scores mode' };
+    if (activeEpisodeId === undefined || activeTaskId === undefined) {
+      return { success: false as const, error: 'No task selected' };
+    }
+
+    const result = await saveUserScoresAction(
+      userId,
+      activeSeriesId,
+      activeEpisodeId,
+      activeTaskId,
+      draftScores.map((c) => ({ contestantId: c.id, points: c.points }))
+    );
+
+    if (!result.success) return { success: false as const, error: result.error };
+
+    setBaselineScores(draftScores);
+    setHasUserScoresForTask(true);
+    return { success: true as const };
+  }, [userId, viewMode, activeEpisodeId, activeTaskId, activeSeriesId, draftScores]);
+
+  const resetToOfficial = useCallback(() => {
+    if (viewMode !== 'user') return;
+    setDraftScores(officialScores);
+  }, [officialScores, viewMode]);
 
   // Group contestants by points for display
-  const contestantsByPoints = scoredContestants.reduce((acc, contestant) => {
+  const visibleScores = viewMode === 'user' ? draftScores : officialScores;
+
+  const contestantsByPoints = visibleScores.reduce((acc, contestant) => {
     if (!acc[contestant.points]) {
       acc[contestant.points] = [];
     }
@@ -111,10 +245,19 @@ export function useSeriesGallery(seriesId: number, episodeId?: number, taskId?: 
   }, {} as Record<number, ScoredContestant[]>);
 
   return {
-    scoredContestants,
+    viewMode,
+    setViewMode,
+    hasUserScoresForTask,
+    officialScores,
+    baselineScores,
+    draftScores,
+    scoredContestants: visibleScores,
     contestantsByPoints,
     allPoints: ALL_POINTS,
     isLoading,
+    isDirty,
     handleDragEnd,
+    save,
+    resetToOfficial,
   };
 }

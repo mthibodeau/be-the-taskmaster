@@ -32,6 +32,36 @@ export async function getSeriesContestants(
   }));
 }
 
+async function getTaskIdForSeriesEpisodeTask(
+  seriesId: number,
+  episodeNumber: number,
+  taskNumber: number
+): Promise<number | null> {
+  const episode = await prisma.episode.findUnique({
+    where: {
+      seriesId_number: {
+        seriesId,
+        number: episodeNumber,
+      },
+    },
+    select: { id: true },
+  });
+
+  if (!episode) return null;
+
+  const task = await prisma.task.findUnique({
+    where: {
+      episodeId_number: {
+        episodeId: episode.id,
+        number: taskNumber,
+      },
+    },
+    select: { id: true },
+  });
+
+  return task?.id ?? null;
+}
+
 /**
  * Get official scores for a specific task
  * 
@@ -114,5 +144,83 @@ export async function getEpisodesForSeries(seriesId: number) {
       },
     },
   });
+}
+
+export async function upsertUserByUsername(
+  username: string
+): Promise<{ id: string; username: string }> {
+  const user = await prisma.user.upsert({
+    where: { username },
+    update: {},
+    create: { username },
+    select: { id: true, username: true },
+  });
+
+  if (!user.username) {
+    // Defensive: schema allows null for legacy rows, but create/upsert should not.
+    throw new Error('Failed to create user with username');
+  }
+
+  return { id: user.id, username: user.username };
+}
+
+export async function getUserScores(
+  userId: string,
+  seriesId: number,
+  episodeNumber: number,
+  taskNumber: number
+): Promise<ScoredContestant[] | null> {
+  const taskId = await getTaskIdForSeriesEpisodeTask(
+    seriesId,
+    episodeNumber,
+    taskNumber
+  );
+
+  if (!taskId) return null;
+
+  const scores = await prisma.userScore.findMany({
+    where: { userId, taskId },
+    include: { contestant: true },
+  });
+
+  if (scores.length === 0) return null;
+
+  return scores.map((s) => ({
+    id: s.contestant.id,
+    name: s.contestant.name,
+    imageUrl: s.contestant.imageUrl,
+    seriesId: s.contestant.seriesId,
+    points: s.points,
+  }));
+}
+
+export async function saveUserScores(
+  userId: string,
+  taskId: number,
+  scores: Array<{ contestantId: string; points: number }>
+): Promise<void> {
+  await prisma.$transaction(
+    scores.map((s) =>
+      prisma.userScore.upsert({
+        where: {
+          userId_taskId_contestantId: {
+            userId,
+            taskId,
+            contestantId: s.contestantId,
+          },
+        },
+        update: {
+          points: s.points,
+        },
+        create: {
+          userId,
+          taskId,
+          contestantId: s.contestantId,
+          points: s.points,
+        },
+        select: { id: true },
+      })
+    )
+  );
 }
 
