@@ -1,4 +1,3 @@
-import 'server-only'; // Throws error if imported client-side
 import { prisma } from './prisma';
 import { Contestant, ScoredContestant } from '@/types/contestant';
 
@@ -46,59 +45,57 @@ export async function getOfficialScores(
   episodeNumber: number,
   taskNumber: number
 ): Promise<ScoredContestant[]> {
-  try {
-    // First, find the episode
-    const episode = await prisma.episode.findFirst({
-      where: {
-        seriesId: seriesId,
+  // First, find the episode
+  const episode = await prisma.episode.findUnique({
+    where: {
+      seriesId_number: {
+        seriesId,
         number: episodeNumber,
       },
-    });
+    },
+  });
 
-    if (!episode) {
-      // Episode not found - return default scores
-      const contestants = await getSeriesContestants(seriesId);
-      return contestants.map((c, index) => ({ ...c, points: 5 - index }));
-    }
+  if (!episode) {
+    // Episode not found - return default scores
+    const contestants = await getSeriesContestants(seriesId);
+    return contestants.map((c, index) => ({ ...c, points: 5 - index }));
+  }
 
-    // Now find the task with its official scores
-    const task = await prisma.task.findFirst({
-      where: {
+  // Now find the task with its official scores
+  const task = await prisma.task.findUnique({
+    where: {
+      episodeId_number: {
         episodeId: episode.id,
         number: taskNumber,
       },
-      include: {
-        officialScores: {
-          include: {
-            contestant: true,
-          },
-          orderBy: { points: 'desc' }, // Sort by points (5 = 1st place, 4 = 2nd, etc.)
+    },
+    include: {
+      officialScores: {
+        include: {
+          contestant: true,
         },
+        orderBy: { points: 'desc' }, // Sort by points (5 = 1st place, 4 = 2nd, etc.)
       },
-    });
+    },
+  });
 
-    if (!task || task.officialScores.length === 0) {
-      // No official scores yet, return contestants with default descending points
-      const contestants = await getSeriesContestants(seriesId);
-      return contestants.map((c, index) => ({ ...c, points: 5 - index }));
-    }
-
-    // Map to ScoredContestant format - use points directly
-    // Already sorted by points DESC (5 = best, 0 = worst/DQ)
-    const scores = task.officialScores.map((s) => ({
-      id: s.contestant.id,
-      name: s.contestant.name,
-      imageUrl: s.contestant.imageUrl,
-      seriesId: s.contestant.seriesId,
-      points: s.points,
-    }));
-    
-    return scores;
-  } catch (error) {
-    console.error('💥 Database query error in getOfficialScores:', error);
-    console.error('Error details:', error instanceof Error ? error.message : 'Unknown error');
-    throw error; // Re-throw to be caught by Server Action
+  if (!task || task.officialScores.length === 0) {
+    // No official scores yet, return contestants with default descending points
+    const contestants = await getSeriesContestants(seriesId);
+    return contestants.map((c, index) => ({ ...c, points: 5 - index }));
   }
+
+  // Map to ScoredContestant format - use points directly
+  // Already sorted by points DESC (5 = best, 0 = worst/DQ)
+  const scores = task.officialScores.map((s) => ({
+    id: s.contestant.id,
+    name: s.contestant.name,
+    imageUrl: s.contestant.imageUrl,
+    seriesId: s.contestant.seriesId,
+    points: s.points,
+  }));
+
+  return scores;
 }
 
 /**

@@ -1,6 +1,10 @@
 'use server';
 
-import { getEpisodesForSeries } from '@/lib/db';
+import { getEpisodesForSeries } from '@/lib/db.server';
+
+function toErrorMessage(error: unknown, fallback: string): string {
+  return error instanceof Error ? error.message : fallback;
+}
 
 export interface Task {
   id: number;
@@ -47,10 +51,10 @@ export async function fetchEpisodesAction(
     
     return { success: true, data: formattedEpisodes };
   } catch (error) {
-    console.error('Failed to fetch episodes:', error);
+    console.error('fetchEpisodesAction failed', { seriesId, error });
     return { 
       success: false, 
-      error: error instanceof Error ? error.message : 'Failed to load episodes'
+      error: toErrorMessage(error, 'Failed to load episodes'),
     };
   }
 }

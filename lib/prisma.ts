@@ -29,11 +29,16 @@ if (process.env.NODE_ENV !== 'production') {
 
 const adapter = new PrismaPg(pool);
 
+const prismaLogLevels: ConstructorParameters<typeof PrismaClient>[0]['log'] =
+  process.env.NODE_ENV === 'production'
+    ? ['error', 'warn']
+    : ['query', 'error', 'warn'];
+
 export const prisma =
   globalForPrisma.prisma ??
   new PrismaClient({ 
     adapter,
-    log: ['query', 'error', 'warn'],
+    log: prismaLogLevels,
   });
 
 if (process.env.NODE_ENV !== 'production') {

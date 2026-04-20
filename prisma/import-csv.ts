@@ -12,7 +12,7 @@
  * Uses direct SQL queries to avoid Prisma adapter transaction issues.
  */
 
-import { Pool } from 'pg';
+import { Pool, type PoolClient, type QueryResult } from 'pg';
 import * as fs from 'fs';
 import * as path from 'path';
 import { parse } from 'csv-parse/sync';
@@ -28,6 +28,10 @@ if (!connectionString) {
 }
 
 const pool = new Pool({ connectionString });
+
+type Queryable = {
+  query: (queryText: string, values?: unknown[]) => Promise<QueryResult<any>>;
+};
 
 interface CSVRow {
   Series: string;
@@ -100,7 +104,7 @@ function loadContestants(): Map<string, string[]> {
       columns: true,
       skip_empty_lines: true,
       trim: true,
-    });
+    }) as Array<Record<string, string>>;
     
     for (const row of records) {
       const seriesId = row.series;
@@ -121,7 +125,7 @@ function loadContestants(): Map<string, string[]> {
       columns: true,
       skip_empty_lines: true,
       trim: true,
-    });
+    }) as Array<Record<string, string>>;
     
     for (const row of records) {
       const seriesId = row.ChampionOfChampions;
@@ -142,7 +146,7 @@ function loadContestants(): Map<string, string[]> {
       columns: true,
       skip_empty_lines: true,
       trim: true,
-    });
+    }) as Array<Record<string, string>>;
     
     for (const row of records) {
       const seriesId = row.TreatNumber;
@@ -158,10 +162,20 @@ function loadContestants(): Map<string, string[]> {
   return contestantsBySeries;
 }
 
+function assertFilesExist(fileNames: string[]) {
+  const missing = fileNames.filter((name) =>
+    !fs.existsSync(path.join(process.cwd(), name))
+  );
+  if (missing.length > 0) {
+    throw new Error(`Missing required CSV file(s): ${missing.join(', ')}`);
+  }
+}
+
 /**
  * Create or update contestants for a series
  */
 async function ensureContestants(
+  db: Queryable,
   seriesId: string,
   seriesNumber: number,
   contestantNames: string[]
@@ -173,7 +187,7 @@ async function ensureContestants(
     const contestantId = createContestantId(seriesId, name);
     const imageUrl = getImageUrl(seriesId, name);
     
-    await pool.query(
+    await db.query(
       `INSERT INTO contestants (id, name, "imageUrl", "seriesId", "displayOrder")
        VALUES ($1, $2, $3, $4, $5)
        ON CONFLICT (id) DO UPDATE 
@@ -241,32 +255,13 @@ function parseBoolean(value: string): boolean {
 /**
  * Clear all data from the database
  */
-async function clearDatabase() {
+async function clearDatabase(db: Queryable) {
   console.log('🗑️  Clearing database...\n');
   
-  const tablesToClear = [
-    'official_scores',
-    'official_rankings',
-    'user_scores',
-    'user_rankings',
-    'tasks',
-    'episodes',
-    'contestants',
-    'series'
-  ];
-  
-  for (const table of tablesToClear) {
-    try {
-      const result = await pool.query(`DELETE FROM ${table}`);
-      if (result.rowCount !== null && result.rowCount > 0) {
-        console.log(`   Cleared ${table} (${result.rowCount} rows)`);
-      }
-    } catch (e: any) {
-      if (e.code !== '42P01') {
-        console.error(`   ❌ Error clearing ${table}: ${e.code} - ${e.message}`);
-      }
-    }
-  }
+  // TRUNCATE is fast and avoids FK-order issues; CASCADE covers dependent tables.
+  await db.query(
+    'TRUNCATE TABLE official_scores, user_scores, tasks, episodes, contestants, series RESTART IDENTITY CASCADE'
+  );
   
   console.log('✅ Database cleared\n');
 }
@@ -274,7 +269,7 @@ async function clearDatabase() {
 /**
  * Create series entry
  */
-async function ensureSeries(seriesId: string, seriesNumber: number): Promise<void> {
+async function ensureSeries(db: Queryable, seriesId: string, seriesNumber: number): Promise<void> {
   let seriesName: string;
   
   if (seriesId.startsWith('CoC')) {
@@ -285,7 +280,7 @@ async function ensureSeries(seriesId: string, seriesNumber: number): Promise<voi
     seriesName = `Series ${seriesId}`;
   }
   
-  await pool.query(
+  await db.query(
     `INSERT INTO series (id, name, "displayName")
      VALUES ($1, $2, $3)
      ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name`,
@@ -297,6 +292,7 @@ async function ensureSeries(seriesId: string, seriesNumber: number): Promise<voi
  * Import data from a single CSV file
  */
 async function importFile(
+  db: Queryable,
   csvPath: string,
   contestantsBySeries: Map<string, string[]>,
   stats: { 
@@ -334,7 +330,7 @@ async function importFile(
     try {
       // 1. Ensure series exists
       if (!seriesCache.has(seriesId)) {
-        await ensureSeries(seriesId, seriesNumber);
+        await ensureSeries(db, seriesId, seriesNumber);
         seriesCache.add(seriesId);
         stats.seriesCreated++;
       }
@@ -347,7 +343,7 @@ async function importFile(
           stats.skipped++;
           continue;
         }
-        const contestantIds = await ensureContestants(seriesId, seriesNumber, contestantNames);
+        const contestantIds = await ensureContestants(db, seriesId, seriesNumber, contestantNames);
         contestantCache.set(seriesId, contestantIds);
         stats.contestantsCreated += contestantIds.length;
       }
@@ -357,7 +353,7 @@ async function importFile(
       let episodeId = episodeCache.get(episodeKey);
       
       if (!episodeId) {
-        const episodeResult = await pool.query(
+        const episodeResult = await db.query(
           `INSERT INTO episodes ("seriesId", number, name)
            VALUES ($1, $2, $3)
            ON CONFLICT ("seriesId", number) DO UPDATE SET name = EXCLUDED.name
@@ -374,7 +370,7 @@ async function importFile(
       const isPrizeTask = parseBoolean(row.IsPrize);
       const isLiveTask = parseBoolean(row.IsLive);
       
-      const taskResult = await pool.query(
+      const taskResult = await db.query(
         `INSERT INTO tasks ("episodeId", "seriesId", number, name, description, "taskFormat", "isPrizeTask", "isLiveTask")
          VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
          ON CONFLICT ("episodeId", number) DO UPDATE 
@@ -412,7 +408,7 @@ async function importFile(
           continue;
         }
         
-        await pool.query(
+        await db.query(
           `INSERT INTO official_scores ("taskId", "contestantId", points, notes)
            VALUES ($1, $2, $3, $4)
            ON CONFLICT ("taskId", "contestantId") DO UPDATE
@@ -434,9 +430,17 @@ async function importFile(
  * Main import function
  */
 async function importCSV() {
-  await clearDatabase();
-  
-  // Load contestants first
+  const requiredFiles = [
+    'taskmaster_contestants.csv',
+    'coc_contestants.csv',
+    'nyt_contestants.csv',
+    'taskmaster_tasks.csv',
+    'taskmaster__coc_tasks.csv',
+    'taskmaster_nyt_tasks.csv',
+  ];
+  assertFilesExist(requiredFiles);
+
+  // Load contestants first (before mutating DB)
   console.log('📖 Loading contestants...\n');
   const contestantsBySeries = loadContestants();
   console.log(`   Found contestants for ${contestantsBySeries.size} series\n`);
@@ -455,14 +459,27 @@ async function importCSV() {
     'taskmaster__coc_tasks.csv',
     'taskmaster_nyt_tasks.csv'
   ];
-  
-  for (const file of files) {
-    const csvPath = path.join(process.cwd(), file);
-    if (fs.existsSync(csvPath)) {
-      await importFile(csvPath, contestantsBySeries, stats);
-    } else {
-      console.log(`⚠️  File not found: ${file}\n`);
+
+  const client: PoolClient = await pool.connect();
+  try {
+    await client.query('BEGIN');
+    await clearDatabase(client);
+
+    for (const file of files) {
+      const csvPath = path.join(process.cwd(), file);
+      await importFile(client, csvPath, contestantsBySeries, stats);
     }
+
+    await client.query('COMMIT');
+  } catch (e) {
+    try {
+      await client.query('ROLLBACK');
+    } catch (rollbackError) {
+      console.error('❌ Rollback failed:', rollbackError);
+    }
+    throw e;
+  } finally {
+    client.release();
   }
   
   console.log('\n✅ Import complete!');

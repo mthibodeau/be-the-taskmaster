@@ -1,7 +1,11 @@
 'use server';
 
-import { getOfficialScores, getSeriesContestants } from '@/lib/db';
+import { getOfficialScores, getSeriesContestants } from '@/lib/db.server';
 import { ScoredContestant } from '@/types/contestant';
+
+function toErrorMessage(error: unknown, fallback: string): string {
+  return error instanceof Error ? error.message : fallback;
+}
 
 /**
  * Server Actions for Scores
@@ -34,10 +38,15 @@ export async function fetchScoresAction(
     const scores = await getOfficialScores(seriesId, episodeId, taskId);
     return { success: true, data: scores };
   } catch (error) {
-    console.error('Server Action error:', error);
+    console.error('fetchScoresAction failed', {
+      seriesId,
+      episodeId,
+      taskId,
+      error,
+    });
     return { 
       success: false, 
-      error: error instanceof Error ? error.message : 'Failed to load scores'
+      error: toErrorMessage(error, 'Failed to load scores'),
     };
   }
 }
@@ -62,10 +71,10 @@ export async function fetchContestantsAction(
     }));
     return { success: true, data: scoredContestants };
   } catch (error) {
-    console.error('Failed to fetch contestants:', error);
+    console.error('fetchContestantsAction failed', { seriesId, error });
     return { 
       success: false, 
-      error: error instanceof Error ? error.message : 'Failed to load contestants'
+      error: toErrorMessage(error, 'Failed to load contestants'),
     };
   }
 }
