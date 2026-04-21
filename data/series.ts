@@ -57,5 +57,5 @@ export function getAllSeries() {
  * @returns True if the series has database data, false otherwise
  */
 export function hasDBData(seriesId: number): boolean {
-  return SERIES_WITH_DB_DATA.includes(seriesId as any);
+  return (SERIES_WITH_DB_DATA as readonly number[]).includes(seriesId);
 }

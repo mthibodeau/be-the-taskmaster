@@ -19,21 +19,27 @@ import {
   useSortable,
 } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
-import { useSeriesGallery } from '@/hooks/useSeriesGallery';
 import { useState } from 'react';
 import { ScoredContestant } from '@/types/contestant';
 import PointsSeal from './PointsSeal';
 // Note: clsx needs to be installed: npm install clsx
 import clsx from 'clsx';
-import { useUser } from '@/contexts/UserContext';
 
 interface ContestantGalleryProps {
-  /** The series ID to display contestants for */
-  seriesId: number;
-  /** The episode ID to display contestants for */
-  episodeId: number;
-  /** The task ID to display contestants for */
-  taskId: number;
+  /** Whether drag/editing is allowed */
+  userId?: string;
+
+  scoredContestants: ScoredContestant[];
+  contestantsByPoints: Record<number, ScoredContestant[]>;
+  allPoints: readonly number[];
+  isLoading: boolean;
+
+  viewMode: 'user' | 'official';
+  setViewMode: (mode: 'user' | 'official') => void;
+  isDirty: boolean;
+  save: () => Promise<{ success: true } | { success: false; error: string }>;
+  resetToOfficial: () => void;
+  handleDragEnd: (event: DragEndEvent) => void;
 }
 
 /**
@@ -141,33 +147,19 @@ function PointsGroup({
   );
 }
 
-/**
- * ContestantGallery Component
- * 
- * Displays a grid of draggable contestant images grouped by points.
- * Supports drag-and-drop reordering and stacking (multiple contestants per points value).
- * Scores are stored independently per series/episode/task combination.
- * 
- * @param seriesId - The series number to display
- * @param episodeId - The episode number to display
- * @param taskId - The task number to display
- */
-export default function ContestantGallery({ seriesId, episodeId, taskId }: ContestantGalleryProps) {
-  const { user } = useUser();
-  const userId = user.status === 'authenticated' ? user.userId : undefined;
-
-  const {
-    scoredContestants,
-    contestantsByPoints,
-    allPoints,
-    isLoading,
-    handleDragEnd,
-    viewMode,
-    setViewMode,
-    isDirty,
-    save,
-    resetToOfficial,
-  } = useSeriesGallery(seriesId, episodeId, taskId, userId);
+export default function ContestantGallery({
+  userId,
+  scoredContestants,
+  contestantsByPoints,
+  allPoints,
+  isLoading,
+  handleDragEnd,
+  viewMode,
+  setViewMode,
+  isDirty,
+  save,
+  resetToOfficial,
+}: ContestantGalleryProps) {
   const [activeId, setActiveId] = useState<string | null>(null);
   const isReadOnly = viewMode === 'official' || !userId;
 
@@ -224,10 +216,65 @@ export default function ContestantGallery({ seriesId, episodeId, taskId }: Conte
 
   return (
     <div className="w-full max-w-5xl mx-auto p-4">
-      {/* Mode + Save controls */}
+      <DndContext
+        sensors={sensors}
+        collisionDetection={closestCenter}
+        onDragStart={handleDragStart}
+        onDragEnd={handleDragEndWrapper}
+        onDragCancel={handleDragCancel}
+        >
+          <SortableContext
+            items={[...scoredContestants.map((c) => c.id), ...allPoints.map((p) => `points-${p}`)]}
+          >
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 items-end">
+              {allPoints.map((points) => (
+                <PointsGroup
+                  key={points}
+                  points={points}
+                  contestants={contestantsByPoints[points] || []}
+                  dragDisabled={isReadOnly}
+                />
+              ))}
+            </div>
+            
+            {/* Seals row - aligned horizontally below all content */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 mt-6">
+              {allPoints.map((points) => {
+                return <PointsSeal key={points} points={points} />;
+              })}
+          </div>
+        </SortableContext>
+
+        {/* DragOverlay shows a copy of the dragged item that follows the cursor */}
+        <DragOverlay>
+          {activeContestant ? (
+            <div className="relative w-48 opacity-90 cursor-grabbing">
+              <div className="relative aspect-[225/266] overflow-hidden rounded-lg shadow-2xl">
+                <Image
+                  src={activeContestant.imageUrl}
+                  alt={activeContestant.name}
+                  fill
+                  sizes="192px"
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          ) : null}
+        </DragOverlay>
+      </DndContext>
+
+      <div className="mt-6 text-center text-sm text-zinc-500">
+        {isReadOnly ? (
+          <p>Switch to “My Scores” to edit.</p>
+        ) : (
+          <p>💡 Drag contestants to reorder or stack them on top of each other to share points.</p>
+        )}
+      </div>
+
+      {/* Mode + Save controls (below scoring section) */}
       <div
         className={clsx(
-          'mb-4 flex flex-wrap items-center justify-between gap-3 rounded-lg border p-3',
+          'mt-6 flex flex-wrap items-center justify-between gap-3 rounded-lg border p-3',
           viewMode === 'user'
             ? 'border-blue-200 bg-blue-50/60 dark:border-blue-900 dark:bg-blue-950/30'
             : 'border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-950'
@@ -286,7 +333,6 @@ export default function ContestantGallery({ seriesId, episodeId, taskId }: Conte
               onClick={async () => {
                 const result = await save();
                 if (!result.success) {
-                  // Keep it simple: alert for now (no toast system yet)
                   alert(result.error);
                 }
               }}
@@ -296,61 +342,6 @@ export default function ContestantGallery({ seriesId, episodeId, taskId }: Conte
             </button>
           </div>
         ) : null}
-      </div>
-
-      <DndContext
-        sensors={sensors}
-        collisionDetection={closestCenter}
-        onDragStart={handleDragStart}
-        onDragEnd={handleDragEndWrapper}
-        onDragCancel={handleDragCancel}
-        >
-          <SortableContext
-            items={[...scoredContestants.map((c) => c.id), ...allPoints.map((p) => `points-${p}`)]}
-          >
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 items-end">
-              {allPoints.map((points) => (
-                <PointsGroup
-                  key={points}
-                  points={points}
-                  contestants={contestantsByPoints[points] || []}
-                  dragDisabled={isReadOnly}
-                />
-              ))}
-            </div>
-            
-            {/* Seals row - aligned horizontally below all content */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 mt-6">
-              {allPoints.map((points) => {
-                return <PointsSeal key={points} points={points} />;
-              })}
-          </div>
-        </SortableContext>
-
-        {/* DragOverlay shows a copy of the dragged item that follows the cursor */}
-        <DragOverlay>
-          {activeContestant ? (
-            <div className="relative w-48 opacity-90 cursor-grabbing">
-              <div className="relative aspect-[225/266] overflow-hidden rounded-lg shadow-2xl">
-                <Image
-                  src={activeContestant.imageUrl}
-                  alt={activeContestant.name}
-                  fill
-                  sizes="192px"
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          ) : null}
-        </DragOverlay>
-      </DndContext>
-
-      <div className="mt-8 text-center text-sm text-zinc-500">
-        {isReadOnly ? (
-          <p>Switch to “My Scores” to edit.</p>
-        ) : (
-          <p>💡 Drag contestants to reorder or stack them on top of each other to share points.</p>
-        )}
       </div>
     </div>
   );

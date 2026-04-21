@@ -1,90 +1,108 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import SeriesSelector from '@/components/SeriesSelector';
+import { useMemo, useState, useEffect, useCallback } from 'react';
 import ContestantGallery from '@/components/ContestantGallery';
-import EpisodeTaskSidebar from '@/components/EpisodeTaskSidebar';
-import UsernameForm from '@/components/UsernameForm';
+import SeriesEpisodeTaskSidebar from '@/components/SeriesEpisodeTaskSidebar';
+import UserInfo from '@/components/UserInfo';
+import { fetchEpisodesAction, type Episode } from '@/app/actions/fetch-episodes';
 import { useUser } from '@/contexts/UserContext';
+import { useSeriesGallery } from '@/hooks/useSeriesGallery';
 
 export default function Home() {
-  const { user, logout } = useUser();
+  const { user } = useUser();
+  const userId = user.status === 'authenticated' ? user.userId : undefined;
+
   const [selectedSeries, setSelectedSeries] = useState(1);
   const [selectedEpisode, setSelectedEpisode] = useState(1);
   const [selectedTask, setSelectedTask] = useState(1);
 
-  // Reset to Episode 1, Task 1 when series changes
+  const [episodes, setEpisodes] = useState<Episode[]>([]);
+
   useEffect(() => {
-    setSelectedEpisode(1);
-    setSelectedTask(1);
+    async function loadEpisodes() {
+      const result = await fetchEpisodesAction(selectedSeries);
+      if (result.success) {
+        setEpisodes(result.data);
+      } else {
+        console.error('Failed to load episodes for header:', result.error);
+        setEpisodes([]);
+      }
+    }
+    loadEpisodes();
   }, [selectedSeries]);
 
-  // Handle task selection from sidebar
-  const handleTaskSelect = (episodeId: number, taskId: number) => {
-    setSelectedEpisode(episodeId);
-    setSelectedTask(taskId);
-  };
+  const selectedTaskDescription = useMemo(() => {
+    const episode = episodes.find((ep) => ep.number === selectedEpisode);
+    const task = episode?.tasks.find((t) => t.number === selectedTask);
+    return task?.description ?? null;
+  }, [episodes, selectedEpisode, selectedTask]);
+
+  const gallery = useSeriesGallery(selectedSeries, selectedEpisode, selectedTask, userId);
+
+  const attemptSelect = useCallback((seriesId: number, episodeNumber: number, taskNumber: number) => {
+    if (gallery.isDirty) {
+      const ok = window.confirm('You have unsaved changes. Discard them and navigate away?');
+      if (!ok) return;
+      gallery.discardDraft();
+    }
+    setSelectedSeries(seriesId);
+    setSelectedEpisode(episodeNumber);
+    setSelectedTask(taskNumber);
+  }, [gallery]);
 
   return (
     <div className="flex h-screen overflow-hidden">
-      {/* Episode/Task Sidebar */}
-      <EpisodeTaskSidebar
-        seriesId={selectedSeries}
+      <SeriesEpisodeTaskSidebar
+        currentSeries={selectedSeries}
         currentEpisode={selectedEpisode}
         currentTask={selectedTask}
-        onTaskSelect={handleTaskSelect}
+        onSelect={attemptSelect}
+        episodesForCurrentSeries={episodes}
       />
       
       {/* Main Content Area */}
       <main className="flex-1 overflow-y-auto bg-zinc-50 dark:bg-zinc-950">
         <div className="container mx-auto py-8 px-4">
-          {/* Header */}
-          <div className="mb-8">
-            <h1 className="text-4xl font-bold text-zinc-900 dark:text-zinc-50 mb-2">
-              Taskmaster Contestant Scores
-            </h1>
-            <p className="text-zinc-600 dark:text-zinc-400">
-              Select a series, episode, and task to score contestants
-            </p>
+          <div className="mb-6 grid grid-cols-1 gap-4 sm:grid-cols-3 sm:items-start">
+            <div className="sm:col-span-1">
+              <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">
+                Taskmaster
+              </h1>
+              <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
+                Official scores and guest rescoring
+              </p>
+            </div>
 
-            <div className="mt-4">
-              {user.status === 'anonymous' ? (
-                <UsernameForm />
-              ) : (
-                <div className="flex flex-wrap items-center gap-3">
-                  <div className="text-sm text-zinc-600 dark:text-zinc-400">
-                    Signed in as <span className="font-medium text-zinc-900 dark:text-zinc-100">{user.username}</span>
-                  </div>
-                  <button
-                    type="button"
-                    onClick={logout}
-                    className="h-8 rounded-md border border-zinc-200 bg-white px-3 text-sm font-medium text-zinc-900 hover:bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-50 dark:hover:bg-zinc-900"
-                  >
-                    Switch user
-                  </button>
-                </div>
-              )}
+            <div className="sm:col-span-1 flex flex-col items-center text-center">
+              <div className="text-lg font-semibold text-zinc-900 dark:text-zinc-50">
+                Episode {selectedEpisode}
+              </div>
+              <div className="text-lg font-semibold text-zinc-900 dark:text-zinc-50">
+                Task {selectedTask}
+              </div>
+              <div className="mt-2 max-w-xl text-sm text-zinc-600 dark:text-zinc-400 line-clamp-3">
+                {selectedTaskDescription ?? 'No description available.'}
+              </div>
+            </div>
+
+            <div className="sm:col-span-1 flex justify-start sm:justify-end">
+              <UserInfo />
             </div>
           </div>
           
-          {/* Series Selector */}
-          <div className="mb-6">
-            <SeriesSelector
-              currentSeries={selectedSeries}
-              onSeriesChange={setSelectedSeries}
-            />
-          </div>
-          
-          {/* Current Context Display */}
-          <div className="mb-6 text-sm text-zinc-600 dark:text-zinc-400">
-            <span className="font-medium">Current View:</span> Episode {selectedEpisode}, Task {selectedTask}
-          </div>
-          
           {/* Contestant Gallery */}
-          <ContestantGallery 
-            seriesId={selectedSeries}
-            episodeId={selectedEpisode}
-            taskId={selectedTask}
+          <ContestantGallery
+            userId={userId}
+            scoredContestants={gallery.scoredContestants}
+            contestantsByPoints={gallery.contestantsByPoints}
+            allPoints={gallery.allPoints}
+            isLoading={gallery.isLoading}
+            viewMode={gallery.viewMode}
+            setViewMode={gallery.setViewMode}
+            isDirty={gallery.isDirty}
+            save={gallery.save}
+            resetToOfficial={gallery.resetToOfficial}
+            handleDragEnd={gallery.handleDragEnd}
           />
         </div>
       </main>

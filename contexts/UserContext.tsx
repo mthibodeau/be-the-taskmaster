@@ -17,29 +17,29 @@ const UserContext = createContext<UserContextValue | null>(null);
 
 const STORAGE_KEY = 'taskmaster.user';
 
+type StoredUser = { userId: string; username: string };
+
 function readStoredUser(): { userId: string; username: string } | null {
   if (typeof window === 'undefined') return null;
   try {
     const raw = window.localStorage.getItem(STORAGE_KEY);
     if (!raw) return null;
-    const parsed = JSON.parse(raw) as unknown;
-    if (
-      typeof parsed === 'object' &&
-      parsed !== null &&
-      'userId' in parsed &&
-      'username' in parsed &&
-      typeof (parsed as any).userId === 'string' &&
-      typeof (parsed as any).username === 'string'
-    ) {
-      return { userId: (parsed as any).userId, username: (parsed as any).username };
-    }
-    return null;
+    const parsed: unknown = JSON.parse(raw);
+    if (typeof parsed !== 'object' || parsed === null) return null;
+
+    const maybeUser = parsed as Record<string, unknown>;
+    const userId = maybeUser.userId;
+    const username = maybeUser.username;
+    if (typeof userId !== 'string' || typeof username !== 'string') return null;
+
+    const result: StoredUser = { userId, username };
+    return result;
   } catch {
     return null;
   }
 }
 
-function writeStoredUser(user: { userId: string; username: string } | null) {
+function writeStoredUser(user: StoredUser | null) {
   if (typeof window === 'undefined') return;
   if (!user) {
     window.localStorage.removeItem(STORAGE_KEY);
@@ -49,13 +49,17 @@ function writeStoredUser(user: { userId: string; username: string } | null) {
 }
 
 export function UserProvider({ children }: { children: React.ReactNode }) {
+  // Important: keep the first render consistent between SSR and client hydration.
+  // We only read localStorage after mount.
   const [user, setUser] = useState<UserState>({ status: 'anonymous' });
 
   useEffect(() => {
-    const stored = readStoredUser();
-    if (stored) {
+    const t = setTimeout(() => {
+      const stored = readStoredUser();
+      if (!stored) return;
       setUser({ status: 'authenticated', userId: stored.userId, username: stored.username });
-    }
+    }, 0);
+    return () => clearTimeout(t);
   }, []);
 
   const login = useCallback(async (username: string) => {

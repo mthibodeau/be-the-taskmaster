@@ -51,10 +51,6 @@ function hydrateUserScores(
  * @returns contestants array, grouped scores, and drag handler function
  */
 export function useSeriesGallery(seriesId: number, episodeId?: number, taskId?: number, userId?: string) {
-  const [activeSeriesId, setActiveSeriesId] = useState(seriesId);
-  const [activeEpisodeId, setActiveEpisodeId] = useState(episodeId);
-  const [activeTaskId, setActiveTaskId] = useState(taskId);
-
   const [officialScores, setOfficialScores] = useState<ScoredContestant[]>([]);
   const [baselineScores, setBaselineScores] = useState<ScoredContestant[]>([]);
   const [draftScores, setDraftScores] = useState<ScoredContestant[]>([]);
@@ -67,45 +63,14 @@ export function useSeriesGallery(seriesId: number, episodeId?: number, taskId?: 
     return !pointsEqual(draftScores, baselineScores);
   }, [draftScores, baselineScores, viewMode]);
 
-  // If selection changes while dirty, confirm discard (keep active selection unless user accepts).
-  useEffect(() => {
-    const nextSeries = seriesId;
-    const nextEpisode = episodeId;
-    const nextTask = taskId;
-
-    const changed =
-      nextSeries !== activeSeriesId ||
-      nextEpisode !== activeEpisodeId ||
-      nextTask !== activeTaskId;
-
-    if (!changed) return;
-
-    if (isDirty) {
-      const ok = window.confirm('You have unsaved changes. Discard them and navigate away?');
-      if (!ok) return;
-    }
-
-    setActiveSeriesId(nextSeries);
-    setActiveEpisodeId(nextEpisode);
-    setActiveTaskId(nextTask);
-  }, [
-    seriesId,
-    episodeId,
-    taskId,
-    activeSeriesId,
-    activeEpisodeId,
-    activeTaskId,
-    isDirty,
-  ]);
-
   // Load contestants for the selected series
   useEffect(() => {
     async function loadData() {
       setIsLoading(true);
 
-      const sid = activeSeriesId;
-      const eid = activeEpisodeId;
-      const tid = activeTaskId;
+      const sid = seriesId;
+      const eid = episodeId;
+      const tid = taskId;
 
       // Check if series has database data and specific task is requested
       if (hasDBData(sid) && eid !== undefined && tid !== undefined) {
@@ -143,7 +108,7 @@ export function useSeriesGallery(seriesId: number, episodeId?: number, taskId?: 
       }
 
       // Fallback: fetch just contestants with default points
-      const contestantsResult = await fetchContestantsAction(activeSeriesId);
+      const contestantsResult = await fetchContestantsAction(seriesId);
       if (contestantsResult.success) {
         setOfficialScores(contestantsResult.data);
         setHasUserScoresForTask(false);
@@ -161,7 +126,7 @@ export function useSeriesGallery(seriesId: number, episodeId?: number, taskId?: 
     }
 
     loadData();
-  }, [activeSeriesId, activeEpisodeId, activeTaskId, userId]);
+  }, [seriesId, episodeId, taskId, userId]);
 
   /**
    * Handle drag end event from dnd-kit
@@ -209,15 +174,15 @@ export function useSeriesGallery(seriesId: number, episodeId?: number, taskId?: 
   const save = useCallback(async () => {
     if (!userId) return { success: false as const, error: 'Not logged in' };
     if (viewMode !== 'user') return { success: false as const, error: 'Not in My Scores mode' };
-    if (activeEpisodeId === undefined || activeTaskId === undefined) {
+    if (episodeId === undefined || taskId === undefined) {
       return { success: false as const, error: 'No task selected' };
     }
 
     const result = await saveUserScoresAction(
       userId,
-      activeSeriesId,
-      activeEpisodeId,
-      activeTaskId,
+      seriesId,
+      episodeId,
+      taskId,
       draftScores.map((c) => ({ contestantId: c.id, points: c.points }))
     );
 
@@ -226,12 +191,16 @@ export function useSeriesGallery(seriesId: number, episodeId?: number, taskId?: 
     setBaselineScores(draftScores);
     setHasUserScoresForTask(true);
     return { success: true as const };
-  }, [userId, viewMode, activeEpisodeId, activeTaskId, activeSeriesId, draftScores]);
+  }, [userId, viewMode, episodeId, taskId, seriesId, draftScores]);
 
   const resetToOfficial = useCallback(() => {
     if (viewMode !== 'user') return;
     setDraftScores(officialScores);
   }, [officialScores, viewMode]);
+
+  const discardDraft = useCallback(() => {
+    setDraftScores(baselineScores);
+  }, [baselineScores]);
 
   // Group contestants by points for display
   const visibleScores = viewMode === 'user' ? draftScores : officialScores;
@@ -259,5 +228,6 @@ export function useSeriesGallery(seriesId: number, episodeId?: number, taskId?: 
     handleDragEnd,
     save,
     resetToOfficial,
+    discardDraft,
   };
 }

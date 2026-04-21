@@ -30,7 +30,7 @@ if (!connectionString) {
 const pool = new Pool({ connectionString });
 
 type Queryable = {
-  query: (queryText: string, values?: unknown[]) => Promise<QueryResult<any>>;
+  query: (queryText: string, values?: unknown[]) => Promise<QueryResult<Record<string, unknown>>>;
 };
 
 interface CSVRow {

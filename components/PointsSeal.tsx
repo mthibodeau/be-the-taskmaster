@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { cn } from '@/lib/utils';
 
 interface PointsSealProps {
   /** The points scored (0 for disqualified, 1-5 standard, can be >5 with bonus) */
@@ -24,7 +25,7 @@ export default function PointsSeal({ points, className }: PointsSealProps) {
   const altText = points === 0 ? 'Disqualified' : `${points} points`;
 
   return (
-    <div className="flex justify-center">
+    <div className={cn("flex justify-center", className)}>
       <div className="relative size-16">
         <Image
           src="/images/blank-seal.png"
