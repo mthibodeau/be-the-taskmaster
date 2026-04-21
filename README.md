@@ -64,23 +64,32 @@ A Next.js application for viewing and managing Taskmaster contestant scores acro
 ```
 /app
   /actions
-    fetch-scores.ts           # Server Actions for secure data fetching
-  page.tsx                    # Main page with series/episode/task selection
+    fetch-scores.ts           # Official score reads
+    fetch-episodes.ts         # Episode/task list reads
+    user-actions.ts           # Guest username create/login
+    fetch-user-scores.ts      # User score reads
+    save-user-scores.ts       # User score writes
+  page.tsx                    # Main page (selection + layout)
   layout.tsx                  # Root layout
   
 /components
-  ContestantGallery.tsx       # Drag-and-drop gallery with dnd-kit
-  EpisodeTaskSidebar.tsx      # Episode and task navigation
+  ContestantGallery.tsx       # Drag-and-drop gallery (DnD context + composition)
+  SeriesEpisodeTaskSidebar.tsx# Series → Episodes → Tasks navigation (left sidebar)
+  TaskHeader.tsx              # Centered Episode/Task/Description header
+  UserInfo.tsx                # Upper-right user info / username form
+  UsernameForm.tsx            # Guest username input
   PointsSeal.tsx              # Points display component
-  SeriesSelector.tsx          # Series dropdown
+  /gallery                    # Gallery subcomponents (controls/columns/cards)
+  /sidebar                    # Sidebar subcomponents (series/episode items + utils)
   /ui                         # Radix UI components
   
 /hooks
-  useSeriesGallery.ts         # Main hook for contestant state and drag-drop
+  useSeriesGallery.ts         # Official + user scores state (draft/baseline/save)
   
 /lib
   prisma.ts                   # Prisma Client singleton with connection pooling
-  db.ts                       # Database query layer (server-only)
+  db.ts                       # Database query layer
+  db.server.ts                # server-only re-export for Next server actions
   utils.ts                    # Utility functions
   
 /types
@@ -88,14 +97,12 @@ A Next.js application for viewing and managing Taskmaster contestant scores acro
   episode.ts                  # TypeScript interfaces for episodes and tasks
   
 /data
-  series.ts                   # Static data for series without database mappings
-  episodes.ts                 # Static episode data (fallback)
+  series.ts                   # Series list + IDs
   
 /prisma
   schema.prisma               # Database schema
   init.sql                    # SQL version of schema
   import-csv.ts               # CSV import script
-  seed.ts                     # Database seeding
   
 /public/images
   /series-04                  # Contestant images by series
@@ -144,7 +151,7 @@ PostgreSQL Database
 - **OfficialScore**: Canonical scores from the show
   - `points`: 0 (DQ), 1-5 (standard), >5 (bonus)
   - `notes`: Additional context (e.g., "Disqualified", "Tie")
-- **UserScore**: User customizations (future feature)
+- **UserScore**: Guest user customizations (saved per username)
 
 ## CSV Data Import
 
@@ -214,9 +221,7 @@ ORDER BY os.points DESC;
 
 ## Hybrid Data Architecture
 
-The app uses a **hybrid approach**:
-- **Series with database mappings** (4, 5): Fetch from PostgreSQL
-- **Series without mappings**: Use static data from `data/series.ts`
+The app uses `data/series.ts` as the UI’s canonical series list (regular series, CoC, NYT). Episodes, tasks, and scores are fetched from PostgreSQL via Server Actions.
 
 Check if series uses database:
 ```typescript
@@ -232,7 +237,6 @@ if (hasDBData(seriesId)) {
 ## Future Enhancements
 
 - [ ] User authentication
-- [ ] Save user custom scores to database
 - [ ] Contestant mappings for all series
 - [ ] Statistics and analytics
 - [ ] Series-wide scoreboard

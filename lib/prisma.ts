@@ -1,4 +1,4 @@
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient, type Prisma } from '@prisma/client';
 import { Pool } from 'pg';
 import { PrismaPg } from '@prisma/adapter-pg';
 
@@ -29,10 +29,10 @@ if (process.env.NODE_ENV !== 'production') {
 
 const adapter = new PrismaPg(pool);
 
-const prismaLogLevels: ConstructorParameters<typeof PrismaClient>[0]['log'] =
+const prismaLogLevels =
   process.env.NODE_ENV === 'production'
-    ? ['error', 'warn']
-    : ['query', 'error', 'warn'];
+    ? (['error', 'warn'] satisfies Prisma.LogLevel[])
+    : (['query', 'error', 'warn'] satisfies Prisma.LogLevel[]);
 
 export const prisma =
   globalForPrisma.prisma ??

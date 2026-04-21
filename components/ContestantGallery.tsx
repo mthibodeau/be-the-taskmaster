@@ -9,24 +9,20 @@ import {
   useSensor,
   useSensors,
   DragOverlay,
-  useDroppable,
   type DragStartEvent,
   type DragEndEvent,
 } from '@dnd-kit/core';
 import {
   SortableContext,
   sortableKeyboardCoordinates,
-  useSortable,
 } from '@dnd-kit/sortable';
-import { CSS } from '@dnd-kit/utilities';
 import { useState } from 'react';
 import { ScoredContestant } from '@/types/contestant';
 import PointsSeal from './PointsSeal';
-// Note: clsx needs to be installed: npm install clsx
-import clsx from 'clsx';
+import { PointsColumn } from '@/components/gallery/PointsColumn';
+import { GalleryControls } from '@/components/gallery/GalleryControls';
 
 interface ContestantGalleryProps {
-  /** Whether drag/editing is allowed */
   userId?: string;
 
   scoredContestants: ScoredContestant[];
@@ -40,111 +36,6 @@ interface ContestantGalleryProps {
   save: () => Promise<{ success: true } | { success: false; error: string }>;
   resetToOfficial: () => void;
   handleDragEnd: (event: DragEndEvent) => void;
-}
-
-/**
- * Individual sortable contestant image (no seal, just the image)
- * Used within a points group
- */
-function SortableContestantImage({ 
-  contestant,
-  isLarge = false,
-  disabled = false,
-}: { 
-  contestant: ScoredContestant;
-  isLarge?: boolean;
-  disabled?: boolean;
-}) {
-  const {
-    attributes,
-    listeners,
-    setNodeRef,
-    transform,
-    transition,
-    isDragging,
-  } = useSortable({ id: contestant.id, disabled });
-
-  const style = {
-    transform: CSS.Transform.toString(transform),
-    transition,
-    opacity: isDragging ? 0.5 : 1,
-  };
-
-  return (
-    <div
-      ref={setNodeRef}
-      style={style}
-      className={clsx(
-        'relative group rounded-lg',
-        disabled ? 'cursor-default' : 'cursor-grab active:cursor-grabbing',
-        'focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2',
-        isDragging && 'z-50',
-        isLarge && 'scale-125'
-      )}
-      {...attributes}
-      {...listeners}
-    >
-      <div className="relative w-full aspect-[225/266] overflow-hidden rounded-lg transition-shadow duration-200 hover:shadow-lg">
-        <Image
-          src={contestant.imageUrl}
-          alt={contestant.name}
-          fill
-          sizes={isLarge ? "(max-width: 640px) 50vw, (max-width: 1024px) 30vw, 300px" : "(max-width: 640px) 50vw, (max-width: 1024px) 20vw, 240px"}
-          className="object-cover"
-          priority={false}
-        />
-        
-        {!disabled ? (
-          <div className="absolute inset-0 flex items-center justify-center group-hover:bg-black/10 transition-colors duration-200">
-            <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-white text-sm font-medium bg-black/50 px-3 py-1 rounded-full backdrop-blur-sm">
-              Drag to reorder
-            </div>
-          </div>
-        ) : null}
-      </div>
-    </div>
-  );
-}
-
-/**
- * Points group component - displays stacked contestants with same points
- * Always shows all point values (0-5), even if empty
- * Seals are aligned horizontally at the same level
- */
-function PointsGroup({ 
-  points, 
-  contestants,
-  dragDisabled,
-}: { 
-  points: number;
-  contestants: ScoredContestant[];
-  dragDisabled: boolean;
-}) {
-  const { setNodeRef, isOver } = useDroppable({
-    id: `points-${points}`,
-  });
-
-  return (
-    <div
-      ref={setNodeRef}
-      className={clsx(
-        'relative flex flex-col items-center rounded-lg transition-colors',
-        isOver && 'bg-zinc-100 dark:bg-zinc-900'
-      )}
-    >
-      {/* Stacked contestant images */}
-      <div className="w-full flex flex-col gap-2">
-        {contestants.map((contestant) => (
-          <SortableContestantImage 
-            key={contestant.id} 
-            contestant={contestant}
-            isLarge={points === 5}
-            disabled={dragDisabled}
-          />
-        ))}
-      </div>
-    </div>
-  );
 }
 
 export default function ContestantGallery({
@@ -228,7 +119,7 @@ export default function ContestantGallery({
           >
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 items-end">
               {allPoints.map((points) => (
-                <PointsGroup
+                <PointsColumn
                   key={points}
                   points={points}
                   contestants={contestantsByPoints[points] || []}
@@ -271,78 +162,14 @@ export default function ContestantGallery({
         )}
       </div>
 
-      {/* Mode + Save controls (below scoring section) */}
-      <div
-        className={clsx(
-          'mt-6 flex flex-wrap items-center justify-between gap-3 rounded-lg border p-3',
-          viewMode === 'user'
-            ? 'border-blue-200 bg-blue-50/60 dark:border-blue-900 dark:bg-blue-950/30'
-            : 'border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-950'
-        )}
-      >
-        <div className="flex items-center gap-3">
-          <div className="inline-flex rounded-md border border-zinc-200 bg-white p-1 dark:border-zinc-800 dark:bg-zinc-950">
-            <button
-              type="button"
-              onClick={() => setViewMode('user')}
-              disabled={!userId}
-              className={clsx(
-                'h-8 rounded px-3 text-sm font-medium disabled:opacity-50',
-                viewMode === 'user'
-                  ? 'bg-blue-600 text-white'
-                  : 'text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-900'
-              )}
-            >
-              My Scores
-            </button>
-            <button
-              type="button"
-              onClick={() => setViewMode('official')}
-              className={clsx(
-                'h-8 rounded px-3 text-sm font-medium',
-                viewMode === 'official'
-                  ? 'bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900'
-                  : 'text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-900'
-              )}
-            >
-              Official
-            </button>
-          </div>
-
-          <div className="text-sm text-zinc-600 dark:text-zinc-400">
-            {viewMode === 'official'
-              ? 'Viewing official scores'
-              : isDirty
-                ? 'Unsaved changes'
-                : 'Saved'}
-          </div>
-        </div>
-
-        {userId && viewMode === 'user' ? (
-          <div className="flex items-center gap-2">
-            <button
-              type="button"
-              onClick={resetToOfficial}
-              className="h-8 rounded-md border border-zinc-200 bg-white px-3 text-sm font-medium text-zinc-900 hover:bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-50 dark:hover:bg-zinc-900"
-            >
-              Reset to official
-            </button>
-            <button
-              type="button"
-              disabled={!isDirty}
-              onClick={async () => {
-                const result = await save();
-                if (!result.success) {
-                  alert(result.error);
-                }
-              }}
-              className="h-8 rounded-md bg-blue-600 px-3 text-sm font-medium text-white disabled:opacity-50"
-            >
-              Save
-            </button>
-          </div>
-        ) : null}
-      </div>
+      <GalleryControls
+        userId={userId}
+        viewMode={viewMode}
+        setViewMode={setViewMode}
+        isDirty={isDirty}
+        onResetToOfficial={resetToOfficial}
+        onSave={save}
+      />
     </div>
   );
 }

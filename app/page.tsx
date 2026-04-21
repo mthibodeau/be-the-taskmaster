@@ -3,6 +3,7 @@
 import { useMemo, useState, useEffect, useCallback } from 'react';
 import ContestantGallery from '@/components/ContestantGallery';
 import SeriesEpisodeTaskSidebar from '@/components/SeriesEpisodeTaskSidebar';
+import TaskHeader from '@/components/TaskHeader';
 import UserInfo from '@/components/UserInfo';
 import { fetchEpisodesAction, type Episode } from '@/app/actions/fetch-episodes';
 import { useUser } from '@/contexts/UserContext';
@@ -73,16 +74,12 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="sm:col-span-1 flex flex-col items-center text-center">
-              <div className="text-lg font-semibold text-zinc-900 dark:text-zinc-50">
-                Episode {selectedEpisode}
-              </div>
-              <div className="text-lg font-semibold text-zinc-900 dark:text-zinc-50">
-                Task {selectedTask}
-              </div>
-              <div className="mt-2 max-w-xl text-sm text-zinc-600 dark:text-zinc-400 line-clamp-3">
-                {selectedTaskDescription ?? 'No description available.'}
-              </div>
+            <div className="sm:col-span-1">
+              <TaskHeader
+                episodeNumber={selectedEpisode}
+                taskNumber={selectedTask}
+                description={selectedTaskDescription}
+              />
             </div>
 
             <div className="sm:col-span-1 flex justify-start sm:justify-end">
