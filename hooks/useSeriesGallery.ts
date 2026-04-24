@@ -57,6 +57,8 @@ export function useSeriesGallery(seriesId: number, episodeId?: number, taskId?: 
   const [viewMode, setViewMode] = useState<ViewMode>('official');
   const [hasUserScoresForTask, setHasUserScoresForTask] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  /** Incremented after a successful save so dependent queries (e.g. cumulative totals) can refetch. */
+  const [scoresSavedVersion, setScoresSavedVersion] = useState(0);
 
   const isDirty = useMemo(() => {
     if (viewMode !== 'user') return false;
@@ -190,6 +192,7 @@ export function useSeriesGallery(seriesId: number, episodeId?: number, taskId?: 
 
     setBaselineScores(draftScores);
     setHasUserScoresForTask(true);
+    setScoresSavedVersion((v) => v + 1);
     return { success: true as const };
   }, [userId, viewMode, episodeId, taskId, seriesId, draftScores]);
 
@@ -229,5 +232,6 @@ export function useSeriesGallery(seriesId: number, episodeId?: number, taskId?: 
     save,
     resetToOfficial,
     discardDraft,
+    scoresSavedVersion,
   };
 }

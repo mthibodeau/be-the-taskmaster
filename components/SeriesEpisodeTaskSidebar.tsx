@@ -55,7 +55,7 @@ export default function SeriesEpisodeTaskSidebar({
   const isLoading = loadingSeriesId !== null;
 
   return (
-    <aside className="w-80 bg-white dark:bg-zinc-900 border-r border-zinc-200 dark:border-zinc-800 h-screen overflow-y-auto">
+    <aside className="w-80 bg-white dark:bg-zinc-900 border-r border-zinc-200 dark:border-zinc-800 h-full overflow-y-auto">
       <div className="p-4">
         <h2 className="text-sm font-semibold text-zinc-500 dark:text-zinc-400 mb-4">
           Series

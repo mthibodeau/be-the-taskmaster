@@ -1,5 +1,6 @@
 import { prisma } from './prisma';
 import { Contestant, ScoredContestant } from '@/types/contestant';
+import { Prisma } from '@prisma/client';
 
 /**
  * Database Query Layer
@@ -222,5 +223,144 @@ export async function saveUserScores(
       })
     )
   );
+}
+
+export type CumulativeTotalsRow = {
+  contestantId: string;
+  officialTotal: number;
+  userTotal: number;
+};
+
+type CumulativeTotalsParams = {
+  seriesId: number;
+  episodeNumber: number;
+  taskNumber: number;
+  userId?: string;
+};
+
+function toNumber(value: unknown): number {
+  if (typeof value === 'number') return value;
+  if (typeof value === 'bigint') return Number(value);
+  if (value === null || value === undefined) return 0;
+  const n = Number(value);
+  return Number.isFinite(n) ? n : 0;
+}
+
+function normalizeTotals(rows: Array<{ contestantId: string; officialTotal: unknown; userTotal: unknown }>): CumulativeTotalsRow[] {
+  return rows.map((r) => ({
+    contestantId: r.contestantId,
+    officialTotal: toNumber(r.officialTotal),
+    userTotal: toNumber(r.userTotal),
+  }));
+}
+
+function mergeTotalsByContestant(a: CumulativeTotalsRow[], b: CumulativeTotalsRow[]): CumulativeTotalsRow[] {
+  const map = new Map<string, { officialTotal: number; userTotal: number }>();
+  const add = (rows: CumulativeTotalsRow[]) => {
+    for (const r of rows) {
+      const cur = map.get(r.contestantId) ?? { officialTotal: 0, userTotal: 0 };
+      map.set(r.contestantId, {
+        officialTotal: cur.officialTotal + r.officialTotal,
+        userTotal: cur.userTotal + r.userTotal,
+      });
+    }
+  };
+  add(a);
+  add(b);
+  return Array.from(map.entries()).map(([contestantId, v]) => ({
+    contestantId,
+    officialTotal: v.officialTotal,
+    userTotal: v.userTotal,
+  }));
+}
+
+/**
+ * Aggregate official + effective user totals for tasks matching an additional episode/task filter.
+ *
+ * When `userId` is absent, user totals match official totals (no per-user overrides).
+ */
+async function aggregateCumulativeTotalsForFilter(
+  seriesId: number,
+  filterSql: Prisma.Sql,
+  userId?: string
+): Promise<CumulativeTotalsRow[]> {
+  const userJoin = userId
+    ? Prisma.sql`
+      LEFT JOIN user_scores us
+        ON us."taskId" = os."taskId"
+       AND us."contestantId" = os."contestantId"
+       AND us."userId" = ${userId}
+    `
+    : Prisma.sql``;
+
+  const userTotalAgg = userId
+    ? Prisma.sql`SUM(COALESCE(us.points, os.points))::int`
+    : Prisma.sql`SUM(os.points)::int`;
+
+  const rows = await prisma.$queryRaw<
+    Array<{ contestantId: string; officialTotal: unknown; userTotal: unknown }>
+  >(Prisma.sql`
+    SELECT
+      os."contestantId" AS "contestantId",
+      SUM(os.points)::int AS "officialTotal",
+      ${userTotalAgg} AS "userTotal"
+    FROM official_scores os
+    INNER JOIN tasks t ON t.id = os."taskId"
+    INNER JOIN episodes e ON e.id = t."episodeId"
+    ${userJoin}
+    WHERE
+      e."seriesId" = ${seriesId}
+      AND ${filterSql}
+    GROUP BY os."contestantId"
+  `);
+
+  return normalizeTotals(rows);
+}
+
+/**
+ * Get cumulative episode totals (official + effective user) through a task.
+ *
+ * Effective user total uses per-task override when present:
+ * user_points = COALESCE(user_scores.points, official_scores.points)
+ */
+export async function getCumulativeEpisodeTotals(
+  params: CumulativeTotalsParams
+): Promise<CumulativeTotalsRow[]> {
+  const { seriesId, episodeNumber, taskNumber, userId } = params;
+
+  return aggregateCumulativeTotalsForFilter(
+    seriesId,
+    Prisma.sql`e.number = ${episodeNumber} AND t.number <= ${taskNumber}`,
+    userId
+  );
+}
+
+/**
+ * Get cumulative series totals (official + effective user) through an episode/task selection.
+ *
+ * Includes all tasks in episodes prior to episodeNumber, plus tasks <= taskNumber in episodeNumber.
+ */
+export async function getCumulativeSeriesTotals(
+  params: CumulativeTotalsParams
+): Promise<CumulativeTotalsRow[]> {
+  const { seriesId, episodeNumber, taskNumber, userId } = params;
+
+  const currentEpisodePartial = await aggregateCumulativeTotalsForFilter(
+    seriesId,
+    Prisma.sql`e.number = ${episodeNumber} AND t.number <= ${taskNumber}`,
+    userId
+  );
+
+  if (episodeNumber <= 1) {
+    return currentEpisodePartial;
+  }
+
+  const priorEpisodes = await aggregateCumulativeTotalsForFilter(
+    seriesId,
+    Prisma.sql`e.number < ${episodeNumber}`,
+    userId
+  );
+
+  return mergeTotalsByContestant(priorEpisodes, currentEpisodePartial);
 }
 
